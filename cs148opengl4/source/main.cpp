@@ -18,6 +18,9 @@
 #include <iostream>
 #include <chrono>
 
+#undef ASSIGNMENT 	// Special config to prevent overwriting in Xcode.
+#define ASSIGNMENT N //
+
 int main(int argc, char** argv) {
     FreeImage_Initialise();
 
