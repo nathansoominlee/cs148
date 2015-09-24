@@ -1,0 +1,592 @@
+\hypertarget{class_scene_object}{}\section{Scene\+Object Class Reference}
+\label{class_scene_object}\index{Scene\+Object@{Scene\+Object}}
+
+
+Represents a generic object that will live in the 3\+D world that we call our \hyperlink{class_scene}{Scene}.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+Object.\+h$>$}
+
+Inheritance diagram for Scene\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.985765cm]{class_scene_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scene_object_a0d268d96d77dbeb45b07a6442e2f4d0d}{Scene\+Object} ()
+\begin{DoxyCompactList}\small\item\em Creates an object at the origin, with no rotation, and no scale. \end{DoxyCompactList}\item 
+\hyperlink{class_scene_object_a9dd76f946c8e0743bed57f9499773fbd}{Scene\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_rendering_object}{Rendering\+Object} $>$ base\+Object)
+\begin{DoxyCompactList}\small\item\em Creates an object at the origin, with no rotation, and no scale. \end{DoxyCompactList}\item 
+\hyperlink{class_scene_object_aa89b21b4732296d196a76d1785aee02c}{Scene\+Object} (const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ class \hyperlink{class_rendering_object}{Rendering\+Object} $>$$>$ \&base\+Objects)
+\begin{DoxyCompactList}\small\item\em Creates an object at the origin, with no rotation, and no scale. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_scene_object_ab258d6b94e982d5ae71ad4d7652381f4}{$\sim$\+Scene\+Object} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_scene_object_a5ab56b2b2997f96aed97415185beec41}{Prepare\+Shader\+For\+Rendering} (const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$shader, const class \hyperlink{class_camera}{Camera} $\ast$current\+Camera, const class \hyperlink{class_light}{Light} $\ast$current\+Light) const 
+\begin{DoxyCompactList}\small\item\em Passes all uniforms, binds all textures, etc. to the currently bound shader program. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_scene_object_ac2873f8a613bd4b161a1ea605888d6e7}{Get\+Total\+Render\+Objects} () const 
+\begin{DoxyCompactList}\small\item\em Returns the total number of rendering objects. \end{DoxyCompactList}\item 
+virtual const class \hyperlink{class_rendering_object}{Rendering\+Object} $\ast$ \hyperlink{class_scene_object_a29b15adf1faeceef0b3f5b1c36e34d5c}{Get\+Render\+Object} (int index=0) const 
+\begin{DoxyCompactList}\small\item\em Gets the specified rendering object. \end{DoxyCompactList}\item 
+virtual glm\+::mat4 \hyperlink{class_scene_object_aea26bf44c609cc4d733a811a55e442e2}{Get\+Transformation\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the current transformation matrix. \end{DoxyCompactList}\item 
+virtual glm\+::vec4 \hyperlink{class_scene_object_abdf46a2b05799382e9cb3894d5da03ea}{Get\+Forward\+Direction} () const 
+\begin{DoxyCompactList}\small\item\em Computes and returns the forward direction of the object. \end{DoxyCompactList}\item 
+virtual glm\+::vec4 \hyperlink{class_scene_object_ab96fed2fb77d81c8d1c2735fbf2a998a}{Get\+Right\+Direction} () const 
+\begin{DoxyCompactList}\small\item\em Computes and returns the right direction of the object. \end{DoxyCompactList}\item 
+virtual glm\+::vec4 \hyperlink{class_scene_object_ad8828989c033b25c996cf025d7e86f54}{Get\+Up\+Direction} () const 
+\begin{DoxyCompactList}\small\item\em Computes and returns the up direction of the object. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_object_a04868377580069b0ee9d202bdb1b7159}{Translate} (const glm\+::vec3 \&translation)
+\begin{DoxyCompactList}\small\item\em Changes the position of the object. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}{Rotate} (const glm\+::vec3 \&axis, float radians)
+\begin{DoxyCompactList}\small\item\em Changes the rotation of the object. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}{Mult\+Scale} (float input\+Scale)
+\begin{DoxyCompactList}\small\item\em Changes the scale of the object uniformly. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}{Add\+Scale} (float input\+Scale)
+\begin{DoxyCompactList}\small\item\em Changes the scale of the object uniformly. \end{DoxyCompactList}\item 
+void \hyperlink{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}{Set\+Position} (const glm\+::vec3 \&in)
+\begin{DoxyCompactList}\small\item\em Changes the position of the object. \end{DoxyCompactList}\item 
+glm\+::vec4 \hyperlink{class_scene_object_ac52870b92ce4cebdd153d44754d1ca7c}{Get\+Position} () const 
+\begin{DoxyCompactList}\small\item\em Gets the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static glm\+::vec4 \hyperlink{class_scene_object_a334a5fb4e91d85fe6a046bd83dd235d3}{Get\+World\+Up} ()
+\begin{DoxyCompactList}\small\item\em The world \textquotesingle{}Up\textquotesingle{} direction. \end{DoxyCompactList}\item 
+static glm\+::vec4 \hyperlink{class_scene_object_a46d0ffed082f7bd515b9550ef9f9a86a}{Get\+World\+Right} ()
+\begin{DoxyCompactList}\small\item\em The world \textquotesingle{}Right\textquotesingle{} direction. \end{DoxyCompactList}\item 
+static glm\+::vec4 \hyperlink{class_scene_object_a6fa71efda895933be4ee684745980e68}{Get\+World\+Forward} ()
+\begin{DoxyCompactList}\small\item\em The world \textquotesingle{}Forward\textquotesingle{} direction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Update\+Transformation\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Recomputes the cached\+Transformation\+Matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \hyperlink{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}{cached\+Transformation\+Matrix}
+\item 
+glm\+::vec4 \hyperlink{class_scene_object_ab4aa9bed778001970c38ea11ef34b285}{position}
+\item 
+glm\+::quat \hyperlink{class_scene_object_ae27376aaca87543a75b5a2cd0daf6e2f}{rotation}
+\item 
+glm\+::vec3 \hyperlink{class_scene_object_a62c686b880fe4f58dec64a409e56de26}{scale}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{class_scene_object_a62d236f4f5c52b66bd02d13d09b6ce5e}{M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}model\+Matrix\char`\"{}
+\item 
+static const std\+::string \hyperlink{class_scene_object_a1c129ecdd6bd8e2f34c713f5dd183361}{V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}view\+Matrix\char`\"{}
+\item 
+static const std\+::string \hyperlink{class_scene_object_ad9a8c9c39a4a262c5e379c0bda184541}{P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N} = \char`\"{}projection\+Matrix\char`\"{}
+\item 
+static const float \hyperlink{class_scene_object_a903eef54277645571794fd87dc8e9fbb}{M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E} = 0.\+01f
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ class \hyperlink{class_rendering_object}{Rendering\+Object} $>$ $>$ \hyperlink{class_scene_object_a4bbf98a19bd8e7ddd491fbb9a41b42cf}{render\+Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a generic object that will live in the 3\+D world that we call our \hyperlink{class_scene}{Scene}. 
+
+Note that this class stores no information about the actual topology of the object. Rather, all it cares about is the relationship between the object space and the world space. The position, rotation, and scale properties all come together to form the \textquotesingle{}model matrix\textquotesingle{} which is just the way of going from object space to world space. Yay math! 
+
+Definition at line 15 of file Scene\+Object.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scene_object_a0d268d96d77dbeb45b07a6442e2f4d0d}{}\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Scene\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Object\+::\+Scene\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a0d268d96d77dbeb45b07a6442e2f4d0d}
+
+
+Creates an object at the origin, with no rotation, and no scale. 
+
+
+
+Definition at line 12 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a9dd76f946c8e0743bed57f9499773fbd}{}\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Scene\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Object\+::\+Scene\+Object (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Rendering\+Object} $>$}]{base\+Object}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a9dd76f946c8e0743bed57f9499773fbd}
+
+
+Creates an object at the origin, with no rotation, and no scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Object} & The rendering object to associate with this object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_aa89b21b4732296d196a76d1785aee02c}{}\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\index{Scene\+Object@{Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Scene\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Object\+::\+Scene\+Object (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::shared\+\_\+ptr$<$ class {\bf Rendering\+Object} $>$$>$ \&}]{base\+Objects}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_aa89b21b4732296d196a76d1785aee02c}
+
+
+Creates an object at the origin, with no rotation, and no scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Objects} & The rendering objects (note\+: plural) to associate with this object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_ab258d6b94e982d5ae71ad4d7652381f4}{}\index{Scene\+Object@{Scene\+Object}!````~Scene\+Object@{$\sim$\+Scene\+Object}}
+\index{````~Scene\+Object@{$\sim$\+Scene\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{$\sim$\+Scene\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+Object\+::$\sim$\+Scene\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_ab258d6b94e982d5ae71ad4d7652381f4}
+
+
+Destructor. 
+
+
+
+Definition at line 29 of file Scene\+Object.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}{}\index{Scene\+Object@{Scene\+Object}!Add\+Scale@{Add\+Scale}}
+\index{Add\+Scale@{Add\+Scale}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Add\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Add\+Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{input\+Scale}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}
+
+
+Changes the scale of the object uniformly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Scale} & The scale to add to the current scale.\\
+\hline
+\end{DoxyParams}
+Let\textquotesingle{}s say the current scale is $(x, x, x)$ and the input scale is $y$ then the final scale is, $(x + y, x + y, x + y)$. 
+
+Definition at line 123 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_abdf46a2b05799382e9cb3894d5da03ea}{}\index{Scene\+Object@{Scene\+Object}!Get\+Forward\+Direction@{Get\+Forward\+Direction}}
+\index{Get\+Forward\+Direction@{Get\+Forward\+Direction}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Forward\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+Forward\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_abdf46a2b05799382e9cb3894d5da03ea}
+
+
+Computes and returns the forward direction of the object. 
+
+\begin{DoxyReturn}{Returns}
+Returns the forward direction of the object.
+\end{DoxyReturn}
+Rotates the world forward direction by the object\textquotesingle{}s rotation. 
+
+Definition at line 67 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_ac52870b92ce4cebdd153d44754d1ca7c}{}\index{Scene\+Object@{Scene\+Object}!Get\+Position@{Get\+Position}}
+\index{Get\+Position@{Get\+Position}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_object_ac52870b92ce4cebdd153d44754d1ca7c}
+
+
+Gets the position of the object. 
+
+\begin{DoxyReturn}{Returns}
+The world space position of the object. 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a29b15adf1faeceef0b3f5b1c36e34d5c}{}\index{Scene\+Object@{Scene\+Object}!Get\+Render\+Object@{Get\+Render\+Object}}
+\index{Get\+Render\+Object@{Get\+Render\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Render\+Object}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Rendering\+Object} $\ast$ Scene\+Object\+::\+Get\+Render\+Object (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_a29b15adf1faeceef0b3f5b1c36e34d5c}
+
+
+Gets the specified rendering object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to access in the \hyperlink{class_scene_object_a4bbf98a19bd8e7ddd491fbb9a41b42cf}{Scene\+Object\+::render\+Object} vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the a pointer to the rendering object at the given index.
+\end{DoxyReturn}
+If the index access is out of bounds in the vector then a null pointer is returned. 
+
+Definition at line 47 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_ab96fed2fb77d81c8d1c2735fbf2a998a}{}\index{Scene\+Object@{Scene\+Object}!Get\+Right\+Direction@{Get\+Right\+Direction}}
+\index{Get\+Right\+Direction@{Get\+Right\+Direction}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Right\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+Right\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_ab96fed2fb77d81c8d1c2735fbf2a998a}
+
+
+Computes and returns the right direction of the object. 
+
+\begin{DoxyReturn}{Returns}
+Returns the right direction of the object.
+\end{DoxyReturn}
+Rotates the world right direction by the object\textquotesingle{}s rotation. 
+
+Definition at line 72 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_ac2873f8a613bd4b161a1ea605888d6e7}{}\index{Scene\+Object@{Scene\+Object}!Get\+Total\+Render\+Objects@{Get\+Total\+Render\+Objects}}
+\index{Get\+Total\+Render\+Objects@{Get\+Total\+Render\+Objects}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Total\+Render\+Objects}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Scene\+Object\+::\+Get\+Total\+Render\+Objects (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_scene_object_ac2873f8a613bd4b161a1ea605888d6e7}
+
+
+Returns the total number of rendering objects. 
+
+\begin{DoxyReturn}{Returns}
+The total number of rendering objects. 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_aea26bf44c609cc4d733a811a55e442e2}{}\index{Scene\+Object@{Scene\+Object}!Get\+Transformation\+Matrix@{Get\+Transformation\+Matrix}}
+\index{Get\+Transformation\+Matrix@{Get\+Transformation\+Matrix}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Transformation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Scene\+Object\+::\+Get\+Transformation\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_aea26bf44c609cc4d733a811a55e442e2}
+
+
+Retrieves the current transformation matrix. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}{Scene\+Object\+::cached\+Transformation\+Matrix}
+\end{DoxyReturn}
+This function does not perform any computation. Instead, it returns the value of whatever was computed the last time \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Update\+Transformation\+Matrix()} was called. 
+
+Definition at line 53 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_ad8828989c033b25c996cf025d7e86f54}{}\index{Scene\+Object@{Scene\+Object}!Get\+Up\+Direction@{Get\+Up\+Direction}}
+\index{Get\+Up\+Direction@{Get\+Up\+Direction}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+Up\+Direction}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+Up\+Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_ad8828989c033b25c996cf025d7e86f54}
+
+
+Computes and returns the up direction of the object. 
+
+\begin{DoxyReturn}{Returns}
+Returns the up direction of the object.
+\end{DoxyReturn}
+Rotates the world up direction by the object\textquotesingle{}s rotation. 
+
+Definition at line 77 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a6fa71efda895933be4ee684745980e68}{}\index{Scene\+Object@{Scene\+Object}!Get\+World\+Forward@{Get\+World\+Forward}}
+\index{Get\+World\+Forward@{Get\+World\+Forward}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+World\+Forward}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+World\+Forward (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_scene_object_a6fa71efda895933be4ee684745980e68}
+
+
+The world \textquotesingle{}Forward\textquotesingle{} direction. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec4(0, 0, -\/1, 0). 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a46d0ffed082f7bd515b9550ef9f9a86a}{}\index{Scene\+Object@{Scene\+Object}!Get\+World\+Right@{Get\+World\+Right}}
+\index{Get\+World\+Right@{Get\+World\+Right}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+World\+Right}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+World\+Right (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_scene_object_a46d0ffed082f7bd515b9550ef9f9a86a}
+
+
+The world \textquotesingle{}Right\textquotesingle{} direction. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec4(1, 0, 0, 0). 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a334a5fb4e91d85fe6a046bd83dd235d3}{}\index{Scene\+Object@{Scene\+Object}!Get\+World\+Up@{Get\+World\+Up}}
+\index{Get\+World\+Up@{Get\+World\+Up}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Get\+World\+Up}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::\+Get\+World\+Up (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_scene_object_a334a5fb4e91d85fe6a046bd83dd235d3}
+
+
+The world \textquotesingle{}Up\textquotesingle{} direction. 
+
+\begin{DoxyReturn}{Returns}
+glm\+::vec4(0, 1, 0, 0). 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}{}\index{Scene\+Object@{Scene\+Object}!Mult\+Scale@{Mult\+Scale}}
+\index{Mult\+Scale@{Mult\+Scale}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Mult\+Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Mult\+Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{input\+Scale}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}
+
+
+Changes the scale of the object uniformly. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Scale} & The scale to multiply to the current scale.\\
+\hline
+\end{DoxyParams}
+Let\textquotesingle{}s say the current scale is $(x, x, x)$ and the input scale is $y$ then the final scale is, $(xy, xy, xy)$. 
+
+Definition at line 116 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a5ab56b2b2997f96aed97415185beec41}{}\index{Scene\+Object@{Scene\+Object}!Prepare\+Shader\+For\+Rendering@{Prepare\+Shader\+For\+Rendering}}
+\index{Prepare\+Shader\+For\+Rendering@{Prepare\+Shader\+For\+Rendering}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Prepare\+Shader\+For\+Rendering}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Prepare\+Shader\+For\+Rendering (
+\begin{DoxyParamCaption}
+\item[{const class {\bf Shader\+Program} $\ast$}]{shader, }
+\item[{const class {\bf Camera} $\ast$}]{current\+Camera, }
+\item[{const class {\bf Light} $\ast$}]{current\+Light}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_scene_object_a5ab56b2b2997f96aed97415185beec41}
+
+
+Passes all uniforms, binds all textures, etc. to the currently bound shader program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & The shader program to use. \\
+\hline
+{\em current\+Camera} & The current camera to use. \\
+\hline
+{\em current\+Light} & The current light to use.\\
+\hline
+\end{DoxyParams}
+Note that this assumes that the shader will only depend on five things\+:
+\begin{DoxyItemize}
+\item The material stored in the shader.
+\item The passed in camera.
+\item The passed in light.
+\item The current object\textquotesingle{}s orientation in world space.
+\item The topology of the various meshes stored in the rendering object (not handled in this function). This function will personally take care of writing the M\+V\+P matrices to the shader, but will let the shader object itself handle processing its necessary camera and light properties. 
+\end{DoxyItemize}
+
+Definition at line 33 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}{}\index{Scene\+Object@{Scene\+Object}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Rotate}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Rotate (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{axis, }
+\item[{float}]{radians}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}
+
+
+Changes the rotation of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate around. \\
+\hline
+{\em radians} & The number of radians to rotate around the axis. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}{}\index{Scene\+Object@{Scene\+Object}!Set\+Position@{Set\+Position}}
+\index{Set\+Position@{Set\+Position}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Set\+Position (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{in}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}
+
+
+Changes the position of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The new position of the object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a04868377580069b0ee9d202bdb1b7159}{}\index{Scene\+Object@{Scene\+Object}!Translate@{Translate}}
+\index{Translate@{Translate}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Translate}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Translate (
+\begin{DoxyParamCaption}
+\item[{const glm\+::vec3 \&}]{translation}
+\end{DoxyParamCaption}
+)}\label{class_scene_object_a04868377580069b0ee9d202bdb1b7159}
+
+
+Changes the position of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The world space translation to give to the object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file Scene\+Object.\+cpp.
+
+\hypertarget{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{}\index{Scene\+Object@{Scene\+Object}!Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}}
+\index{Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{Update\+Transformation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Scene\+Object\+::\+Update\+Transformation\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}
+
+
+Recomputes the cached\+Transformation\+Matrix. 
+
+This function should be called whenever you need the cached\+Transformation\+Matrix and there has been a change in the position, rotation, or scale of an object. Currently it is called every time \hyperlink{class_scene_object_a04868377580069b0ee9d202bdb1b7159}{Translate()}, \hyperlink{class_scene_object_a0d27f5853e8e1718b1a77f0f1a6d4551}{Rotate()}, \hyperlink{class_scene_object_a00d73ad3f7d77bfc0d3c1869decb97ea}{Mult\+Scale()}, \hyperlink{class_scene_object_a40d7194cf79cad6ee3a2fa7c3d8ed95c}{Add\+Scale()}, and \hyperlink{class_scene_object_a1903672e77e88a1e220fcfa8e6afc1d4}{Set\+Position()} are called; however, it would be more efficient to only call it once per frame right before the render call. 
+
+Reimplemented in \hyperlink{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}{Perspective\+Camera}, and \hyperlink{class_camera_aea640c892a3807671d8ca49616d96eda}{Camera}.
+
+
+
+Definition at line 58 of file Scene\+Object.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}{}\index{Scene\+Object@{Scene\+Object}!cached\+Transformation\+Matrix@{cached\+Transformation\+Matrix}}
+\index{cached\+Transformation\+Matrix@{cached\+Transformation\+Matrix}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{cached\+Transformation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Scene\+Object\+::cached\+Transformation\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scene_object_aac3f13eea8a7b455e8cffc6eceef211c}
+
+
+Definition at line 160 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a903eef54277645571794fd87dc8e9fbb}{}\index{Scene\+Object@{Scene\+Object}!M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E@{M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E}}
+\index{M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E@{M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E}]{\setlength{\rightskip}{0pt plus 5cm}const float Scene\+Object\+::\+M\+I\+N\+I\+M\+U\+M\+\_\+\+S\+C\+A\+L\+E = 0.\+01f\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_scene_object_a903eef54277645571794fd87dc8e9fbb}
+
+
+Definition at line 169 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a62d236f4f5c52b66bd02d13d09b6ce5e}{}\index{Scene\+Object@{Scene\+Object}!M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}}
+\index{M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scene\+Object\+::\+M\+O\+D\+E\+L\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N = \char`\"{}model\+Matrix\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_scene_object_a62d236f4f5c52b66bd02d13d09b6ce5e}
+
+
+Definition at line 166 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_ab4aa9bed778001970c38ea11ef34b285}{}\index{Scene\+Object@{Scene\+Object}!position@{position}}
+\index{position@{position}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Scene\+Object\+::position\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scene_object_ab4aa9bed778001970c38ea11ef34b285}
+
+
+Definition at line 162 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_ad9a8c9c39a4a262c5e379c0bda184541}{}\index{Scene\+Object@{Scene\+Object}!P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}}
+\index{P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scene\+Object\+::\+P\+R\+O\+J\+E\+C\+T\+I\+O\+N\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N = \char`\"{}projection\+Matrix\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_scene_object_ad9a8c9c39a4a262c5e379c0bda184541}
+
+
+Definition at line 168 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a4bbf98a19bd8e7ddd491fbb9a41b42cf}{}\index{Scene\+Object@{Scene\+Object}!render\+Object@{render\+Object}}
+\index{render\+Object@{render\+Object}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{render\+Object}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::shared\+\_\+ptr$<$class {\bf Rendering\+Object}$>$ $>$ Scene\+Object\+::render\+Object\hspace{0.3cm}{\ttfamily [private]}}\label{class_scene_object_a4bbf98a19bd8e7ddd491fbb9a41b42cf}
+
+
+Definition at line 172 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_ae27376aaca87543a75b5a2cd0daf6e2f}{}\index{Scene\+Object@{Scene\+Object}!rotation@{rotation}}
+\index{rotation@{rotation}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{rotation}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::quat Scene\+Object\+::rotation\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scene_object_ae27376aaca87543a75b5a2cd0daf6e2f}
+
+
+Definition at line 163 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a62c686b880fe4f58dec64a409e56de26}{}\index{Scene\+Object@{Scene\+Object}!scale@{scale}}
+\index{scale@{scale}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Scene\+Object\+::scale\hspace{0.3cm}{\ttfamily [protected]}}\label{class_scene_object_a62c686b880fe4f58dec64a409e56de26}
+
+
+Definition at line 164 of file Scene\+Object.\+h.
+
+\hypertarget{class_scene_object_a1c129ecdd6bd8e2f34c713f5dd183361}{}\index{Scene\+Object@{Scene\+Object}!V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}}
+\index{V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N@{V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}!Scene\+Object@{Scene\+Object}}
+\subsubsection[{V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Scene\+Object\+::\+V\+I\+E\+W\+\_\+\+M\+A\+T\+R\+I\+X\+\_\+\+L\+O\+C\+A\+T\+I\+O\+N = \char`\"{}view\+Matrix\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_scene_object_a1c129ecdd6bd8e2f34c713f5dd183361}
+
+
+Definition at line 167 of file Scene\+Object.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_object_8h}{Scene\+Object.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\hyperlink{_scene_object_8cpp}{Scene\+Object.\+cpp}\end{DoxyCompactItemize}

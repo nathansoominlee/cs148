@@ -1,0 +1,35 @@
+\hypertarget{_shader_program_8cpp}{}\section{/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\+Shaders/\+Shader\+Program.cpp File Reference}
+\label{_shader_program_8cpp}\index{/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\+Shaders/\+Shader\+Program.\+cpp@{/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\+Shaders/\+Shader\+Program.\+cpp}}
+{\ttfamily \#include \char`\"{}common/\+Rendering/\+Shaders/\+Shader\+Program.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common/\+Scene/\+Light/\+Light.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common/\+Scene/\+Light/\+Light\+Properties.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iterator$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60}{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S}(program,  name,  var)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60}{}\index{Shader\+Program.\+cpp@{Shader\+Program.\+cpp}!V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S@{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S}}
+\index{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S@{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S}!Shader\+Program.\+cpp@{Shader\+Program.\+cpp}}
+\subsubsection[{V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S}]{\setlength{\rightskip}{0pt plus 5cm}\#define V\+E\+R\+I\+F\+Y\+\_\+\+S\+H\+A\+D\+E\+R\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+E\+X\+I\+S\+T\+S(
+\begin{DoxyParamCaption}
+\item[{}]{program, }
+\item[{}]{name, }
+\item[{}]{var}
+\end{DoxyParamCaption}
+)}\label{_shader_program_8cpp_a83fe82500a8c6fce3722638fdf7d3d60}
+{\bfseries Value\+:}
+\begin{DoxyCode}
+GLint var = \hyperlink{common_8h_ab76e9d812060d1ba7e166d5b3e75355b}{OGL\_CALL}(glGetUniformLocation(program, name)); \(\backslash\)
+    if (var == -1) \{ \(\backslash\)
+        return; \(\backslash\)
+    \} \(\backslash\)
+\end{DoxyCode}
+
+
+Definition at line 7 of file Shader\+Program.\+cpp.
+

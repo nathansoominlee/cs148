@@ -1,0 +1,771 @@
+\hypertarget{class_rendering_object}{}\section{Rendering\+Object Class Reference}
+\label{class_rendering_object}\index{Rendering\+Object@{Rendering\+Object}}
+
+
+Stores the vertex data for a mesh.  
+
+
+
+
+{\ttfamily \#include $<$Rendering\+Object.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{Vertex\+Attribute\+Positions} \{ \hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{Vertex\+Attribute\+Positions\+::\+Position} = 0, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{Vertex\+Attribute\+Positions\+::\+Normals}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{Vertex\+Attribute\+Positions\+::\+U\+V}, 
+\hyperlink{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{Vertex\+Attribute\+Positions\+::\+Colors}
+ \}
+\begin{DoxyCompactList}\small\item\em This enum has its values corresponding to the layout location qualifer on the vertex attribute array. \end{DoxyCompactList}\item 
+using \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} = std\+::vector$<$ glm\+::vec4 $>$
+\item 
+using \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} = std\+::vector$<$ unsigned int $>$
+\item 
+using \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} = std\+::vector$<$ glm\+::vec3 $>$
+\item 
+using \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} = std\+::vector$<$ glm\+::vec2 $>$
+\item 
+using \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} = std\+::vector$<$ glm\+::vec4 $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{Rendering\+Object} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ input\+Positions, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ input\+Indices=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ input\+Normals=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ input\+U\+V=nullptr, std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ input\+Colors=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_rendering_object}{Rendering\+Object} from a shader and all the possible vertex attributes. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{$\sim$\+Rendering\+Object} ()
+\begin{DoxyCompactList}\small\item\em Just another deconstructor. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{Set\+Shader} (std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader)
+\begin{DoxyCompactList}\small\item\em Sets the shader to be used to render this object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{Begin\+Render} () const 
+\begin{DoxyCompactList}\small\item\em Prepares to the mesh object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{Render} () const 
+\begin{DoxyCompactList}\small\item\em Calls the appropriate draw function depending on whether or not an element buffer object is used. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{End\+Render} () const 
+\begin{DoxyCompactList}\small\item\em Unbinds the V\+A\+O and the E\+B\+O to cleanup the state. \end{DoxyCompactList}\item 
+void \hyperlink{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{Set\+Draw\+Mode} (G\+Lenum input\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets what kind of primitives Open\+G\+L should interpret the data as. \end{DoxyCompactList}\item 
+G\+Lint \hyperlink{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{Get\+Shader\+Program} () const 
+\begin{DoxyCompactList}\small\item\em Returns the Open\+G\+L identifier for the underlying shader program. \end{DoxyCompactList}\item 
+const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$ \hyperlink{class_rendering_object_ac9187166c98131aab185111e105528c2}{Get\+Shader\+Program\+Raw} () const 
+\begin{DoxyCompactList}\small\item\em Returns a raw pointer to the underlying shader program. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{Get\+Total\+Vertices} () const 
+\begin{DoxyCompactList}\small\item\em Returns the total number of vertices. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{Set\+Vertex\+Positions} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ positions)
+\begin{DoxyCompactList}\small\item\em Sets the vertex positions array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{Set\+Vertex\+Indices} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ indices)
+\begin{DoxyCompactList}\small\item\em Sets the vertex indices array. Also updates the data stored in the element buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{Set\+Vertex\+Normals} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ normals)
+\begin{DoxyCompactList}\small\item\em Sets the vertex normal array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{Set\+Vertex\+U\+V} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ uv)
+\begin{DoxyCompactList}\small\item\em Sets the vertex U\+V array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{Set\+Vertex\+Colors} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ colors)
+\begin{DoxyCompactList}\small\item\em Sets the vertex color array. Also updates the data stored in the vertex buffer object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{Initialize\+Open\+G\+L} ()
+\begin{DoxyCompactList}\small\item\em Prepares the rendering object for use by Open\+G\+L. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{Update\+Vertex\+Positions} ()
+\item 
+virtual void \hyperlink{class_rendering_object_afb49054121b1b552bce58625db91b851}{Update\+Vertex\+Indices} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{Update\+Vertex\+Normals} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{Update\+Vertex\+U\+V} ()
+\item 
+virtual void \hyperlink{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{Update\+Vertex\+Colors} ()
+\item 
+virtual void \hyperlink{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{Cleanup\+Vertex\+Positions} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{Cleanup\+Vertex\+Indices} ()
+\item 
+virtual void \hyperlink{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{Cleanup\+Vertex\+Normals} ()
+\item 
+virtual void \hyperlink{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{Cleanup\+Vertex\+U\+V} ()
+\item 
+virtual void \hyperlink{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{Cleanup\+Vertex\+Colors} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ class \hyperlink{class_shader_program}{Shader\+Program} $>$ \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{shader}
+\begin{DoxyCompactList}\small\item\em The shader program used to render the object. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{vertex\+Position\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer I\+D for the vertex position V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{Position\+Array} $>$ \hyperlink{class_rendering_object_a14721712672d0421ed72a394e3131da0}{vertex\+Positions}
+\begin{DoxyCompactList}\small\item\em The position of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{vertex\+Index\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer I\+D for the vertex index E\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Index\+Array} $>$ \hyperlink{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{vertex\+Indices}
+\begin{DoxyCompactList}\small\item\em The indices into the vertex array. This allows us to reuse vertices for multiple faces. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{vertex\+Normal\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer I\+D for the vertex normal V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{Normal\+Array} $>$ \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{vertex\+Normals}
+\begin{DoxyCompactList}\small\item\em The normal of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{vertex\+U\+V\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer I\+D for the vertex U\+V V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{U\+V\+Array} $>$ \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{vertex\+U\+V}
+\begin{DoxyCompactList}\small\item\em The U\+V coordinate of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{vertex\+Color\+Buffer}
+\begin{DoxyCompactList}\small\item\em The buffer I\+D for the vertex color V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{Color\+Array} $>$ \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{vertex\+Colors}
+\begin{DoxyCompactList}\small\item\em The color of every vertex. \end{DoxyCompactList}\item 
+G\+Luint \hyperlink{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{vao}
+\item 
+G\+Lenum \hyperlink{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{draw\+Mode}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static glm\+::vec3 \hyperlink{class_rendering_object_af270a476ba12c23fefbb034e21930add}{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{Rendering\+Object\+::vertex\+Normals} is not set. \end{DoxyCompactList}\item 
+static glm\+::vec2 \hyperlink{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{Rendering\+Object\+::vertex\+U\+V} is not set. \end{DoxyCompactList}\item 
+static glm\+::vec4 \hyperlink{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}
+\begin{DoxyCompactList}\small\item\em The default value sent to the shader if \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{Rendering\+Object\+::vertex\+Colors} is not set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the vertex data for a mesh. 
+
+This class allows us to easily reuse the same mesh data for multiple objects in the scene. 
+
+Definition at line 13 of file Rendering\+Object.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}{}\index{Rendering\+Object@{Rendering\+Object}!Color\+Array@{Color\+Array}}
+\index{Color\+Array@{Color\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Color\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Color\+Array} =  std\+::vector$<$glm\+::vec4$>$}\label{class_rendering_object_a8a12e1f9be788d99af6c089e1c600022}
+
+
+Definition at line 20 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{}\index{Rendering\+Object@{Rendering\+Object}!Index\+Array@{Index\+Array}}
+\index{Index\+Array@{Index\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Index\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Index\+Array} =  std\+::vector$<$unsigned int$>$}\label{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}
+
+
+Definition at line 17 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}{}\index{Rendering\+Object@{Rendering\+Object}!Normal\+Array@{Normal\+Array}}
+\index{Normal\+Array@{Normal\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Normal\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Normal\+Array} =  std\+::vector$<$glm\+::vec3$>$}\label{class_rendering_object_a327c4d892de8d6138fb59afa6d078257}
+
+
+Definition at line 18 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}{}\index{Rendering\+Object@{Rendering\+Object}!Position\+Array@{Position\+Array}}
+\index{Position\+Array@{Position\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Position\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+Position\+Array} =  std\+::vector$<$glm\+::vec4$>$}\label{class_rendering_object_a1223b9cf03f2029b9c43d71042c2a18e}
+
+
+Definition at line 16 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}{}\index{Rendering\+Object@{Rendering\+Object}!U\+V\+Array@{U\+V\+Array}}
+\index{U\+V\+Array@{U\+V\+Array}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{U\+V\+Array}]{\setlength{\rightskip}{0pt plus 5cm}using {\bf Rendering\+Object\+::\+U\+V\+Array} =  std\+::vector$<$glm\+::vec2$>$}\label{class_rendering_object_a504ecd45ebe36dfa5b78c46d64d9904a}
+
+
+Definition at line 19 of file Rendering\+Object.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}{}\index{Rendering\+Object@{Rendering\+Object}!Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}}
+\index{Vertex\+Attribute\+Positions@{Vertex\+Attribute\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Vertex\+Attribute\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Rendering\+Object\+::\+Vertex\+Attribute\+Positions}\hspace{0.3cm}{\ttfamily [strong]}}\label{class_rendering_object_ab772f569ef63a1db07db29a744b519ee}
+
+
+This enum has its values corresponding to the layout location qualifer on the vertex attribute array. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Position@{Position}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Position@{Position}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}{}Position\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea52f5e0bc3859bc5f5e25130b6c7e8881}
+}]\index{Normals@{Normals}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Normals@{Normals}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}{}Normals\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea4ab971a51f0335cbf8d9c2c65d379e99}
+}]\index{U\+V@{U\+V}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!U\+V@{U\+V}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}{}U\+V\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eeadeaa2adbeb26802ae61609c3f3642d82}
+}]\index{Colors@{Colors}!Rendering\+Object@{Rendering\+Object}}\index{Rendering\+Object@{Rendering\+Object}!Colors@{Colors}}\item[{\em 
+\hypertarget{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}{}Colors\label{class_rendering_object_ab772f569ef63a1db07db29a744b519eea5d50889672f6f860d14f502de3de1957}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 24 of file Rendering\+Object.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_rendering_object_a0550d86d49a01032921150d1c09c378f}{}\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\index{Rendering\+Object@{Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Rendering\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Rendering\+Object\+::\+Rendering\+Object (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Shader\+Program} $>$}]{input\+Shader, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Position\+Array} $>$}]{input\+Positions, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Index\+Array} $>$}]{input\+Indices = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Normal\+Array} $>$}]{input\+Normals = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf U\+V\+Array} $>$}]{input\+U\+V = {\ttfamily nullptr}, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Color\+Array} $>$}]{input\+Colors = {\ttfamily nullptr}}
+\end{DoxyParamCaption}
+)}\label{class_rendering_object_a0550d86d49a01032921150d1c09c378f}
+
+
+Constructs a \hyperlink{class_rendering_object}{Rendering\+Object} from a shader and all the possible vertex attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shader} & The shader that is to be used to render this object. Can be a nullptr and set later. \\
+\hline
+{\em input\+Positions} & The vertex positions. Should not be a null pointer (you can probably get away with it and set it later...). \\
+\hline
+{\em input\+Normals} & The vertex normals. Can be set later. \\
+\hline
+{\em input\+U\+V} & The vertex U\+V coordinates. Can be set later. \\
+\hline
+{\em input\+Colors} & The vertex colors. Can be set later.\\
+\hline
+\end{DoxyParams}
+Constructs a new object that holds the data necessary to render an object. Note that the ordering of the vertex attributes is the same regardless of whether or not the vertex attribute array is actually used by the shader. In other words, vertex U\+V\textquotesingle{}s will always be at location 2 regardless of whether the vertex normals are set and/or used. Once the \hyperlink{class_rendering_object}{Rendering\+Object} is created, the Open\+G\+L V\+B\+O\textquotesingle{}s and V\+A\+O\textquotesingle{}s will be constructed and all available data will be copied into the Open\+G\+L buffer. 
+
+Definition at line 8 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}{}\index{Rendering\+Object@{Rendering\+Object}!````~Rendering\+Object@{$\sim$\+Rendering\+Object}}
+\index{````~Rendering\+Object@{$\sim$\+Rendering\+Object}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{$\sim$\+Rendering\+Object}]{\setlength{\rightskip}{0pt plus 5cm}Rendering\+Object\+::$\sim$\+Rendering\+Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_ae4e8e14104ee3a587d10c9f90ec82048}
+
+
+Just another deconstructor. 
+
+
+
+Definition at line 26 of file Rendering\+Object.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}{}\index{Rendering\+Object@{Rendering\+Object}!Begin\+Render@{Begin\+Render}}
+\index{Begin\+Render@{Begin\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Begin\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Begin\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_afa4510ba81fb7b17b940c92b27442d93}
+
+
+Prepares to the mesh object. 
+
+We bind the vertex array object using \href{https://www.opengl.org/sdk/docs/man/html/glBindVertexArray.xhtml}{\tt gl\+Bind\+Vertex\+Array} and the element buffer object so that Open\+G\+L knows what to render. 
+
+Definition at line 54 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}}
+\index{Cleanup\+Vertex\+Colors@{Cleanup\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_adce4a6d6406eb589b088bedd19127f32}
+
+
+Definition at line 258 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}}
+\index{Cleanup\+Vertex\+Indices@{Cleanup\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ac60c8a7f3d5678fd4aa8198f6c980e6e}
+
+
+Definition at line 240 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}}
+\index{Cleanup\+Vertex\+Normals@{Cleanup\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ad89bc24893f8fe32794f0686c2bb0da1}
+
+
+Definition at line 246 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}}
+\index{Cleanup\+Vertex\+Positions@{Cleanup\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_af9c1a07398071cdd0cca3ad36095fc85}
+
+
+Definition at line 234 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}{}\index{Rendering\+Object@{Rendering\+Object}!Cleanup\+Vertex\+U\+V@{Cleanup\+Vertex\+U\+V}}
+\index{Cleanup\+Vertex\+U\+V@{Cleanup\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Cleanup\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Cleanup\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a776f54b41f9e9f0e55fc1104919c3e7c}
+
+
+Definition at line 252 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a2a038472f934360acddd26f4e992b28b}{}\index{Rendering\+Object@{Rendering\+Object}!End\+Render@{End\+Render}}
+\index{End\+Render@{End\+Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{End\+Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+End\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a2a038472f934360acddd26f4e992b28b}
+
+
+Unbinds the V\+A\+O and the E\+B\+O to cleanup the state. 
+
+
+
+Definition at line 73 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program@{Get\+Shader\+Program}}
+\index{Get\+Shader\+Program@{Get\+Shader\+Program}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Shader\+Program}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lint Rendering\+Object\+::\+Get\+Shader\+Program (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_rendering_object_a80658debd2668b55a3c9fe86ec9f49fb}
+
+
+Returns the Open\+G\+L identifier for the underlying shader program. 
+
+\begin{DoxyReturn}{Returns}
+Returns the value that was generated by \href{https://www.opengl.org/sdk/docs/man/html/glCreateProgram.xhtml}{\tt gl\+Create\+Program} for the underlying shader program. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{Rendering\+Object\+::shader} is not set to a non-\/null pointer, this function\textquotesingle{}s action is undefined. 
+\end{DoxyWarning}
+
+
+Definition at line 79 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac9187166c98131aab185111e105528c2}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}}
+\index{Get\+Shader\+Program\+Raw@{Get\+Shader\+Program\+Raw}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Shader\+Program\+Raw}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Shader\+Program} $\ast$ Rendering\+Object\+::\+Get\+Shader\+Program\+Raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_rendering_object_ac9187166c98131aab185111e105528c2}
+
+
+Returns a raw pointer to the underlying shader program. 
+
+\begin{DoxyReturn}{Returns}
+Returns a raw pointer to the underlying shader program. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+If \hyperlink{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{Rendering\+Object\+::shader} is not set to a non-\/null pointer, this function\textquotesingle{}s action is undefined. 
+
+Do not store the \hyperlink{class_shader_program}{Shader\+Program} pointer anywhere. You may be left with a dangling pointer at some point. 
+\end{DoxyWarning}
+
+
+Definition at line 84 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}{}\index{Rendering\+Object@{Rendering\+Object}!Get\+Total\+Vertices@{Get\+Total\+Vertices}}
+\index{Get\+Total\+Vertices@{Get\+Total\+Vertices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Get\+Total\+Vertices}]{\setlength{\rightskip}{0pt plus 5cm}size\+\_\+t Rendering\+Object\+::\+Get\+Total\+Vertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_rendering_object_a3bb36683836c8c177984aa928cb1fb04}
+
+
+Returns the total number of vertices. 
+
+\begin{DoxyReturn}{Returns}
+Returns the total number of vertices. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+The vertex position array must be set before this is called. 
+\end{DoxyWarning}
+
+
+Definition at line 110 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}{}\index{Rendering\+Object@{Rendering\+Object}!Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}}
+\index{Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Initialize\+Open\+G\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Initialize\+Open\+G\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a77c78d1b42ea2ebfdbf994b6b91ce805}
+
+
+Prepares the rendering object for use by Open\+G\+L. 
+
+This function calls all of the Update\+Vertex functions. Additionally, it generates the vertex array object. Note that this function should only be called once. 
+
+Definition at line 41 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}{}\index{Rendering\+Object@{Rendering\+Object}!Render@{Render}}
+\index{Render@{Render}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Render}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Render (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a5fdb7a1b2d53b7ce024a4eeabd9c86d3}
+
+
+Calls the appropriate draw function depending on whether or not an element buffer object is used. 
+
+Should an element buffer object exist, the right function to call is \href{https://www.opengl.org/sdk/docs/man/html/glDrawElements.xhtml}{\tt gl\+Draw\+Elements} which will utilize the index data. Otherwise, we will call \href{https://www.opengl.org/sdk/docs/man/html/glDrawArrays.xhtml}{\tt gl\+Draw\+Arrays}. This function will step through N vertices at a time and use those N vertices (in order) as the primitive to render. For example, if we are drawing triangles, then it will go through three vertices at a time to render a triangle. 
+
+Definition at line 61 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Draw\+Mode@{Set\+Draw\+Mode}}
+\index{Set\+Draw\+Mode@{Set\+Draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Draw\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Draw\+Mode (
+\begin{DoxyParamCaption}
+\item[{G\+Lenum}]{input\+Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_rendering_object_aa627eb310f11d0e04dbbb3665f58bb4e}
+
+
+Sets what kind of primitives Open\+G\+L should interpret the data as. 
+
+See the \href{https://www.opengl.org/sdk/docs/man/html/glDrawArrays.xhtml}{\tt gl\+Draw\+Arrays} documentation for its \textquotesingle{}mode\textquotesingle{} parameter to see what values are valid. 
+
+Definition at line 86 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Shader@{Set\+Shader}}
+\index{Set\+Shader@{Set\+Shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Shader}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Shader (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ class {\bf Shader\+Program} $>$}]{input\+Shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a22311d08bb7559f6b913afe314a5031e}
+
+
+Sets the shader to be used to render this object. 
+
+Note that changing the shader for the rendering object will change the shader for A\+L\+L scene objects that use this rendering object. This function only modifies the \textquotesingle{}shader\textquotesingle{} member variable. 
+
+Definition at line 36 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Colors@{Set\+Vertex\+Colors}}
+\index{Set\+Vertex\+Colors@{Set\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Color\+Array} $>$}]{colors}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_aa1170c47ff02b2305a54c8aab3460201}
+
+
+Sets the vertex color array. Also updates the data stored in the vertex buffer object. 
+
+
+
+Definition at line 113 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Indices@{Set\+Vertex\+Indices}}
+\index{Set\+Vertex\+Indices@{Set\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Index\+Array} $>$}]{indices}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a61ea597df0c456834eac8eb4087fb573}
+
+
+Sets the vertex indices array. Also updates the data stored in the element buffer object. 
+
+
+
+Definition at line 95 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Normals@{Set\+Vertex\+Normals}}
+\index{Set\+Vertex\+Normals@{Set\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Normal\+Array} $>$}]{normals}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a4cd085aed01fbc5e4fae7076e00919d3}
+
+
+Sets the vertex normal array. Also updates the data stored in the vertex buffer object. 
+
+
+
+Definition at line 101 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+Positions@{Set\+Vertex\+Positions}}
+\index{Set\+Vertex\+Positions@{Set\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Position\+Array} $>$}]{positions}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_ada51886b7da1924a17d3a55e8fe90061}
+
+
+Sets the vertex positions array. Also updates the data stored in the vertex buffer object. 
+
+
+
+Definition at line 89 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}{}\index{Rendering\+Object@{Rendering\+Object}!Set\+Vertex\+U\+V@{Set\+Vertex\+U\+V}}
+\index{Set\+Vertex\+U\+V@{Set\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Set\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Set\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf U\+V\+Array} $>$}]{uv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_rendering_object_a2a2b3c6ec2d13e8d3a4b6ac4c05ae11b}
+
+
+Sets the vertex U\+V array. Also updates the data stored in the vertex buffer object. 
+
+
+
+Definition at line 107 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Colors@{Update\+Vertex\+Colors}}
+\index{Update\+Vertex\+Colors@{Update\+Vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Colors (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_aca18dbb9252f27cef09df307dbcf02a9}
+
+
+Definition at line 207 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_afb49054121b1b552bce58625db91b851}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Indices@{Update\+Vertex\+Indices}}
+\index{Update\+Vertex\+Indices@{Update\+Vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Indices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_afb49054121b1b552bce58625db91b851}
+
+
+Definition at line 136 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Normals@{Update\+Vertex\+Normals}}
+\index{Update\+Vertex\+Normals@{Update\+Vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Normals (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ae4b537e1c9b1c5c50cb7b0db83e6f190}
+
+
+Definition at line 153 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+Positions@{Update\+Vertex\+Positions}}
+\index{Update\+Vertex\+Positions@{Update\+Vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+Positions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_a7a097727acf37f9671ddd5e3a9873771}
+
+
+Definition at line 119 of file Rendering\+Object.\+cpp.
+
+\hypertarget{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}{}\index{Rendering\+Object@{Rendering\+Object}!Update\+Vertex\+U\+V@{Update\+Vertex\+U\+V}}
+\index{Update\+Vertex\+U\+V@{Update\+Vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{Update\+Vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}void Rendering\+Object\+::\+Update\+Vertex\+U\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_rendering_object_ac00889f2afaa605b09164649ef68a1b6}
+
+
+Definition at line 180 of file Rendering\+Object.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R@{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec4 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+L\+O\+R\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_a3bf21996dc0ef604b2b81d95275c97f9}
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{Rendering\+Object\+::vertex\+Colors} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. 
+
+Definition at line 198 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_af270a476ba12c23fefbb034e21930add}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L@{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec3 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+N\+O\+R\+M\+A\+L\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_af270a476ba12c23fefbb034e21930add}
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{Rendering\+Object\+::vertex\+Normals} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. 
+
+Definition at line 170 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}{}\index{Rendering\+Object@{Rendering\+Object}!D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V@{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V@{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::vec2 Rendering\+Object\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+V\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_rendering_object_a3dcb28a12f578630aea75cc59ea39588}
+
+
+The default value sent to the shader if \hyperlink{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{Rendering\+Object\+::vertex\+U\+V} is not set. 
+
+The \href{https://www.opengl.org/sdk/docs/man/html/glVertexAttrib.xhtml}{\tt gl\+Vertex\+Attrib} function is used to set the default value. 
+
+Definition at line 184 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}{}\index{Rendering\+Object@{Rendering\+Object}!draw\+Mode@{draw\+Mode}}
+\index{draw\+Mode@{draw\+Mode}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{draw\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}G\+Lenum Rendering\+Object\+::draw\+Mode\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_aa67856a72705b54a5667e91e270d00b3}
+
+
+Definition at line 219 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}{}\index{Rendering\+Object@{Rendering\+Object}!shader@{shader}}
+\index{shader@{shader}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{shader}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$class {\bf Shader\+Program}$>$ Rendering\+Object\+::shader\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ae50e545ce2008ffa802478cd4316e82e}
+
+
+The shader program used to render the object. 
+
+This should be set on construction or set later. However, this should be set before the \hyperlink{class_rendering_object}{Rendering\+Object} is rendered. 
+
+Definition at line 140 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a96dd05670a977a949514a2c490c1c867}{}\index{Rendering\+Object@{Rendering\+Object}!vao@{vao}}
+\index{vao@{vao}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vao}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vao\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a96dd05670a977a949514a2c490c1c867}
+
+
+Definition at line 218 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Color\+Buffer@{vertex\+Color\+Buffer}}
+\index{vertex\+Color\+Buffer@{vertex\+Color\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Color\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Color\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_aeb014a4ef24e2fc4665a769241660cad}
+
+
+The buffer I\+D for the vertex color V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+Definition at line 188 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a65fc52e665791ce55e43106b603e917a}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Colors@{vertex\+Colors}}
+\index{vertex\+Colors@{vertex\+Colors}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Colors}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Color\+Array}$>$ Rendering\+Object\+::vertex\+Colors\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a65fc52e665791ce55e43106b603e917a}
+
+
+The color of every vertex. 
+
+
+
+Definition at line 192 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Index\+Buffer@{vertex\+Index\+Buffer}}
+\index{vertex\+Index\+Buffer@{vertex\+Index\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Index\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Index\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a6740a0a0e6bd4d841c9c211f2a31cca3}
+
+
+The buffer I\+D for the vertex index E\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+Definition at line 152 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Indices@{vertex\+Indices}}
+\index{vertex\+Indices@{vertex\+Indices}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Index\+Array}$>$ Rendering\+Object\+::vertex\+Indices\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a7b84487d3c34c1ca36b2ac6060b0f802}
+
+
+The indices into the vertex array. This allows us to reuse vertices for multiple faces. 
+
+
+
+Definition at line 156 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}}
+\index{vertex\+Normal\+Buffer@{vertex\+Normal\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Normal\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Normal\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a91649e3a653f2266cd00c718f10849f9}
+
+
+The buffer I\+D for the vertex normal V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+Definition at line 160 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Normals@{vertex\+Normals}}
+\index{vertex\+Normals@{vertex\+Normals}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Normals}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Normal\+Array}$>$ Rendering\+Object\+::vertex\+Normals\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ac28d301f97d29ab603f65f8e823063b4}
+
+
+The normal of every vertex. 
+
+
+
+Definition at line 164 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a473f623b39157288bef992e76ddc45a9}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Position\+Buffer@{vertex\+Position\+Buffer}}
+\index{vertex\+Position\+Buffer@{vertex\+Position\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Position\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+Position\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a473f623b39157288bef992e76ddc45a9}
+
+
+The buffer I\+D for the vertex position V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+Definition at line 144 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_a14721712672d0421ed72a394e3131da0}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+Positions@{vertex\+Positions}}
+\index{vertex\+Positions@{vertex\+Positions}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+Positions}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Position\+Array}$>$ Rendering\+Object\+::vertex\+Positions\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_a14721712672d0421ed72a394e3131da0}
+
+
+The position of every vertex. 
+
+
+
+Definition at line 148 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+U\+V@{vertex\+U\+V}}
+\index{vertex\+U\+V@{vertex\+U\+V}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+U\+V}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf U\+V\+Array}$>$ Rendering\+Object\+::vertex\+U\+V\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_afc405316bddec4ba1d5c228ecc0d9061}
+
+
+The U\+V coordinate of every vertex. 
+
+
+
+Definition at line 178 of file Rendering\+Object.\+h.
+
+\hypertarget{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}{}\index{Rendering\+Object@{Rendering\+Object}!vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}}
+\index{vertex\+U\+V\+Buffer@{vertex\+U\+V\+Buffer}!Rendering\+Object@{Rendering\+Object}}
+\subsubsection[{vertex\+U\+V\+Buffer}]{\setlength{\rightskip}{0pt plus 5cm}G\+Luint Rendering\+Object\+::vertex\+U\+V\+Buffer\hspace{0.3cm}{\ttfamily [protected]}}\label{class_rendering_object_ad583c70014e3f6ab0c9b62ea3c96ad25}
+
+
+The buffer I\+D for the vertex U\+V V\+B\+O as generated by \href{https://www.opengl.org/sdk/docs/man/html/glGenBuffers.xhtml}{\tt gl\+Gen\+Buffers}. 
+
+
+
+Definition at line 174 of file Rendering\+Object.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\hyperlink{_rendering_object_8h}{Rendering\+Object.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Rendering/\hyperlink{_rendering_object_8cpp}{Rendering\+Object.\+cpp}\end{DoxyCompactItemize}

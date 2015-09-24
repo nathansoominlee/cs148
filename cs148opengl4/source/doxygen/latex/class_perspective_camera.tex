@@ -1,0 +1,269 @@
+\hypertarget{class_perspective_camera}{}\section{Perspective\+Camera Class Reference}
+\label{class_perspective_camera}\index{Perspective\+Camera@{Perspective\+Camera}}
+
+
+\hyperlink{class_camera}{Camera} that performs perspective projection.  
+
+
+
+
+{\ttfamily \#include $<$Perspective\+Camera.\+h$>$}
+
+Inheritance diagram for Perspective\+Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_perspective_camera}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_perspective_camera_adb5624bfee18c9390df3ba0612431124}{Perspective\+Camera} (float in\+Fov, float in\+A\+R)
+\item 
+virtual glm\+::mat4 \hyperlink{class_perspective_camera_a24a338c552cede73ae7d69527ec85817}{Get\+Projection\+Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Creates the projection matrix. \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_perspective_camera_a47ca1c9615ef9cb9dbe3436e561b76a0}{Get\+F\+O\+V} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the vertical F\+O\+V. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_perspective_camera_a03f2ce1c0940599712b12a07719b5122}{Set\+F\+O\+V} (float in)
+\begin{DoxyCompactList}\small\item\em Set the vertical F\+O\+V. \end{DoxyCompactList}\item 
+virtual float \hyperlink{class_perspective_camera_a02d3e3a9a8b3770ed0cad810a3946dee}{Get\+Aspect\+Ratio} () const 
+\item 
+virtual void \hyperlink{class_perspective_camera_a2f8753cd16d119ed00d050b4dbac2510}{Set\+Aspect\+Ratio} (float in)
+\item 
+virtual float \hyperlink{class_perspective_camera_a42fbe0fea96a362cd6e5e7e6414843ac}{Get\+Z\+Near} () const 
+\item 
+virtual void \hyperlink{class_perspective_camera_ab9bab141c767e0b604b213f482f72c8a}{Set\+Z\+Near} (float in)
+\item 
+virtual float \hyperlink{class_perspective_camera_a7e954166961c8d643c24fec0aa0261a4}{Get\+Z\+Far} () const 
+\item 
+virtual void \hyperlink{class_perspective_camera_a4374ca73880370dad1b93eaf489c9bb4}{Set\+Z\+Far} (float in)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}{Update\+Transformation\+Matrix} ()
+\begin{DoxyCompactList}\small\item\em Override the \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object\+::\+Update\+Transformation\+Matrix()} to do nothing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{class_perspective_camera_ad693187f75ab5bfc597066364483325c}{fov}
+\item 
+float \hyperlink{class_perspective_camera_ad96660d3109e54fa282955bf66a255eb}{aspect\+Ratio}
+\item 
+float \hyperlink{class_perspective_camera_a11c1dcd1bdeb4bf8294d6272fb4d2695}{z\+Near}
+\item 
+float \hyperlink{class_perspective_camera_af88e6161cd3c818d49e6421f52474a2b}{z\+Far}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_camera}{Camera} that performs perspective projection. 
+
+\begin{DoxyWarning}{Warning}
+The F\+O\+V in this class is the V\+E\+R\+T\+I\+C\+A\+L field of view. If you are familiar with video games, the F\+O\+V is usually presented to you as the H\+O\+R\+I\+Z\+O\+N\+T\+A\+L field of view which is usually wider than the vertical field of view! Be careful! Setting your vertical field of view to something like 120 degrees is insane!
+\end{DoxyWarning}
+We will not be covering the math behind perspective projection in this class, but you can read about it on the \href{https://en.wikipedia.org/wiki/3D_projection#Perspective_projection}{\tt Wikipedia page} or \href{http://ogldev.atspace.co.uk/www/tutorial12/tutorial12.html}{\tt this tutorial} if you are interested. The variables and functions in this class are just parameters to calculate the perspective projection matrix. 
+
+Definition at line 17 of file Perspective\+Camera.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_perspective_camera_adb5624bfee18c9390df3ba0612431124}{}\index{Perspective\+Camera@{Perspective\+Camera}!Perspective\+Camera@{Perspective\+Camera}}
+\index{Perspective\+Camera@{Perspective\+Camera}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Perspective\+Camera}]{\setlength{\rightskip}{0pt plus 5cm}Perspective\+Camera\+::\+Perspective\+Camera (
+\begin{DoxyParamCaption}
+\item[{float}]{in\+Fov, }
+\item[{float}]{in\+A\+R}
+\end{DoxyParamCaption}
+)}\label{class_perspective_camera_adb5624bfee18c9390df3ba0612431124}
+
+
+Definition at line 3 of file Perspective\+Camera.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_perspective_camera_a02d3e3a9a8b3770ed0cad810a3946dee}{}\index{Perspective\+Camera@{Perspective\+Camera}!Get\+Aspect\+Ratio@{Get\+Aspect\+Ratio}}
+\index{Get\+Aspect\+Ratio@{Get\+Aspect\+Ratio}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Get\+Aspect\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Perspective\+Camera\+::\+Get\+Aspect\+Ratio (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a02d3e3a9a8b3770ed0cad810a3946dee}
+
+
+Definition at line 34 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a47ca1c9615ef9cb9dbe3436e561b76a0}{}\index{Perspective\+Camera@{Perspective\+Camera}!Get\+F\+O\+V@{Get\+F\+O\+V}}
+\index{Get\+F\+O\+V@{Get\+F\+O\+V}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Get\+F\+O\+V}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Perspective\+Camera\+::\+Get\+F\+O\+V (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a47ca1c9615ef9cb9dbe3436e561b76a0}
+
+
+Retrieve the vertical F\+O\+V. 
+
+\begin{DoxyReturn}{Returns}
+The vertical F\+O\+V in degrees. 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a24a338c552cede73ae7d69527ec85817}{}\index{Perspective\+Camera@{Perspective\+Camera}!Get\+Projection\+Matrix@{Get\+Projection\+Matrix}}
+\index{Get\+Projection\+Matrix@{Get\+Projection\+Matrix}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Get\+Projection\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Perspective\+Camera\+::\+Get\+Projection\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_perspective_camera_a24a338c552cede73ae7d69527ec85817}
+
+
+Creates the projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+The identity matrix.
+\end{DoxyReturn}
+This matrix will be the \char`\"{}\+P\char`\"{} in the M\+V\+P matrices. 
+
+Reimplemented from \hyperlink{class_camera_a497efa3119ab4ae679d29badf6f25682}{Camera}.
+
+
+
+Definition at line 8 of file Perspective\+Camera.\+cpp.
+
+\hypertarget{class_perspective_camera_a7e954166961c8d643c24fec0aa0261a4}{}\index{Perspective\+Camera@{Perspective\+Camera}!Get\+Z\+Far@{Get\+Z\+Far}}
+\index{Get\+Z\+Far@{Get\+Z\+Far}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Get\+Z\+Far}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Perspective\+Camera\+::\+Get\+Z\+Far (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a7e954166961c8d643c24fec0aa0261a4}
+
+
+Definition at line 40 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a42fbe0fea96a362cd6e5e7e6414843ac}{}\index{Perspective\+Camera@{Perspective\+Camera}!Get\+Z\+Near@{Get\+Z\+Near}}
+\index{Get\+Z\+Near@{Get\+Z\+Near}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Get\+Z\+Near}]{\setlength{\rightskip}{0pt plus 5cm}virtual float Perspective\+Camera\+::\+Get\+Z\+Near (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a42fbe0fea96a362cd6e5e7e6414843ac}
+
+
+Definition at line 37 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a2f8753cd16d119ed00d050b4dbac2510}{}\index{Perspective\+Camera@{Perspective\+Camera}!Set\+Aspect\+Ratio@{Set\+Aspect\+Ratio}}
+\index{Set\+Aspect\+Ratio@{Set\+Aspect\+Ratio}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Set\+Aspect\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Perspective\+Camera\+::\+Set\+Aspect\+Ratio (
+\begin{DoxyParamCaption}
+\item[{float}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a2f8753cd16d119ed00d050b4dbac2510}
+
+
+Definition at line 35 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a03f2ce1c0940599712b12a07719b5122}{}\index{Perspective\+Camera@{Perspective\+Camera}!Set\+F\+O\+V@{Set\+F\+O\+V}}
+\index{Set\+F\+O\+V@{Set\+F\+O\+V}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Set\+F\+O\+V}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Perspective\+Camera\+::\+Set\+F\+O\+V (
+\begin{DoxyParamCaption}
+\item[{float}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a03f2ce1c0940599712b12a07719b5122}
+
+
+Set the vertical F\+O\+V. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & The vertical F\+O\+V in degrees. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a4374ca73880370dad1b93eaf489c9bb4}{}\index{Perspective\+Camera@{Perspective\+Camera}!Set\+Z\+Far@{Set\+Z\+Far}}
+\index{Set\+Z\+Far@{Set\+Z\+Far}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Set\+Z\+Far}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Perspective\+Camera\+::\+Set\+Z\+Far (
+\begin{DoxyParamCaption}
+\item[{float}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a4374ca73880370dad1b93eaf489c9bb4}
+
+
+Definition at line 41 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_ab9bab141c767e0b604b213f482f72c8a}{}\index{Perspective\+Camera@{Perspective\+Camera}!Set\+Z\+Near@{Set\+Z\+Near}}
+\index{Set\+Z\+Near@{Set\+Z\+Near}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Set\+Z\+Near}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Perspective\+Camera\+::\+Set\+Z\+Near (
+\begin{DoxyParamCaption}
+\item[{float}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{class_perspective_camera_ab9bab141c767e0b604b213f482f72c8a}
+
+
+Definition at line 38 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}{}\index{Perspective\+Camera@{Perspective\+Camera}!Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}}
+\index{Update\+Transformation\+Matrix@{Update\+Transformation\+Matrix}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{Update\+Transformation\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}void Perspective\+Camera\+::\+Update\+Transformation\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_perspective_camera_a2f17fb07425e2146d5692805753fa368}
+
+
+Override the \hyperlink{class_scene_object_a20e31da3f9d2765de50cdb2d637ae6c9}{Scene\+Object\+::\+Update\+Transformation\+Matrix()} to do nothing. 
+
+This will guarantee that the transformation matrix will always be an identity matrix regardless of whether you move/rotate/scale the camera. 
+
+Reimplemented from \hyperlink{class_camera_aea640c892a3807671d8ca49616d96eda}{Camera}.
+
+
+
+Definition at line 13 of file Perspective\+Camera.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_perspective_camera_ad96660d3109e54fa282955bf66a255eb}{}\index{Perspective\+Camera@{Perspective\+Camera}!aspect\+Ratio@{aspect\+Ratio}}
+\index{aspect\+Ratio@{aspect\+Ratio}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{aspect\+Ratio}]{\setlength{\rightskip}{0pt plus 5cm}float Perspective\+Camera\+::aspect\+Ratio\hspace{0.3cm}{\ttfamily [private]}}\label{class_perspective_camera_ad96660d3109e54fa282955bf66a255eb}
+
+
+Definition at line 47 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_ad693187f75ab5bfc597066364483325c}{}\index{Perspective\+Camera@{Perspective\+Camera}!fov@{fov}}
+\index{fov@{fov}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{fov}]{\setlength{\rightskip}{0pt plus 5cm}float Perspective\+Camera\+::fov\hspace{0.3cm}{\ttfamily [private]}}\label{class_perspective_camera_ad693187f75ab5bfc597066364483325c}
+
+
+Definition at line 46 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_af88e6161cd3c818d49e6421f52474a2b}{}\index{Perspective\+Camera@{Perspective\+Camera}!z\+Far@{z\+Far}}
+\index{z\+Far@{z\+Far}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{z\+Far}]{\setlength{\rightskip}{0pt plus 5cm}float Perspective\+Camera\+::z\+Far\hspace{0.3cm}{\ttfamily [private]}}\label{class_perspective_camera_af88e6161cd3c818d49e6421f52474a2b}
+
+
+Definition at line 49 of file Perspective\+Camera.\+h.
+
+\hypertarget{class_perspective_camera_a11c1dcd1bdeb4bf8294d6272fb4d2695}{}\index{Perspective\+Camera@{Perspective\+Camera}!z\+Near@{z\+Near}}
+\index{z\+Near@{z\+Near}!Perspective\+Camera@{Perspective\+Camera}}
+\subsubsection[{z\+Near}]{\setlength{\rightskip}{0pt plus 5cm}float Perspective\+Camera\+::z\+Near\hspace{0.3cm}{\ttfamily [private]}}\label{class_perspective_camera_a11c1dcd1bdeb4bf8294d6272fb4d2695}
+
+
+Definition at line 48 of file Perspective\+Camera.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\+Camera/\hyperlink{_perspective_camera_8h}{Perspective\+Camera.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\+Camera/\hyperlink{_perspective_camera_8cpp}{Perspective\+Camera.\+cpp}\end{DoxyCompactItemize}

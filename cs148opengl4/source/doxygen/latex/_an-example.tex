@@ -1,0 +1,16 @@
+\hypertarget{_an-example}{}\section{An}
+Processes an S\+D\+L keyboard event. 
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em state} & \\
+\hline
+{\em repeat} & \\
+\hline
+{\em timestamp} & object moves at 10 meters per second and you want it to move forward when you hit the \textquotesingle{}W\textquotesingle{} key. How many units do you move forward by? You would move forward by $10 \cdot deltaTime$ Although you get an input immediately, if you want to make a change to the scene, it is highly recommended that you queue a change and then process it within the Tick() function. This allows you to multiply by the appropriate delta when making a change\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+ 

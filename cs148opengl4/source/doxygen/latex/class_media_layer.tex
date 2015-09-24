@@ -1,0 +1,243 @@
+\hypertarget{class_media_layer}{}\section{Media\+Layer Class Reference}
+\label{class_media_layer}\index{Media\+Layer@{Media\+Layer}}
+
+
+Class that initializes the application and makes it ready to process Open\+G\+L commands.  
+
+
+
+
+{\ttfamily \#include $<$Media\+Layer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_media_layer_aea3b3bc36411af90517692b110d2829a}{Media\+Layer} (std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ input\+App, std\+::unique\+\_\+ptr$<$ \hyperlink{class_renderer}{Renderer} $>$ input\+Renderer)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_media_layer}{Media\+Layer} object and readies the \hyperlink{class_application}{Application} and \hyperlink{class_renderer}{Renderer} for immediate use. \end{DoxyCompactList}\item 
+\hyperlink{class_media_layer_a0c64e2d0a1c7b34b5457a0c57b69bbb1}{$\sim$\+Media\+Layer} ()
+\begin{DoxyCompactList}\small\item\em A destructor. Carry on. \end{DoxyCompactList}\item 
+bool \hyperlink{class_media_layer_a9f3b22b608b45efa23ebaebe17ae3a85}{Can\+Tick} () const 
+\begin{DoxyCompactList}\small\item\em Whether or not the program should keep running. \end{DoxyCompactList}\item 
+void \hyperlink{class_media_layer_a570ff8c3fc3e8f3e720d9dcebafba143}{Tick} (double delta\+Time, double current\+Time)
+\begin{DoxyCompactList}\small\item\em Handles what happens every frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_media_layer_ad72130dbe963e351d5749a7f48b4ef97}{Initialize\+S\+D\+L} ()
+\begin{DoxyCompactList}\small\item\em Initializes S\+D\+L. \end{DoxyCompactList}\item 
+void \hyperlink{class_media_layer_abb3502cb44e707538741f55f5fe81361}{Initialize\+Open\+G\+L} ()
+\begin{DoxyCompactList}\small\item\em Initializes Open\+G\+L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_application}{Application} $>$ \hyperlink{class_media_layer_a3cddf8a24527db756c3fe0534fce4f0c}{app}
+\begin{DoxyCompactList}\small\item\em Underlying \hyperlink{class_application}{Application} to run. \end{DoxyCompactList}\item 
+std\+::unique\+\_\+ptr$<$ \hyperlink{class_renderer}{Renderer} $>$ \hyperlink{class_media_layer_aee28804a7f4e1fb771b11e93b218e387}{renderer}
+\begin{DoxyCompactList}\small\item\em Underlying \hyperlink{class_renderer}{Renderer} to run. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{class_media_layer_a769679df4457ecbe60e9668199e8788b}{sdl\+Window}
+\begin{DoxyCompactList}\small\item\em Store a pointer to the sdl\+Window so we can clean this up later. \end{DoxyCompactList}\item 
+bool \hyperlink{class_media_layer_ab577253a72d7d158badb3932f09e7d3f}{sdl\+Initialized}
+\begin{DoxyCompactList}\small\item\em Set to true if \hyperlink{class_media_layer_ad72130dbe963e351d5749a7f48b4ef97}{Initialize\+S\+D\+L()} runs successfully. \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+G\+L\+Context \hyperlink{class_media_layer_a0e027d967e7c796efaed751e0b0a7090}{gl\+Context}
+\begin{DoxyCompactList}\small\item\em Store the Open\+G\+L context so that we can clean it up later. \end{DoxyCompactList}\item 
+bool \hyperlink{class_media_layer_abb67004f8dd82afd036233dfb225df3d}{opengl\+Initialized}
+\begin{DoxyCompactList}\small\item\em Set to true after G\+L\+E\+W initialization succeeds. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that initializes the application and makes it ready to process Open\+G\+L commands. 
+
+This class \char`\"{}owns\char`\"{} the \hyperlink{class_application}{Application}. It will handle telling when the application and the renderer should do their per-\/frame actions as well as handling I/\+O events and passing it to the application. Should you ever decide to handle audio and networking this is the class that should own the respective handlers. 
+
+Definition at line 21 of file Media\+Layer.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_media_layer_aea3b3bc36411af90517692b110d2829a}{}\index{Media\+Layer@{Media\+Layer}!Media\+Layer@{Media\+Layer}}
+\index{Media\+Layer@{Media\+Layer}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{Media\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}Media\+Layer\+::\+Media\+Layer (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Application} $>$}]{input\+App, }
+\item[{std\+::unique\+\_\+ptr$<$ {\bf Renderer} $>$}]{input\+Renderer}
+\end{DoxyParamCaption}
+)}\label{class_media_layer_aea3b3bc36411af90517692b110d2829a}
+
+
+Constructs a \hyperlink{class_media_layer}{Media\+Layer} object and readies the \hyperlink{class_application}{Application} and \hyperlink{class_renderer}{Renderer} for immediate use. 
+
+\begin{DoxyWarning}{Warning}
+After passing in the std\+::unique\+\_\+ptr\textquotesingle{}s to \hyperlink{class_media_layer}{Media\+Layer}, you will no longer be able to use the previous std\+::unique\+\_\+ptr\textquotesingle{}s. For example, let\textquotesingle{}s say you have the unique pointers x and y and you call \hyperlink{class_media_layer}{Media\+Layer}(std\+::move(x), std\+::move(y)). After this call, x and y will N\+O L\+O\+N\+G\+E\+R B\+E V\+A\+L\+I\+D P\+O\+I\+N\+T\+E\+R\+S. D\+O N\+O\+T U\+S\+E T\+H\+E\+M. For more information about this, you will want to read more about \href{http://thbecker.net/articles/rvalue_references/section_01.html}{\tt R-\/\+Values} and \href{http://thbecker.net/articles/rvalue_references/section_02.html}{\tt move semantics}. 
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em input\+App} & The unique pointer to the application. We will own this pointer. \\
+\hline
+{\em input\+Renderer} & The unique pointer to the renderer. We will own this pointer.\\
+\hline
+\end{DoxyParams}
+This class assumes that the \hyperlink{class_application}{Application} and \hyperlink{class_renderer}{Renderer} are ready for use once the \hyperlink{class_media_layer}{Media\+Layer} is created. After passing them to the \hyperlink{class_media_layer}{Media\+Layer} constructor, you will no longer be able to modify them without doing some black magic within the \hyperlink{class_media_layer}{Media\+Layer}. 
+
+Definition at line 4 of file Media\+Layer.\+cpp.
+
+\hypertarget{class_media_layer_a0c64e2d0a1c7b34b5457a0c57b69bbb1}{}\index{Media\+Layer@{Media\+Layer}!````~Media\+Layer@{$\sim$\+Media\+Layer}}
+\index{````~Media\+Layer@{$\sim$\+Media\+Layer}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{$\sim$\+Media\+Layer}]{\setlength{\rightskip}{0pt plus 5cm}Media\+Layer\+::$\sim$\+Media\+Layer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_media_layer_a0c64e2d0a1c7b34b5457a0c57b69bbb1}
+
+
+A destructor. Carry on. 
+
+
+
+Definition at line 17 of file Media\+Layer.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_media_layer_a9f3b22b608b45efa23ebaebe17ae3a85}{}\index{Media\+Layer@{Media\+Layer}!Can\+Tick@{Can\+Tick}}
+\index{Can\+Tick@{Can\+Tick}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{Can\+Tick}]{\setlength{\rightskip}{0pt plus 5cm}bool Media\+Layer\+::\+Can\+Tick (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_media_layer_a9f3b22b608b45efa23ebaebe17ae3a85}
+
+
+Whether or not the program should keep running. 
+
+The main loop will query \hyperlink{class_media_layer_a9f3b22b608b45efa23ebaebe17ae3a85}{Can\+Tick()} to see if the program should keep running. If S\+D\+L or Open\+G\+L fails, the program will immediately exit. Also, if the application wants to exit (i.\+e. \hyperlink{class_application_ae0019f2c58008791971e67f23f2d4182}{Application\+::\+Is\+Finished()}) is true, then the main loop will stop as well. 
+
+Definition at line 101 of file Media\+Layer.\+cpp.
+
+\hypertarget{class_media_layer_abb3502cb44e707538741f55f5fe81361}{}\index{Media\+Layer@{Media\+Layer}!Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}}
+\index{Initialize\+Open\+G\+L@{Initialize\+Open\+G\+L}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{Initialize\+Open\+G\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Layer\+::\+Initialize\+Open\+G\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_abb3502cb44e707538741f55f5fe81361}
+
+
+Initializes Open\+G\+L. 
+
+This function will not run if S\+D\+L was not initialized. If S\+D\+L was initialized, this function will request an Open\+G\+L context and then setup the Open\+G\+L function pointers using G\+L\+E\+W. If G\+L\+E\+W initialization succeeds, we will enable some sane defaults for rendering. 
+
+Definition at line 44 of file Media\+Layer.\+cpp.
+
+\hypertarget{class_media_layer_ad72130dbe963e351d5749a7f48b4ef97}{}\index{Media\+Layer@{Media\+Layer}!Initialize\+S\+D\+L@{Initialize\+S\+D\+L}}
+\index{Initialize\+S\+D\+L@{Initialize\+S\+D\+L}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{Initialize\+S\+D\+L}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Layer\+::\+Initialize\+S\+D\+L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_ad72130dbe963e351d5749a7f48b4ef97}
+
+
+Initializes S\+D\+L. 
+
+This function will initialize S\+D\+L with \href{https://wiki.libsdl.org/SDL_Init}{\tt S\+D\+L\+\_\+\+Init} and create a window. The size of the window will initially be the value returned by \hyperlink{class_application_a3e9992f0ceae0d8beda7debccdb00534}{Application\+::\+Get\+Window\+Size()}. 
+
+Definition at line 23 of file Media\+Layer.\+cpp.
+
+\hypertarget{class_media_layer_a570ff8c3fc3e8f3e720d9dcebafba143}{}\index{Media\+Layer@{Media\+Layer}!Tick@{Tick}}
+\index{Tick@{Tick}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{Tick}]{\setlength{\rightskip}{0pt plus 5cm}void Media\+Layer\+::\+Tick (
+\begin{DoxyParamCaption}
+\item[{double}]{delta\+Time, }
+\item[{double}]{current\+Time}
+\end{DoxyParamCaption}
+)}\label{class_media_layer_a570ff8c3fc3e8f3e720d9dcebafba143}
+
+
+Handles what happens every frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The amount of time (seconds) since the last tick. \\
+\hline
+{\em current\+Time} & The amount of time (seconds) since the program started.\\
+\hline
+\end{DoxyParams}
+This function does a multitude of things. First it will clear the color and depth buffers for Open\+G\+L. If you ever decide to use a stencil buffer, you will want to clear this here as well. Next, it will process S\+D\+L Events and cause the application to tick to move the \char`\"{}gameplay\char`\"{} logic forward. Finally we will render to the back buffer (since we are double buffering) and then swap the front and back buffers. 
+
+Definition at line 106 of file Media\+Layer.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_media_layer_a3cddf8a24527db756c3fe0534fce4f0c}{}\index{Media\+Layer@{Media\+Layer}!app@{app}}
+\index{app@{app}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{app}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Application}$>$ Media\+Layer\+::app\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_a3cddf8a24527db756c3fe0534fce4f0c}
+
+
+Underlying \hyperlink{class_application}{Application} to run. 
+
+
+
+Definition at line 63 of file Media\+Layer.\+h.
+
+\hypertarget{class_media_layer_a0e027d967e7c796efaed751e0b0a7090}{}\index{Media\+Layer@{Media\+Layer}!gl\+Context@{gl\+Context}}
+\index{gl\+Context@{gl\+Context}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{gl\+Context}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+G\+L\+Context Media\+Layer\+::gl\+Context\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_a0e027d967e7c796efaed751e0b0a7090}
+
+
+Store the Open\+G\+L context so that we can clean it up later. 
+
+
+
+Definition at line 93 of file Media\+Layer.\+h.
+
+\hypertarget{class_media_layer_abb67004f8dd82afd036233dfb225df3d}{}\index{Media\+Layer@{Media\+Layer}!opengl\+Initialized@{opengl\+Initialized}}
+\index{opengl\+Initialized@{opengl\+Initialized}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{opengl\+Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool Media\+Layer\+::opengl\+Initialized\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_abb67004f8dd82afd036233dfb225df3d}
+
+
+Set to true after G\+L\+E\+W initialization succeeds. 
+
+
+
+Definition at line 97 of file Media\+Layer.\+h.
+
+\hypertarget{class_media_layer_aee28804a7f4e1fb771b11e93b218e387}{}\index{Media\+Layer@{Media\+Layer}!renderer@{renderer}}
+\index{renderer@{renderer}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{renderer}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<${\bf Renderer}$>$ Media\+Layer\+::renderer\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_aee28804a7f4e1fb771b11e93b218e387}
+
+
+Underlying \hyperlink{class_renderer}{Renderer} to run. 
+
+
+
+Definition at line 67 of file Media\+Layer.\+h.
+
+\hypertarget{class_media_layer_ab577253a72d7d158badb3932f09e7d3f}{}\index{Media\+Layer@{Media\+Layer}!sdl\+Initialized@{sdl\+Initialized}}
+\index{sdl\+Initialized@{sdl\+Initialized}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{sdl\+Initialized}]{\setlength{\rightskip}{0pt plus 5cm}bool Media\+Layer\+::sdl\+Initialized\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_ab577253a72d7d158badb3932f09e7d3f}
+
+
+Set to true if \hyperlink{class_media_layer_ad72130dbe963e351d5749a7f48b4ef97}{Initialize\+S\+D\+L()} runs successfully. 
+
+
+
+Definition at line 82 of file Media\+Layer.\+h.
+
+\hypertarget{class_media_layer_a769679df4457ecbe60e9668199e8788b}{}\index{Media\+Layer@{Media\+Layer}!sdl\+Window@{sdl\+Window}}
+\index{sdl\+Window@{sdl\+Window}!Media\+Layer@{Media\+Layer}}
+\subsubsection[{sdl\+Window}]{\setlength{\rightskip}{0pt plus 5cm}S\+D\+L\+\_\+\+Window$\ast$ Media\+Layer\+::sdl\+Window\hspace{0.3cm}{\ttfamily [private]}}\label{class_media_layer_a769679df4457ecbe60e9668199e8788b}
+
+
+Store a pointer to the sdl\+Window so we can clean this up later. 
+
+
+
+Definition at line 78 of file Media\+Layer.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\hyperlink{_media_layer_8h}{Media\+Layer.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\hyperlink{_media_layer_8cpp}{Media\+Layer.\+cpp}\end{DoxyCompactItemize}

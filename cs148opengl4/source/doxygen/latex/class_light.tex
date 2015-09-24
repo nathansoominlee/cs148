@@ -1,0 +1,249 @@
+\hypertarget{class_light}{}\section{Light Class Reference}
+\label{class_light}\index{Light@{Light}}
+
+
+Generic light class.  
+
+
+
+
+{\ttfamily \#include $<$Light.\+h$>$}
+
+Inheritance diagram for Light\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_light}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8}{Light\+Type} \{ \hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334}{Light\+Type\+::\+G\+L\+O\+B\+A\+L} = 0, 
+\hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82}{Light\+Type\+::\+P\+O\+I\+N\+T}
+ \}
+\begin{DoxyCompactList}\small\item\em The different types of light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_light_adca12f0d5470bc3f2e6e77233ab3dcf1}{Light} (std\+::unique\+\_\+ptr$<$ struct \hyperlink{struct_light_properties}{Light\+Properties} $>$ in\+Properties, \hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8}{Light\+Type} type=\hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82}{Light\+Type\+::\+P\+O\+I\+N\+T})
+\begin{DoxyCompactList}\small\item\em Constructs a light from user-\/specified properties and a light type. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{$\sim$\+Light} ()
+\item 
+void \hyperlink{class_light_a2d3f34b821c0cb0b5baa664ee91d309f}{Get\+Attenuation} (float \&constant, float \&linear, float \&quadratic) const 
+\begin{DoxyCompactList}\small\item\em Returns the attenuation parameters for the light. \end{DoxyCompactList}\item 
+\hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8}{Light\+Type} \hyperlink{class_light_a393ede80ccba5f4314135011a665afab}{Get\+Light\+Type} () const 
+\item 
+const struct \hyperlink{struct_light_properties}{Light\+Properties} $\ast$ \hyperlink{class_light_a074230bc62c5bf705bc39c1de64474c0}{Get\+Properties\+Raw} () const 
+\item 
+virtual void \hyperlink{class_light_a360ea479af434502737f6b5c0b0ff3d9}{Setup\+Shader\+Uniforms} (const class \hyperlink{class_shader_program}{Shader\+Program} $\ast$program) const 
+\begin{DoxyCompactList}\small\item\em Sets up the shader to have the necessary properties for a given type of light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ struct \hyperlink{struct_light_properties}{Light\+Properties} $>$ \hyperlink{class_light_a74eba4cac1cc27e741230fbda32fceef}{properties}
+\item 
+\hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8}{Light\+Type} \hyperlink{class_light_ab0c279c927973443f7b52fc924b489aa}{light\+Type}
+\item 
+float \hyperlink{class_light_afef6c00a21aa16dc6cc7a7fb1639d2fa}{constant\+Attenuation}
+\item 
+float \hyperlink{class_light_afcb2da592197efae015ae16c1c5bfceb}{linear\+Attenuation}
+\item 
+float \hyperlink{class_light_a0f24dde11cbbd12d0f0309e189f3640c}{quadratic\+Attenuation}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \hyperlink{class_light_ab2d40f6c364cf728d03a90ff885e37cb}{L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E} = \char`\"{}point\+Light\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Generic light class. 
+
+Note that the \char`\"{}\+Light\char`\"{} class only holds the properties related to the orientation and shape of the camera in world space. The actual \char`\"{}light\char`\"{} of the \hyperlink{class_light}{Light} object is stored within a \hyperlink{struct_light_properties}{Light\+Properties} structure. The \hyperlink{class_light}{Light} class acts as a point light. 
+
+Definition at line 13 of file Light.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_light_a661d9480e01af8b1612860b9630ef5f8}{}\index{Light@{Light}!Light\+Type@{Light\+Type}}
+\index{Light\+Type@{Light\+Type}!Light@{Light}}
+\subsubsection[{Light\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Light\+::\+Light\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{class_light_a661d9480e01af8b1612860b9630ef5f8}
+
+
+The different types of light. 
+
+If you ever want to create a new type of light, you should add a new entry into the Light\+Type enum and then have the \hyperlink{class_shader_program}{Shader\+Program} subclass handle that Light\+Type properly. Note that the \hyperlink{class_light_a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334}{Light\+Type\+::\+G\+L\+O\+B\+A\+L} enum is used by the \hyperlink{class_blinn_phong_shader}{Blinn\+Phong\+Shader} to handle global light (if any). You can ignore this if your shader does not have any global light that should only be applied once per object. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{G\+L\+O\+B\+A\+L@{G\+L\+O\+B\+A\+L}!Light@{Light}}\index{Light@{Light}!G\+L\+O\+B\+A\+L@{G\+L\+O\+B\+A\+L}}\item[{\em 
+\hypertarget{class_light_a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334}{}G\+L\+O\+B\+A\+L\label{class_light_a661d9480e01af8b1612860b9630ef5f8a6eecfba72d12922ee1dead07a0ef3334}
+}]\index{P\+O\+I\+N\+T@{P\+O\+I\+N\+T}!Light@{Light}}\index{Light@{Light}!P\+O\+I\+N\+T@{P\+O\+I\+N\+T}}\item[{\em 
+\hypertarget{class_light_a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82}{}P\+O\+I\+N\+T\label{class_light_a661d9480e01af8b1612860b9630ef5f8aaebdbcb765394d25d6a604589a890f82}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 23 of file Light.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_light_adca12f0d5470bc3f2e6e77233ab3dcf1}{}\index{Light@{Light}!Light@{Light}}
+\index{Light@{Light}!Light@{Light}}
+\subsubsection[{Light}]{\setlength{\rightskip}{0pt plus 5cm}Light\+::\+Light (
+\begin{DoxyParamCaption}
+\item[{std\+::unique\+\_\+ptr$<$ struct {\bf Light\+Properties} $>$}]{in\+Properties, }
+\item[{{\bf Light\+Type}}]{type = {\ttfamily {\bf Light\+Type\+::\+P\+O\+I\+N\+T}}}
+\end{DoxyParamCaption}
+)}\label{class_light_adca12f0d5470bc3f2e6e77233ab3dcf1}
+
+
+Constructs a light from user-\/specified properties and a light type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in\+Properties} & The \hyperlink{struct_light_properties}{Light\+Properties} structure. The type of this property is dependent on what shader is being used. \\
+\hline
+{\em type} & The type of light as enumerated in the Light\+Type enum.\\
+\hline
+\end{DoxyParams}
+Subclasses of the \hyperlink{class_light}{Light} class should pass in the appropriate Light\+Type to the base class constructor. Note that a point light should probably be its own subclass instead of just hijacking the base class. 
+
+Definition at line 7 of file Light.\+cpp.
+
+\hypertarget{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}{}\index{Light@{Light}!````~Light@{$\sim$\+Light}}
+\index{````~Light@{$\sim$\+Light}!Light@{Light}}
+\subsubsection[{$\sim$\+Light}]{\setlength{\rightskip}{0pt plus 5cm}Light\+::$\sim$\+Light (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_light_ad0e59fad13bb6cfadc25b2c477e9ddc7}
+
+
+Definition at line 12 of file Light.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_light_a2d3f34b821c0cb0b5baa664ee91d309f}{}\index{Light@{Light}!Get\+Attenuation@{Get\+Attenuation}}
+\index{Get\+Attenuation@{Get\+Attenuation}!Light@{Light}}
+\subsubsection[{Get\+Attenuation}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::\+Get\+Attenuation (
+\begin{DoxyParamCaption}
+\item[{float \&}]{constant, }
+\item[{float \&}]{linear, }
+\item[{float \&}]{quadratic}
+\end{DoxyParamCaption}
+) const}\label{class_light_a2d3f34b821c0cb0b5baa664ee91d309f}
+
+
+Returns the attenuation parameters for the light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em constant} & Reference where the constant attenuation will be written to. \\
+\hline
+{\em linear} & Reference where the linear attenuation will be written to. \\
+\hline
+{\em quadratic} & Reference where the quadratic attenuation will be written to.\\
+\hline
+\end{DoxyParams}
+Let us define $d$ as the distance a vertex is from the light. Furthermore, let\textquotesingle{}s define $c$ as the constant attenuation, $l$ as the linear attenuation, and $q$ as the quadratic attenuation. Then the light\textquotesingle{}s intensity will be multiplied by $\frac{1}{c + d l + d^2 l}$. 
+
+Definition at line 16 of file Light.\+cpp.
+
+\hypertarget{class_light_a393ede80ccba5f4314135011a665afab}{}\index{Light@{Light}!Get\+Light\+Type@{Get\+Light\+Type}}
+\index{Get\+Light\+Type@{Get\+Light\+Type}!Light@{Light}}
+\subsubsection[{Get\+Light\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Light\+Type} Light\+::\+Get\+Light\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{class_light_a393ede80ccba5f4314135011a665afab}
+
+
+Definition at line 49 of file Light.\+h.
+
+\hypertarget{class_light_a074230bc62c5bf705bc39c1de64474c0}{}\index{Light@{Light}!Get\+Properties\+Raw@{Get\+Properties\+Raw}}
+\index{Get\+Properties\+Raw@{Get\+Properties\+Raw}!Light@{Light}}
+\subsubsection[{Get\+Properties\+Raw}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Light\+Properties} $\ast$ Light\+::\+Get\+Properties\+Raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_light_a074230bc62c5bf705bc39c1de64474c0}
+
+
+Definition at line 23 of file Light.\+cpp.
+
+\hypertarget{class_light_a360ea479af434502737f6b5c0b0ff3d9}{}\index{Light@{Light}!Setup\+Shader\+Uniforms@{Setup\+Shader\+Uniforms}}
+\index{Setup\+Shader\+Uniforms@{Setup\+Shader\+Uniforms}!Light@{Light}}
+\subsubsection[{Setup\+Shader\+Uniforms}]{\setlength{\rightskip}{0pt plus 5cm}void Light\+::\+Setup\+Shader\+Uniforms (
+\begin{DoxyParamCaption}
+\item[{const class {\bf Shader\+Program} $\ast$}]{program}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_light_a360ea479af434502737f6b5c0b0ff3d9}
+
+
+Sets up the shader to have the necessary properties for a given type of light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & The shader to setup.\\
+\hline
+\end{DoxyParams}
+For a point light, the only thing that is necessary is the light\textquotesingle{}s position. 
+
+Definition at line 28 of file Light.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_light_afef6c00a21aa16dc6cc7a7fb1639d2fa}{}\index{Light@{Light}!constant\+Attenuation@{constant\+Attenuation}}
+\index{constant\+Attenuation@{constant\+Attenuation}!Light@{Light}}
+\subsubsection[{constant\+Attenuation}]{\setlength{\rightskip}{0pt plus 5cm}float Light\+::constant\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}\label{class_light_afef6c00a21aa16dc6cc7a7fb1639d2fa}
+
+
+Definition at line 66 of file Light.\+h.
+
+\hypertarget{class_light_ab2d40f6c364cf728d03a90ff885e37cb}{}\index{Light@{Light}!L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E@{L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E}}
+\index{L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E@{L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E}!Light@{Light}}
+\subsubsection[{L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string Light\+::\+L\+I\+G\+H\+T\+\_\+\+U\+N\+I\+F\+O\+R\+M\+\_\+\+N\+A\+M\+E = \char`\"{}point\+Light\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{class_light_ab2d40f6c364cf728d03a90ff885e37cb}
+
+
+Definition at line 60 of file Light.\+h.
+
+\hypertarget{class_light_ab0c279c927973443f7b52fc924b489aa}{}\index{Light@{Light}!light\+Type@{light\+Type}}
+\index{light\+Type@{light\+Type}!Light@{Light}}
+\subsubsection[{light\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Light\+Type} Light\+::light\+Type\hspace{0.3cm}{\ttfamily [private]}}\label{class_light_ab0c279c927973443f7b52fc924b489aa}
+
+
+Definition at line 63 of file Light.\+h.
+
+\hypertarget{class_light_afcb2da592197efae015ae16c1c5bfceb}{}\index{Light@{Light}!linear\+Attenuation@{linear\+Attenuation}}
+\index{linear\+Attenuation@{linear\+Attenuation}!Light@{Light}}
+\subsubsection[{linear\+Attenuation}]{\setlength{\rightskip}{0pt plus 5cm}float Light\+::linear\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}\label{class_light_afcb2da592197efae015ae16c1c5bfceb}
+
+
+Definition at line 67 of file Light.\+h.
+
+\hypertarget{class_light_a74eba4cac1cc27e741230fbda32fceef}{}\index{Light@{Light}!properties@{properties}}
+\index{properties@{properties}!Light@{Light}}
+\subsubsection[{properties}]{\setlength{\rightskip}{0pt plus 5cm}std\+::unique\+\_\+ptr$<$struct {\bf Light\+Properties}$>$ Light\+::properties\hspace{0.3cm}{\ttfamily [private]}}\label{class_light_a74eba4cac1cc27e741230fbda32fceef}
+
+
+Definition at line 61 of file Light.\+h.
+
+\hypertarget{class_light_a0f24dde11cbbd12d0f0309e189f3640c}{}\index{Light@{Light}!quadratic\+Attenuation@{quadratic\+Attenuation}}
+\index{quadratic\+Attenuation@{quadratic\+Attenuation}!Light@{Light}}
+\subsubsection[{quadratic\+Attenuation}]{\setlength{\rightskip}{0pt plus 5cm}float Light\+::quadratic\+Attenuation\hspace{0.3cm}{\ttfamily [private]}}\label{class_light_a0f24dde11cbbd12d0f0309e189f3640c}
+
+
+Definition at line 68 of file Light.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\+Light/\hyperlink{_light_8h}{Light.\+h}\item 
+/\+Users/michaelbao/\+Phys\+B\+A\+M/\+Courses/2015/cs148/cs148opengl4/source/common/\+Scene/\+Light/\hyperlink{_light_8cpp}{Light.\+cpp}\end{DoxyCompactItemize}

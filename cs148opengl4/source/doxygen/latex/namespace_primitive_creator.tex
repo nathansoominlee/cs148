@@ -1,0 +1,92 @@
+\hypertarget{namespace_primitive_creator}{}\section{Primitive\+Creator Namespace Reference}
+\label{namespace_primitive_creator}\index{Primitive\+Creator@{Primitive\+Creator}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespace_primitive_creator_acbc473c3e4d3b99d8e2b9d302e095978}{Add\+Triangle\+Indices} (const glm\+::uvec3 \&triangle, \hyperlink{class_rendering_object_a9931c88bca3384065c6691dfe1e60af1}{Rendering\+Object\+::\+Index\+Array} \&indices)
+\begin{DoxyCompactList}\small\item\em Utility function to add the elements in a glm\+::uvec3 to the indices array. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ \hyperlink{namespace_primitive_creator_a4fcaafc02f9b75b4e6e9720e7c15c079}{Create\+Cube} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, float side\+Length)
+\begin{DoxyCompactList}\small\item\em Create a cube with a given side length. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_rendering_object}{Rendering\+Object} $>$ \hyperlink{namespace_primitive_creator_afbeed51ca2c797399acd7b582ce91139}{Create\+Ico\+Sphere} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_shader_program}{Shader\+Program} $>$ input\+Shader, float radius, int refinement\+Steps=0)
+\begin{DoxyCompactList}\small\item\em Create a sphere with a given radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_primitive_creator_acbc473c3e4d3b99d8e2b9d302e095978}{}\index{Primitive\+Creator@{Primitive\+Creator}!Add\+Triangle\+Indices@{Add\+Triangle\+Indices}}
+\index{Add\+Triangle\+Indices@{Add\+Triangle\+Indices}!Primitive\+Creator@{Primitive\+Creator}}
+\subsubsection[{Add\+Triangle\+Indices}]{\setlength{\rightskip}{0pt plus 5cm}void Primitive\+Creator\+::\+Add\+Triangle\+Indices (
+\begin{DoxyParamCaption}
+\item[{const glm\+::uvec3 \&}]{triangle, }
+\item[{{\bf Rendering\+Object\+::\+Index\+Array} \&}]{indices}
+\end{DoxyParamCaption}
+)}\label{namespace_primitive_creator_acbc473c3e4d3b99d8e2b9d302e095978}
+
+
+Utility function to add the elements in a glm\+::uvec3 to the indices array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em triangle} & The three vertex indices for a single triangle. \\
+\hline
+{\em indices} & The index vector that we want to add the indices to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file Primitive\+Creator.\+cpp.
+
+\hypertarget{namespace_primitive_creator_a4fcaafc02f9b75b4e6e9720e7c15c079}{}\index{Primitive\+Creator@{Primitive\+Creator}!Create\+Cube@{Create\+Cube}}
+\index{Create\+Cube@{Create\+Cube}!Primitive\+Creator@{Primitive\+Creator}}
+\subsubsection[{Create\+Cube}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Rendering\+Object} $>$ Primitive\+Creator\+::\+Create\+Cube (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Shader\+Program} $>$}]{input\+Shader, }
+\item[{float}]{side\+Length}
+\end{DoxyParamCaption}
+)}\label{namespace_primitive_creator_a4fcaafc02f9b75b4e6e9720e7c15c079}
+
+
+Create a cube with a given side length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shader} & The shader to use. \\
+\hline
+{\em side\+Length} & The length of one side of the cube. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \hyperlink{class_rendering_object}{Rendering\+Object} that holds the cube vertices. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Not implemented. 
+\end{DoxyWarning}
+
+
+Definition at line 15 of file Primitive\+Creator.\+cpp.
+
+\hypertarget{namespace_primitive_creator_afbeed51ca2c797399acd7b582ce91139}{}\index{Primitive\+Creator@{Primitive\+Creator}!Create\+Ico\+Sphere@{Create\+Ico\+Sphere}}
+\index{Create\+Ico\+Sphere@{Create\+Ico\+Sphere}!Primitive\+Creator@{Primitive\+Creator}}
+\subsubsection[{Create\+Ico\+Sphere}]{\setlength{\rightskip}{0pt plus 5cm}std\+::shared\+\_\+ptr$<$ {\bf Rendering\+Object} $>$ Primitive\+Creator\+::\+Create\+Ico\+Sphere (
+\begin{DoxyParamCaption}
+\item[{std\+::shared\+\_\+ptr$<$ {\bf Shader\+Program} $>$}]{input\+Shader, }
+\item[{float}]{radius, }
+\item[{int}]{refinement\+Steps = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespace_primitive_creator_afbeed51ca2c797399acd7b582ce91139}
+
+
+Create a sphere with a given radius. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Shader} & The shader to use. \\
+\hline
+{\em radius} & The radius of the sphere. \\
+\hline
+{\em refinement\+Steps} & The number of times to subdivide the sphere.\\
+\hline
+\end{DoxyParams}
+Note that the first stpe in this process is to create a icosahedron. Aftewards, we will subdivide it multiple times as determined by refinement\+Steps to smooth it out to become an actual sphere. 
+
+Definition at line 20 of file Primitive\+Creator.\+cpp.
+
