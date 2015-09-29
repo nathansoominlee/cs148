@@ -2,6 +2,10 @@
 #include "common/Rendering/ForwardRenderer.h"
 #include "FreeImage.h"
 
+#undef ASSIGNMENT 	// Special config to prevent overwriting in Xcode.
+//#define ASSIGNMENT N //change N to the assignment number accordingly (look below)
+#define ASSIGNMENT 1 //
+
 #if ASSIGNMENT == 1
 #include "assignment1/Assignment1.h"
 #define APPLICATION Assignment1
@@ -18,8 +22,6 @@
 #include <iostream>
 #include <chrono>
 
-#undef ASSIGNMENT 	// Special config to prevent overwriting in Xcode.
-#define ASSIGNMENT N //
 
 int main(int argc, char** argv) {
     FreeImage_Initialise();
