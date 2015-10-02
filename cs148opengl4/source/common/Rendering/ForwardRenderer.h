@@ -59,15 +59,6 @@ public:
      *  Still confused? Ask on Piazza!
      */
     virtual void Render() override;
-
-protected:
-    /*! \brief The depth prepass shader.
-     *
-     *  The depth prepass shader is constructed from the shaders loaded in "shaders/required/pass". The vertex shader applies
-     *  the MVP transformations to the input vertex and stores it in gl_Position. The fragment shader will write (0, 0, 0, 0) to the
-     *  color buffer to not affect the results of the following render passes.
-     */
-    std::shared_ptr<class ShaderProgram> depthPrepassShader;
 };
 
 #endif

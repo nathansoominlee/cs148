@@ -18,11 +18,6 @@ ForwardRenderer::~ForwardRenderer()
 
 void ForwardRenderer::Initialize()
 {
-    std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "required/pass/pass.vert" },
-        { GL_FRAGMENT_SHADER, "required/pass/pass.frag"}
-    };
-    depthPrepassShader = std::make_shared<ShaderProgram>(shaderSpec);
 }
 
 void ForwardRenderer::Render()
@@ -37,14 +32,9 @@ void ForwardRenderer::Render()
     //   Rest - Diffuse/Specular/etc Lighting for Objects
     for (decltype(totalRenderingPasses) p = 0; p < totalRenderingPasses; ++p) {
         OGL_CALL(glDepthMask((p == 0) ? GL_TRUE : GL_FALSE));
-        if (p == 0) {
-            OGL_CALL(glDisable(GL_POLYGON_OFFSET_FILL));
-        } else {
-            // Need this to prevent z-fighting with the depth prepass!
-            OGL_CALL(glEnable(GL_POLYGON_OFFSET_FILL));
-            OGL_CALL(glPolygonOffset(-1.f, -1.f));
-        }
 
+        bool writeToColor = (p == 0) ? GL_FALSE: GL_TRUE;
+        OGL_CALL(glColorMask(writeToColor, writeToColor, writeToColor, writeToColor));
         for (decltype(totalObjects) i = 0; i < totalObjects; ++i) {
             const SceneObject& sceneObject = scene->GetSceneObject(i); 
 
@@ -54,8 +44,7 @@ void ForwardRenderer::Render()
                 if (!renderObject) {
                     continue;
                 }
-
-                const ShaderProgram* shaderToUse = (p == 0) ? depthPrepassShader.get() : renderObject->GetShaderProgramRaw();
+                const ShaderProgram* shaderToUse = renderObject->GetShaderProgramRaw();
                 assert(shaderToUse);
 
                 shaderToUse->StartUseShader();
