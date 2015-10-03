@@ -15,6 +15,27 @@ else( CMAKE_SIZEOF_VOID_P EQUAL 8 )
     SET( EX_PLATFORM_STR "32" )
 endif( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 
+# Get the hostname so that we can use different paths
+# depending on whether Nathan or Mike is compiling
+# This is needed for the assimplib location and
+# for the OpenGL version.
+
+site_name(HOSTNAME)
+
+if (HOSTNAME STREQUAL "coche")
+    set(MIKE True)
+    set(MYNAME "Mike")
+    set(OPENGL_MAJOR "3")
+    set(OPENGL_MINOR "3")
+else()
+    set(MIKE False)
+    set(MYNAME "Nathan")
+    set(OPENGL_MAJOR "4")
+    set(OPENGL_MINOR "1")
+endif()
+
+message(STATUS "Generating buildfiles for ${MYNAME}'s machine, ${HOSTNAME}")
+
 # Import utility cmake scripts...mainly useful for Linux systems since we provide
 # the external libraries elsewhere.
 if (NOT WIN32 AND NOT APPLE)
@@ -130,7 +151,16 @@ endif()
 if (WIN32)
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/windows/lib${EX_PLATFORM_STR}/assimp.lib")
 elseif (APPLE)
-    target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+
+    # Nathan and Mike have different assimplib locations!
+    message(STATUS "Using ${MYNAME}'s assimplib")
+
+    if (MIKE)
+        target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/lib/libassimp.dylib")
+    else() # Nathan
+        target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/osx/libassimp.dylib")
+    endif()
+
 else()
     target_link_libraries(cs148opengl4 "${CMAKE_CURRENT_SOURCE_DIR}/external/assimp/distrib/unix/libassimp.so")
 endif()
@@ -143,6 +173,11 @@ elseif (APPLE)
 else()
     target_link_libraries(cs148opengl4 ${FREEIMAGE_LIBRARY})
 endif()
+
+# OpenGL Versions, Mike 3.3 and Nathan 4.1
+message(STATUS "Setting ${MYNAME}'s OpenGL version to ${OPENGL_MAJOR}.${OPENGL_MINOR}")
+add_definitions(-DOPENGL_MAJOR=${OPENGL_MAJOR})
+add_definitions(-DOPENGL_MINOR=${OPENGL_MINOR})
 
 # Source Group Folders for IDE Usage
 # Shaders

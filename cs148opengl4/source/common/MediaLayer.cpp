@@ -59,8 +59,8 @@ void MediaLayer::InitializeOpenGL()
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 
     SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE ); 
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, 1); 
+    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, OPENGL_MAJOR); // 3 for mike, 4 for nathan
+    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, OPENGL_MINOR); // 3 for mike, 1 for nathan
 
     glContext = SDL_GL_CreateContext(sdlWindow);
     if (glContext == NULL) {
