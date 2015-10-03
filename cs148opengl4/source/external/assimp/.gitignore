@@ -9,7 +9,7 @@ build
 
 # Output
 bin/
-lib/
+#lib/ --> Mike needs lib/libassimp.dylib
 
 # Generated
 
