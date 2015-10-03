@@ -58,9 +58,9 @@ glm::mat4 SceneObject::GetTransformationMatrix() const
 void SceneObject::UpdateTransformationMatrix()
 {
     glm::mat4 newTransformation(1.f);
-    newTransformation = glm::scale(newTransformation, scale);
+    newTransformation = glm::scale(glm::mat4(1.f), scale) * newTransformation;
     newTransformation = glm::mat4_cast(rotation) * newTransformation;
-    newTransformation = glm::translate(newTransformation, glm::vec3(position));
+    newTransformation = glm::translate(glm::mat4(1.f), glm::vec3(position)) * newTransformation;
     cachedTransformationMatrix = std::move(newTransformation);
 }
 
