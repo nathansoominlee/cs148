@@ -27,3 +27,10 @@ test/results
 
 # Python
 __pycache__
+
+# Mike's build files
+Makefile
+assimp.pc
+code/Makefile
+revision.h
+tools/assimp_cmd/Makefile
