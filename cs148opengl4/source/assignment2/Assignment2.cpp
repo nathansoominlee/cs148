@@ -204,18 +204,27 @@ void Assignment2::SetupGoblin()
     shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
     shader->SetAmbient(glm::vec4(0.5f));
 
-    // unposed Goblin
-    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "goblin/Model/goblin_unposed.obj");
-    if (meshTemplate.empty()) {
-        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
-        return;
+    std::vector<std::string> goblin_models {"goblin/Model/goblin_unposed.obj",
+                                            "goblin/Model/goblin_pose_01.obj",
+                                            "goblin/Model/goblin_pose_02.obj"};
+
+    for(int i = 0; i < 3; i++)
+    {
+
+        // unposed Goblin
+        std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, goblin_models[i]);
+        if (meshTemplate.empty()) {
+            std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+            return;
+        }
+
+        sceneObject = std::make_shared<SceneObject>(meshTemplate);
+        scene->AddSceneObject(sceneObject);
+
+        sceneObject->SetPosition(glm::vec3(-100.f + 100.f * i, 0.f, -150.f));
+        sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
+
     }
-
-    sceneObject = std::make_shared<SceneObject>(meshTemplate);
-    scene->AddSceneObject(sceneObject);
-
-    sceneObject->SetPosition(glm::vec3(0.f, 0.f, -150.f));
-    sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(0.5f, 0.5f, 0.5f, 1.f);
