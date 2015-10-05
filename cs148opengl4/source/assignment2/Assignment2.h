@@ -29,6 +29,7 @@ private:
     virtual void SetupExample1();
     virtual void SetupExample2();
     virtual void SetupGoblin(Goblin goblin_count);
+    virtual void SetupHuman();
 
     virtual void SetupCamera();
 

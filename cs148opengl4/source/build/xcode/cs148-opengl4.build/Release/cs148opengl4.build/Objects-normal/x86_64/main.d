@@ -145,4 +145,4 @@ dependencies: \
   /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.h \
   /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h \
   /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/FreeImage.h \
-  /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment1/Assignment1.h
+  /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment2/Assignment2.h
