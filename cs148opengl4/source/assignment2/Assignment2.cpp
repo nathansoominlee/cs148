@@ -54,6 +54,11 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
             SetupExample2();
         }
         break;
+    case SDLK_3:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupGoblin();
+        }
+        break;
     case SDLK_UP:
         sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -0.1f);
         break;
@@ -171,6 +176,46 @@ void Assignment2::SetupExample2()
 
     sceneObject = std::make_shared<SceneObject>(meshTemplate);
     scene->AddSceneObject(sceneObject);
+
+    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(0.5f, 0.5f, 0.5f, 1.f);
+
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(0.f, 0.f, 10.f));
+    scene->AddLight(pointLight);
+}
+
+// Goblin model from http://www.polycount.com/forum/showthread.php?t=69806&highlight=sdk+models
+void Assignment2::SetupGoblin()
+{
+    scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag"}
+    };
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
+    };
+#endif
+    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    shader->SetAmbient(glm::vec4(0.5f));
+
+    // unposed Goblin
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "goblin/Model/goblin_unposed.obj");
+    if (meshTemplate.empty()) {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return;
+    }
+
+    sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    scene->AddSceneObject(sceneObject);
+
+    sceneObject->SetPosition(glm::vec3(0.f, 0.f, -150.f));
+    sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(0.5f, 0.5f, 0.5f, 1.f);

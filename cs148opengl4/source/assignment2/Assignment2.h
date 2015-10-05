@@ -25,6 +25,7 @@ private:
 
     virtual void SetupExample1();
     virtual void SetupExample2();
+    virtual void SetupGoblin();
 
     virtual void SetupCamera();
 
