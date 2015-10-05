@@ -29,12 +29,17 @@ glm::vec2 Assignment2::GetWindowSize() const
 
 void Assignment2::SetupScene()
 {
-    SetupExample1();
+    SetupGoblin(Goblin::SINGLE);
 }
 
 void Assignment2::SetupCamera()
 {
-    camera->Translate(glm::vec3(0.f, 0.f, 10.f));
+    camera->Translate(glm::vec3(0.f, 100.f, 10.f));
+    camera->Rotate(glm::vec3(SceneObject::GetWorldRight()), -0.5f);
+
+    // Extend the far clip plane
+    std::shared_ptr<PerspectiveCamera> pc = std::static_pointer_cast<PerspectiveCamera>(camera);
+    pc->SetZFar(1000.f);
 }
 
 void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
@@ -46,17 +51,17 @@ void Assignment2::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     switch (key.sym) {
     case SDLK_1:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample1();
+            SetupGoblin(Goblin::SINGLE);
         }
         break;
     case SDLK_2:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample2();
+            SetupGoblin(Goblin::TRIO);
         }
         break;
     case SDLK_3:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupGoblin();
+            SetupGoblin(Goblin::ARMY);
         }
         break;
     case SDLK_UP:
@@ -186,7 +191,7 @@ void Assignment2::SetupExample2()
 }
 
 // Goblin model from http://www.polycount.com/forum/showthread.php?t=69806&highlight=sdk+models
-void Assignment2::SetupGoblin()
+void Assignment2::SetupGoblin(Goblin goblin_count)
 {
     scene->ClearScene();
 #ifndef DISABLE_OPENGL_SUBROUTINES
@@ -208,11 +213,9 @@ void Assignment2::SetupGoblin()
                                             "goblin/Model/goblin_pose_01.obj",
                                             "goblin/Model/goblin_pose_02.obj"};
 
-    for(int i = 0; i < 3; i++)
+    if (goblin_count == Goblin::SINGLE)
     {
-
-        // unposed Goblin
-        std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, goblin_models[i]);
+        std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, goblin_models[0]);
         if (meshTemplate.empty()) {
             std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
             return;
@@ -221,9 +224,55 @@ void Assignment2::SetupGoblin()
         sceneObject = std::make_shared<SceneObject>(meshTemplate);
         scene->AddSceneObject(sceneObject);
 
-        sceneObject->SetPosition(glm::vec3(-100.f + 100.f * i, 0.f, -150.f));
+        sceneObject->SetPosition(glm::vec3(0.f, 0.f, -150.f));
         sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
+    }
+    else if (goblin_count == Goblin::TRIO)
+    {
 
+        for(int i = 0; i < 3; i++)
+        {
+            std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, goblin_models[i]);
+            if (meshTemplate.empty()) {
+                std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+                return;
+            }
+
+            sceneObject = std::make_shared<SceneObject>(meshTemplate);
+            scene->AddSceneObject(sceneObject);
+
+            sceneObject->SetPosition(glm::vec3(-100.f + 100.f * i, 0.f, -150.f));
+            sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
+        }
+    }
+    else // army
+    {
+        // Create and N across x M deep grid of goblins
+        int N = 10;
+        int M = 15;
+
+        for(int i = 0; i < N; i++)
+        {
+
+            for(int j = 0; j < M; j++)
+            {
+                // pick a random goblin
+                int goblin = rand() % goblin_models.size();
+
+                std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, goblin_models[goblin]);
+                if (meshTemplate.empty()) {
+                    std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+                    return;
+                }
+
+                sceneObject = std::make_shared<SceneObject>(meshTemplate);
+                scene->AddSceneObject(sceneObject);
+
+                sceneObject->SetPosition(glm::vec3(-M/2 * 100.f + 100.f * j, -50.f, -150.f - 100.f * i));
+                sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), -1.2f);
+            }
+
+        }
     }
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();

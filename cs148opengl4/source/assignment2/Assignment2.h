@@ -21,11 +21,14 @@ protected:
     virtual void HandleWindowResize(float x, float y);
 
 private:
+    enum Goblin { SINGLE, 
+                  TRIO, 
+                  ARMY }; 
     virtual void SetupScene();
 
     virtual void SetupExample1();
     virtual void SetupExample2();
-    virtual void SetupGoblin();
+    virtual void SetupGoblin(Goblin goblin_count);
 
     virtual void SetupCamera();
 
