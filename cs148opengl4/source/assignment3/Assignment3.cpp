@@ -35,7 +35,7 @@ glm::vec2 Assignment3::GetWindowSize() const
 
 void Assignment3::SetupScene()
 {
-    SetupExample1();
+    SetupEpic();
 }
 
 void Assignment3::SetupCamera()
@@ -65,6 +65,11 @@ void Assignment3::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     case SDLK_2:
         if (!repeat && state == SDL_KEYDOWN) {
             SetupExample2();
+        }
+        break;
+    case SDLK_3:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupEpic();
         }
         break;
     case SDLK_UP:
@@ -132,6 +137,33 @@ void Assignment3::SetupExample1()
     shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
 
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+    scene->AddLight(pointLight);
+
+    GenericSetupExample(shader, groundShader);
+
+}
+
+void Assignment3::SetupEpic()
+{
+    scene->ClearScene();
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.frag"}
+    };
+
+    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
+
+    std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+
+    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
