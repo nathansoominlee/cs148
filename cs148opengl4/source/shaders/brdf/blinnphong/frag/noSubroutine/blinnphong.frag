@@ -1,4 +1,4 @@
-#version 400
+#version 330
 
 in vec4 fragmentColor;
 in vec4 vertexWorldPosition;
@@ -31,6 +31,7 @@ uniform float linearAttenuation;
 uniform float quadraticAttenuation;
 
 uniform int lightingType;
+
 
 vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
 {

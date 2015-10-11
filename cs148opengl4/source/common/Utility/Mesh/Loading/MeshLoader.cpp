@@ -16,16 +16,18 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
 #endif
 
     Assimp::Importer importer;
+    importer.SetPropertyInteger(AI_CONFIG_PP_SBP_REMOVE, aiPrimitiveType_LINE | aiPrimitiveType_POINT);
 
     const std::string completeFilename = std::string(STRINGIFY(ASSET_PATH)) + "/" + filename;
+
     const aiScene* scene = importer.ReadFile(completeFilename.c_str(),
             aiProcess_CalcTangentSpace       | 
             aiProcess_Triangulate            |
             aiProcess_JoinIdenticalVertices  |
             aiProcess_FixInfacingNormals |
             aiProcess_SortByPType);
-
     if (!scene) {
+        std::cerr << "ERROR: Assimp failed -- " << importer.GetErrorString() << std::endl;
         return {};
     }
 
@@ -63,7 +65,7 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
         for (decltype(mesh->mNumFaces) f = 0; f < mesh->mNumFaces && indices; ++f) {
             const aiFace& face =  mesh->mFaces[f];
             if (face.mNumIndices != 3) {
-                std::cerr << "WARNING: Input mesh may not be triangulated. Skipping face." << std::endl;
+                std::cerr << "WARNING: Input mesh may not be triangulated. Skipping face with: " << face.mNumIndices << " vertices." << std::endl;
                 continue;
             }
 

@@ -29,6 +29,25 @@ void MediaLayer::InitializeSDL()
         return;
     }
 
+    // Create OpenGL Context with the set attributes. This tells SDL to create an OpenGL context
+    // with the specifies properties.
+    // More information can be found here: https://wiki.libsdl.org/SDL_GL_SetAttribute 
+    // Note that these properties must be set before the window is created.
+    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
+    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE ); 
+    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, OPENGL_MAJOR); // 3 for mike, 4 for nathan
+    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, OPENGL_MINOR); // 3 for mike, 1 for nathan
+
+
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS, 1);
+    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES, 16);
+
     glm::vec2 windowSize(app->GetWindowSize());
     sdlWindow = SDL_CreateWindow("CS148 Fall 2015-2016", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
         windowSize.x, windowSize.y, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE);
@@ -47,20 +66,6 @@ void MediaLayer::InitializeOpenGL()
         std::cerr << "ERROR: Can not initialize OpenGL before setting up SDL." << std::endl;
         return;
     }
-
-    // Create OpenGL Context with the set attributes. This tells SDL to create an OpenGL context
-    // with the specifies properties.
-    // More information can be found here: https://wiki.libsdl.org/SDL_GL_SetAttribute 
-    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
-
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE ); 
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MAJOR_VERSION, OPENGL_MAJOR); // 3 for mike, 4 for nathan
-    SDL_GL_SetAttribute( SDL_GL_CONTEXT_MINOR_VERSION, OPENGL_MINOR); // 3 for mike, 1 for nathan
 
     glContext = SDL_GL_CreateContext(sdlWindow);
     if (glContext == NULL) {

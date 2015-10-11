@@ -35,10 +35,15 @@ std::shared_ptr<RenderingObject> CreateCube(std::shared_ptr<ShaderProgram> input
  *  \param radius The radius of the sphere.
  *  \param refinementSteps The number of times to subdivide the sphere.
  *
- *  Note that the first stpe in this process is to create a icosahedron. Aftewards, we will subdivide it multiple times as determined by
+ *  Note that the first step in this process is to create a icosahedron. Afterwards, we will subdivide it multiple times as determined by
  *  refinementSteps to smooth it out to become an actual sphere.
  */
 std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> inputShader, float radius, int refinementSteps = 0);
+
+/*! \brief Creates a plane with size 1x1.
+ *  \param inputShader The shader to use.
+ */
+std::shared_ptr<RenderingObject> CreatePlane(std::shared_ptr<ShaderProgram> inputShader);
 
 }
 

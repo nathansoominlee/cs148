@@ -22,7 +22,10 @@ public:
      */
     enum class LightType {
         GLOBAL = 0,
-        POINT
+        POINT,
+        DIRECTIONAL,
+        HEMISPHERE,
+        IBL
     };
 
     /*! \brief Constructs a light from user-specified properties and a light type.
@@ -46,12 +49,17 @@ public:
      */
     void GetAttenuation(float& constant, float& linear, float& quadratic) const;
 
+    void SetConstantAttenuation(float inValue);
+    void SetLinearAttenuation(float inValue);
+    void SetQuadraticAttenuation(float inValue);
+
     LightType GetLightType() const { return lightType; }
 
     const struct LightProperties* GetPropertiesRaw() const;
     
     /*! \brief Sets up the shader to have the necessary properties for a given type of light.
      *  \param program The shader to setup.
+     *  \warning Deprecated.
      *
      *  For a point light, the only thing that is necessary is the light's position.
      */ 

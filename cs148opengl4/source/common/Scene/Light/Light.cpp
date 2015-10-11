@@ -29,3 +29,18 @@ void Light::SetupShaderUniforms(const ShaderProgram* program) const
 {
     program->SetShaderUniform(LIGHT_UNIFORM_NAME + ".pointPosition", GetPosition());
 }
+
+void Light::SetConstantAttenuation(float inValue)
+{
+    constantAttenuation = inValue;
+}
+
+void Light::SetLinearAttenuation(float inValue)
+{
+    linearAttenuation = inValue;
+}
+
+void Light::SetQuadraticAttenuation(float inValue)
+{
+    quadraticAttenuation = inValue;
+}

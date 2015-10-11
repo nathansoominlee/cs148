@@ -19,7 +19,7 @@ out vec3 vertexWorldNormal;
 void main()
 {
     vertexWorldPosition =  modelMatrix * vertexPosition;
-    vertexWorldNormal = vec3(transpose(inverse(modelMatrix)) * vec4(vertexNormal, 0));
+    vertexWorldNormal = normalize(vec3(transpose(inverse(modelMatrix)) * vec4(vertexNormal, 0)));
     gl_Position = projectionMatrix * viewMatrix * vertexWorldPosition;
     fragmentColor = vertexColor;
 }

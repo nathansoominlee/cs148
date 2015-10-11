@@ -128,8 +128,8 @@ void BlinnPhongShader::SetupShaderMaterials() const
     diffuseTexture->BeginRender(static_cast<int>(TextureSlots::DIFFUSE));
 
     const Texture* specularTexture = defaultTexture.get();
-    if (textureSlotMapping.find(TextureSlots::DIFFUSE) != textureSlotMapping.end()) {
-        specularTexture = textureSlotMapping.at(TextureSlots::DIFFUSE).get();
+    if (textureSlotMapping.find(TextureSlots::SPECULAR) != textureSlotMapping.end()) {
+        specularTexture = textureSlotMapping.at(TextureSlots::SPECULAR).get();
     }
     assert(specularTexture);
     specularTexture->BeginRender(static_cast<int>(TextureSlots::SPECULAR));
