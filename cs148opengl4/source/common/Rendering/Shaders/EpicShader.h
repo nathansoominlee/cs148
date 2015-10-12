@@ -42,29 +42,9 @@ public:
      */
     virtual void SetupShaderCamera(const class Camera* camera) const;
 
-    /*! \brief Sets the diffuse color of the material.
-     *  \param inDiffuse The desired diffuse color.
-     *
-     *  Immediately calls UpdateMaterialBlock() to store the new data into the OpenGL buffer.
-     */
-    virtual void SetDiffuse(glm::vec4 inDiffuse);
-
-    /*! \brief Sets the specular color of the material.
-     *  \param inSpecular The desired specular color.
-     *  \param inShininess The desired shininess. 
-     *
-     *  Immediately calls UpdateMaterialBlock() to store the new data into the OpenGL buffer. For more information
-     *  about the shininess parameters, refer to the Wikipedia page on the <a href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a>.
-     */
-    virtual void SetSpecular(glm::vec4 inSpecular, float inShininess);
-
-    /*! \brief Sets the ambient color of the material.
-     *  \param inAmbient The desired ambient color.
-     *
-     *  Immediately calls UpdateMaterialBlock() to store the new data into the OpenGL buffer.
-     */
-    virtual void SetAmbient(glm::vec4 inAmbient);
-
+    virtual void SetMetallic(float inMetallic);
+    virtual void SetRoughness(float inRoughness);
+    virtual void SetSpecular(float inSpecular);
 
     /*! \brief Corresponds to the texture unit that we want to bind the texture to.
      *
@@ -90,18 +70,23 @@ public:
 protected:
     // Material Parameters
     virtual void UpdateMaterialBlock() const;
+    float metallic;
+    float roughness;
+    float specular;
+    /*
     glm::vec4 diffuse;
     glm::vec4 specular;
     float shininess;
     glm::vec4 ambient;
+    */
 
     // Material Bindings into the Shader
-    static std::array<const char*, 4> MATERIAL_PROPERTY_NAMES;
+    static std::array<const char*, 3> MATERIAL_PROPERTY_NAMES;
     static const int MATERIAL_BINDING_POINT;
     GLuint materialBlockLocation;
     GLint materialBlockSize;
-    std::array<GLuint, 4> materialIndices;
-    std::array<GLint, 4> materialOffsets;
+    std::array<GLuint, 3> materialIndices;
+    std::array<GLint, 3> materialOffsets;
     GLuint materialBuffer;
     std::vector<GLubyte> materialStorage;
 

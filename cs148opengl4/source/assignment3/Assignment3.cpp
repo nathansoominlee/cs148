@@ -157,15 +157,18 @@ void Assignment3::SetupEpic()
     };
 
     std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
-    shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
-
+    shader->SetMetallic(0.5f);
+    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    //shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
+    
     std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    shader->SetMetallic(0.5f);
+    //shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
 
     std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
-    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
-    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    //lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    //lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));
     pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));

@@ -6,8 +6,7 @@
 #include "common/Scene/Light/LightProperties.h"
 
 struct EpicLightProperties: public LightProperties {
-    glm::vec4 diffuseColor;
-    glm::vec4 specularColor;
+    glm::vec4 color;
 };
 
 #endif
