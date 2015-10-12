@@ -1,0 +1,603 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"diren",
+				"direntv6	struct"
+			],
+			[
+				"path",
+				"pathname	const char *"
+			],
+			[
+				"disk",
+				"diskNum	int"
+			],
+			[
+				"get",
+				"getFileNumber(struct unixfilesystem *fs, int dirinumber)	int"
+			],
+			[
+				"name",
+				"namebuf	char[]"
+			],
+			[
+				"dis",
+				"diskNum	int"
+			],
+			[
+				"inode",
+				"inode_iget(struct unixfilesystem *fs, int inumber, struct inode *inp)	int"
+			],
+			[
+				"fo",
+				"foundName	char[]"
+			],
+			[
+				"di",
+				"dirinumber	int"
+			],
+			[
+				"getFileN",
+				"getFileName(struct unixfilesystem *fs, int dirinumber, char *strbuf)	int"
+			],
+			[
+				"n",
+				"nBlocks	int"
+			],
+			[
+				"str",
+				"strbuf	char *"
+			],
+			[
+				"ino",
+				"inobuf	struct inode[]"
+			],
+			[
+				"dir",
+				"direntv6	struct"
+			],
+			[
+				"diri",
+				"dirinode	struct inode"
+			],
+			[
+				"IF",
+				"IFDIR	macro"
+			],
+			[
+				"dire",
+				"directory_findname(struct unixfilesystem *fs, const char *name, int dirinumber, struct direntv6 *dirEnt)	int"
+			],
+			[
+				"indr",
+				"indir_indexlookup(int sectorNum, int index)	int"
+			],
+			[
+				"file",
+				"fileSize	int"
+			],
+			[
+				"i",
+				"inumber	int"
+			],
+			[
+				"in",
+				"inumber	int"
+			],
+			[
+				"d",
+				"dfd	int"
+			],
+			[
+				"f",
+				"fprintf	fprintf …"
+			],
+			[
+				"han",
+				"handle_smallfile()	int"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/shaders/brdf/epicshader/frag/noSubroutine/epicshader.frag",
+			"settings":
+			{
+				"buffer_size": 5317,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"selected_items":
+		[
+			[
+				"shader",
+				"Set Syntax: CG Shader"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"clang",
+				"Preferences: SublimeClang Settings – Default"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/nathanlee/Library/Application Support/Sublime Text 2/Packages/User/SublimeClang.sublime-settings",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment2/Assignment2.h",
+		"/Users/nathanlee/Library/Application Support/Sublime Text 2/Packages/SublimeClang/SublimeClang.sublime-settings",
+		"/Users/nathanlee/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.h",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.h",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/common/common.h",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment1/Assignment1.h",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment1/Assignment1.cpp",
+		"/Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment2/Assignment2.cpp",
+		"/Users/nathanlee/workspace/cs148/README.md",
+		"/Users/nathanlee/workspace/math51/texnotes.tex",
+		"/Users/nathanlee/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/nathanlee/Library/Application Support/Sublime Text 2/Packages/User/Distraction Free.sublime-settings",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/pathname.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/diskimg.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/testdisks/basicDiskImage.gold",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/chksumfile.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/direntv6.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/file.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/filsys.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/ino.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/inode.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/unixfilesystem.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/chksumfile.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/diskimageaccess.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/diskimg.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/file.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/inode.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/pathname.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/unixfilesystem.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/file.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/diskimg.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/diskimageaccess.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/directory.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/chksumfile.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/inode.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/pathname.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assignment1/unixfilesystem.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/.bash_profile",
+		"/Users/nathanlee/.bash_profile",
+		"/Users/nathanlee/workspace/cs110/assignment1/file.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/inode.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/directory.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/direntv6.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/pathname.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/inode.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/directory.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/pathname.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/.hg/.hgrc",
+		"/Users/nathanlee/workspace/cs110/assignment1/diskimageaccess.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/testdisks/basicDiskImage.gold",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/.hgrc",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/.hgrc",
+		"/Users/nathanlee/workspace/cs110/assignment1/testdisks",
+		"/Users/nathanlee/workspace/cs110/assignment1/ino.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/unixfilesystem.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/diskimg.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/file.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/chksumfile.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/diskimg.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/unixfilesystem.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/chksumfile.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/debug.c",
+		"/Users/nathanlee/workspace/cs110/assignment1/debug.h",
+		"/Users/nathanlee/workspace/cs110/assignment1/filsys.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/unixfilesystem.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/pathname.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/inode.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/ino.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/filsys.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/file.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/diskimg.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/direntv6.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/directory.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/chksumfile.h",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/chksumfile.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/directory.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/diskimageaccess.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/diskimg.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/file.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/inode.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/pathname.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs110/assignment1/unixfilesystem.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/chksumfile.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/directory.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/direntv6.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/diskimg.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/file.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/filsys.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/ino.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/inode.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/pathname.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/unixfilesystem.h",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/chksumfile.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/directory.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/diskimageaccess.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/diskimg.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/file.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/inode.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/pathname.c",
+		"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/cs110/unixfilesystem.c",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs148/temp/cs148opengl4/source/CMakeLists.txt",
+		"/Users/nathanlee/Google Drive/Stanford/Courses/cs148/cs148opengl4/source/main.cpp"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"clang",
+			"#",
+			"scroll",
+			"section",
+			"directory_find",
+			"pathname_loo",
+			"pathname_lookup",
+			"dumppath",
+			"path",
+			"chksum",
+			"262",
+			"off_t",
+			"diskimg_read",
+			"file_get",
+			"chksumfile_byinumber",
+			"can't",
+			"file_getblock",
+			"pathname",
+			"pathname_lookup",
+			"directory_find",
+			"lookup",
+			"chksumfile_cvt2string",
+			"checksumfile",
+			"file_get",
+			"%",
+			"IALLOC",
+			"file_getblock",
+			"inode_indexlookup",
+			"7",
+			"IFMT",
+			"can'r",
+			"checksum",
+			"9721",
+			"chksumfile_by",
+			"can't compute",
+			"inode_in",
+			");\n",
+			"file_get",
+			"stack smashing",
+			"diskimg_read",
+			"pathname",
+			"pathname_look",
+			"directory_findname",
+			"findname",
+			"dumppath",
+			"dump",
+			"dumpinodechecksum",
+			"inode_i",
+			"inode_iget",
+			"inode_index",
+			"At inumber",
+			"At sector",
+			"s_issize",
+			"super",
+			"chksumfile",
+			"at inumber",
+			"block",
+			"chksumfile_by",
+			"chk",
+			"debug",
+			"inode_iget",
+			"s_issize",
+			"inode_iget",
+			"Inode %d",
+			"file_get",
+			"dump",
+			"can't",
+			"compute chks",
+			"close",
+			"window"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/shaders/brdf/epicshader/frag/noSubroutine/epicshader.frag",
+					"settings":
+					{
+						"buffer_size": 5317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								637,
+								637
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShaderLanguages/CG Shader.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 401.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.933307267895,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.clang":
+	{
+		"height": 71.0
+	},
+	"output.git":
+	{
+		"height": 100.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"dir",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.h"
+			],
+			[
+				"path",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/pathname.h"
+			],
+			[
+				"pat",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/pathname.h"
+			],
+			[
+				"di",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.h"
+			],
+			[
+				"dire",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.h"
+			],
+			[
+				"gold",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/testdisks/basicDiskImage.gold"
+			],
+			[
+				"unix",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/unixfilesystem.h"
+			],
+			[
+				"pa",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/pathname.c"
+			],
+			[
+				"",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.c"
+			],
+			[
+				"inod",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/inode.h"
+			],
+			[
+				"direc",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/directory.h"
+			],
+			[
+				"diren",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/direntv6.h"
+			],
+			[
+				"file",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/filsys.h"
+			],
+			[
+				"disk",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/diskimg.h"
+			],
+			[
+				"fisk",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/diskimg.c"
+			],
+			[
+				"file.",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/file.c"
+			],
+			[
+				"ch",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/chksumfile.c"
+			],
+			[
+				"uni",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/unixfilesystem.h"
+			],
+			[
+				"ino",
+				"/private/var/folders/nr/hs4r3nd95512jhv8_9gf10g80000gn/T/236d5c74-cf9a-4fb3-925c-4f3b4d1088a3/afs/.ir.stanford.edu/users/l/e/leeso/assign1/inode.h"
+			],
+			[
+				"chk",
+				"chksumfile.c"
+			],
+			[
+				"fil",
+				"file.c"
+			],
+			[
+				"diskimg",
+				"diskimg.c"
+			],
+			[
+				"pta",
+				"pathname.h"
+			],
+			[
+				"dis",
+				"diskimageaccess.c"
+			],
+			[
+				"diskim",
+				"diskimg.c"
+			],
+			[
+				"ck",
+				"chksumfile.c"
+			],
+			[
+				"unx",
+				"unixfilesystem.c"
+			],
+			[
+				"in",
+				"inode.h"
+			],
+			[
+				"inode",
+				"/Users/nathanlee/workspace/cs110/assignment1/inode.c"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 202.0,
+	"status_bar_visible": true
+}

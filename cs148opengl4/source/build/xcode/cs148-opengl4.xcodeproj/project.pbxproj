@@ -34,84 +34,26 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		045A4D7536854A0BA79E4B52 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.cpp */ = {isa = PBXBuildFile; fileRef = E32CFABDE9804E619B40679F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		14F01D193A3643A68F6A1484 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.cpp */ = {isa = PBXBuildFile; fileRef = 0CE01373533949468F881155 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		1A6CD9A03854427F861646F2 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.h */ = {isa = PBXBuildFile; fileRef = D8AE1481C8134F3FB59A5ACA /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.h */; settings = {COMPILER_FLAGS = ""; }; };
-		1AF0BEEF488248CC86AB298D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h */ = {isa = PBXBuildFile; fileRef = E413B95ED3934B4AB0D3869F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h */; settings = {COMPILER_FLAGS = ""; }; };
-		232A5C725AEA46D4956C15F5 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/core.h */ = {isa = PBXBuildFile; fileRef = F2838C92EEE546EEA526A3E2 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/core.h */; settings = {COMPILER_FLAGS = ""; }; };
-		280FC49B9A694B42BBE16C5A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.cpp */ = {isa = PBXBuildFile; fileRef = 3E72617815BB471A9CB1AA35 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		2C0D26CD861E4BECA9AC529C /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.h */ = {isa = PBXBuildFile; fileRef = C37938DB2EE7470FAB56615C /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.h */; settings = {COMPILER_FLAGS = ""; }; };
-		371AAE08FE7440CEAE70EA8A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.h */ = {isa = PBXBuildFile; fileRef = FE69FE8F9F9B4A69A9269558 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.h */; settings = {COMPILER_FLAGS = ""; }; };
-		3A2E6A6AFFA84F4691E83C24 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.cpp */ = {isa = PBXBuildFile; fileRef = 1E3D249EEA0346288957A8B1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		3A9F32A56FFE40DD8E753975 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/common.h */ = {isa = PBXBuildFile; fileRef = 7890B6EE72284B5899FE9ED9 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/common.h */; settings = {COMPILER_FLAGS = ""; }; };
-		3BCD212C7CC649E9A3E92045 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.h */ = {isa = PBXBuildFile; fileRef = D19B579430EA4B81BA8912C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.h */; settings = {COMPILER_FLAGS = ""; }; };
-		43058A42503C44808C92559E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.h */ = {isa = PBXBuildFile; fileRef = 2C47C168D94645F5A7B9B098 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.h */; settings = {COMPILER_FLAGS = ""; }; };
-		493F274A9D2D49C0A6F0BAE1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.cpp */ = {isa = PBXBuildFile; fileRef = 292D31595F774F5190B266C7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		4CBD9177A5E04227A96B3A16 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.cpp */ = {isa = PBXBuildFile; fileRef = FA3E740E08284EF7A0CA3688 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		4D4EC792E23747ACBB449561 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.cpp */ = {isa = PBXBuildFile; fileRef = 6CD5E7640FBF4E1781A60190 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		4F306CA84B594DCD9A893529 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp */ = {isa = PBXBuildFile; fileRef = BCE7DA52D6924F6795A7640F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		56F561BFC19F4F7DAC25300B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.h */ = {isa = PBXBuildFile; fileRef = 018A7D69D47B41B3B2F4006D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.h */; settings = {COMPILER_FLAGS = ""; }; };
-		641C32A05EDF4883A1051E68 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.h */ = {isa = PBXBuildFile; fileRef = EDFC763C9F5A4F719ED4A19D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.h */; settings = {COMPILER_FLAGS = ""; }; };
-		6ED589F6F23340FAAB2CD1A4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.h */ = {isa = PBXBuildFile; fileRef = FD359747DABF47C18BC482F5 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.h */; settings = {COMPILER_FLAGS = ""; }; };
-		7D66FA7E54C14C64B811EE74 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.h */ = {isa = PBXBuildFile; fileRef = CB4446F964554395A9912E04 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.h */; settings = {COMPILER_FLAGS = ""; }; };
-		8664D690797241F185B215E3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.cpp */ = {isa = PBXBuildFile; fileRef = 11B9609F32F547FA9A1F1A9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		976D6762BB9D47CE8840F1CF /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h */ = {isa = PBXBuildFile; fileRef = 61FF9BAD41034F8C81EE6EE4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h */; settings = {COMPILER_FLAGS = ""; }; };
-		9A099668F3B74A5991D2D0F6 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = AE8D3B17D59F4DD0868CC4F6 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */; settings = {COMPILER_FLAGS = ""; }; };
-		9A0AAFE2F9DE48BE871FFBF1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.h */ = {isa = PBXBuildFile; fileRef = 0F22C9815B0B4D788DFA44CB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.h */; settings = {COMPILER_FLAGS = ""; }; };
-		9E397F1F04504E2F8C067F60 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.cpp */ = {isa = PBXBuildFile; fileRef = B0CB0F8329FD4954B24DFFD4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		A5E92780DE534FC58345F4EB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.h */ = {isa = PBXBuildFile; fileRef = CDD5D12718054E8AB9565B3E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.h */; settings = {COMPILER_FLAGS = ""; }; };
-		A60BFBE859F14A83857F6B4B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.cpp */ = {isa = PBXBuildFile; fileRef = C4AA3E74CEBE46E38CCFB1DE /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		A6B91529010B4CA7A3198615 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.h */ = {isa = PBXBuildFile; fileRef = 77B9C9526F0E47A68B1D7CD7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.h */; settings = {COMPILER_FLAGS = ""; }; };
-		AAB1B0FB5C944B3D913B5B04 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.cpp */ = {isa = PBXBuildFile; fileRef = 82B830E4D7804FE4B8B15806 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		BB2AF7F48A72440288592253 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.h */ = {isa = PBXBuildFile; fileRef = 7325EA63FBFA4C51B08054C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.h */; settings = {COMPILER_FLAGS = ""; }; };
-		BE21896008B34CDEBDC035EB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.h */ = {isa = PBXBuildFile; fileRef = 4B05B5D4596B42CEAE42915B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.h */; settings = {COMPILER_FLAGS = ""; }; };
-		BEEB0AAA99B14BC8849E412A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.h */ = {isa = PBXBuildFile; fileRef = B6A1E28CB12D4DEB8BC23E9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.h */; settings = {COMPILER_FLAGS = ""; }; };
-		C73DF004DB08410C97263496 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.cpp */ = {isa = PBXBuildFile; fileRef = AAAD7EE12D9A40C9A046C6AB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		C9BFB4932E2A4C18A4FE3F7B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/main.cpp */ = {isa = PBXBuildFile; fileRef = EAE54E0542664406B9B44888 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		DB6A044B17064F9580CAA357 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.cpp */ = {isa = PBXBuildFile; fileRef = 2AA989F297E040F98711346B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		DBEBFDDB9B9B4514A1C0CA17 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp */ = {isa = PBXBuildFile; fileRef = 0D6940833BCF4EFBA0042C86 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		DCB3695549C6476FA271A40F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.cpp */ = {isa = PBXBuildFile; fileRef = D3484F5D715D4383AB598AD3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		DEB7810BD11F40F68CC696C2 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.h */ = {isa = PBXBuildFile; fileRef = F84FC796002943588FF31980 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.h */; settings = {COMPILER_FLAGS = ""; }; };
-		F42C8D6089ED4E268F5EA3BC /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/LightProperties.h */ = {isa = PBXBuildFile; fileRef = F45B801B13754387A436934A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/LightProperties.h */; settings = {COMPILER_FLAGS = ""; }; };
-		F702CF7B44974B268267EC08 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/EpicShader/EpicLightProperties.h */ = {isa = PBXBuildFile; fileRef = AFC3F76F194343FB87DBFCBC /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/EpicShader/EpicLightProperties.h */; settings = {COMPILER_FLAGS = ""; }; };
-		F80790B5A5B843748E96CBEB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp */ = {isa = PBXBuildFile; fileRef = 0025D3F8FC0F4A9F943E15E0 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		FCD44A660BDD4E47843F222C /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.h */ = {isa = PBXBuildFile; fileRef = 99319D1D55BA44FCA7414598 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.h */; settings = {COMPILER_FLAGS = ""; }; };
-		FFEB7CD29701490887722772 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.cpp */ = {isa = PBXBuildFile; fileRef = EB45278733174BE98B2BD408 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		045A4D7536854A0BA79E4B52 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E32CFABDE9804E619B40679F /* Texture.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		14F01D193A3643A68F6A1484 /* PrimitiveCreator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0CE01373533949468F881155 /* PrimitiveCreator.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		280FC49B9A694B42BBE16C5A /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E72617815BB471A9CB1AA35 /* Renderer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		3A2E6A6AFFA84F4691E83C24 /* Application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D249EEA0346288957A8B1 /* Application.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		493F274A9D2D49C0A6F0BAE1 /* ForwardRenderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 292D31595F774F5190B266C7 /* ForwardRenderer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		4CBD9177A5E04227A96B3A16 /* PerspectiveCamera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FA3E740E08284EF7A0CA3688 /* PerspectiveCamera.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		4D4EC792E23747ACBB449561 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6CD5E7640FBF4E1781A60190 /* Camera.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		4F306CA84B594DCD9A893529 /* MeshLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BCE7DA52D6924F6795A7640F /* MeshLoader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		8664D690797241F185B215E3 /* BlinnPhongShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B9609F32F547FA9A1F1A9F /* BlinnPhongShader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		9E397F1F04504E2F8C067F60 /* ShaderProgram.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0CB0F8329FD4954B24DFFD4 /* ShaderProgram.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		A60BFBE859F14A83857F6B4B /* MediaLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C4AA3E74CEBE46E38CCFB1DE /* MediaLayer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		AAB1B0FB5C944B3D913B5B04 /* RenderingObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 82B830E4D7804FE4B8B15806 /* RenderingObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C73DF004DB08410C97263496 /* EpicShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AAAD7EE12D9A40C9A046C6AB /* EpicShader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C9BFB4932E2A4C18A4FE3F7B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE54E0542664406B9B44888 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		DB6A044B17064F9580CAA357 /* SceneObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2AA989F297E040F98711346B /* SceneObject.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		DBEBFDDB9B9B4514A1C0CA17 /* TextureLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0D6940833BCF4EFBA0042C86 /* TextureLoader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		DCB3695549C6476FA271A40F /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D3484F5D715D4383AB598AD3 /* Light.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		F80790B5A5B843748E96CBEB /* Assignment3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0025D3F8FC0F4A9F943E15E0 /* Assignment3.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		FFEB7CD29701490887722772 /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB45278733174BE98B2BD408 /* Scene.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXBuildStyle section */
-		031E4B2995824B9189A2DB91 = {
-			isa = PBXBuildStyle;
-		};
-		5112194DC32E45BD99D84F33 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		6AEA359DF3CC49419ADB3E8F /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		C0040718950A4F988BEA580E /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		C65EC6B3596F4661BE4679F2 /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-/* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
 		5C490818E9B448C198251881 /* PBXContainerItemProxy */ = {
@@ -138,60 +80,61 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0025D3F8FC0F4A9F943E15E0 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Assignment3.cpp; path = assignment3/Assignment3.cpp; sourceTree = SOURCE_ROOT; };
-		018A7D69D47B41B3B2F4006D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderingObject.h; path = common/Rendering/RenderingObject.h; sourceTree = SOURCE_ROOT; };
-		0CE01373533949468F881155 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PrimitiveCreator.cpp; path = common/Utility/Mesh/Simple/PrimitiveCreator.cpp; sourceTree = SOURCE_ROOT; };
-		0D6940833BCF4EFBA0042C86 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureLoader.cpp; path = common/Utility/Texture/TextureLoader.cpp; sourceTree = SOURCE_ROOT; };
-		0F22C9815B0B4D788DFA44CB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BlinnPhongShader.h; path = common/Rendering/Shaders/BlinnPhongShader.h; sourceTree = SOURCE_ROOT; };
-		11B9609F32F547FA9A1F1A9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BlinnPhongShader.cpp; path = common/Rendering/Shaders/BlinnPhongShader.cpp; sourceTree = SOURCE_ROOT; };
-		1E3D249EEA0346288957A8B1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Application.cpp; path = common/Application.cpp; sourceTree = SOURCE_ROOT; };
-		292D31595F774F5190B266C7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ForwardRenderer.cpp; path = common/Rendering/ForwardRenderer.cpp; sourceTree = SOURCE_ROOT; };
-		2AA989F297E040F98711346B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SceneObject.cpp; path = common/Scene/SceneObject.cpp; sourceTree = SOURCE_ROOT; };
-		2C47C168D94645F5A7B9B098 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = common/Scene/Scene.h; sourceTree = SOURCE_ROOT; };
-		3E72617815BB471A9CB1AA35 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Renderer.cpp; path = common/Rendering/Renderer.cpp; sourceTree = SOURCE_ROOT; };
-		4B05B5D4596B42CEAE42915B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = common/Scene/Camera/Camera.h; sourceTree = SOURCE_ROOT; };
-		61FF9BAD41034F8C81EE6EE4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BlinnPhongLightProperties.h; path = common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h; sourceTree = SOURCE_ROOT; };
-		625EF7410060438AB66A76C8 /* cs148opengl4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = cs148opengl4; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
-		6CD5E7640FBF4E1781A60190 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = common/Scene/Camera/Camera.cpp; sourceTree = SOURCE_ROOT; };
-		7325EA63FBFA4C51B08054C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ShaderProgram.h; path = common/Rendering/Shaders/ShaderProgram.h; sourceTree = SOURCE_ROOT; };
-		77B9C9526F0E47A68B1D7CD7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Renderer.h; path = common/Rendering/Renderer.h; sourceTree = SOURCE_ROOT; };
-		7890B6EE72284B5899FE9ED9 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = common.h; path = common/common.h; sourceTree = SOURCE_ROOT; };
-		82B830E4D7804FE4B8B15806 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RenderingObject.cpp; path = common/Rendering/RenderingObject.cpp; sourceTree = SOURCE_ROOT; };
-		921669EC8FBE4645ABA2B12E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		99319D1D55BA44FCA7414598 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Texture.h; path = common/Rendering/Textures/Texture.h; sourceTree = SOURCE_ROOT; };
-		AAAD7EE12D9A40C9A046C6AB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EpicShader.cpp; path = common/Rendering/Shaders/EpicShader.cpp; sourceTree = SOURCE_ROOT; };
-		AE8D3B17D59F4DD0868CC4F6 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		AFC3F76F194343FB87DBFCBC /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/EpicShader/EpicLightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EpicLightProperties.h; path = common/Scene/Light/Properties/EpicShader/EpicLightProperties.h; sourceTree = SOURCE_ROOT; };
-		B0CB0F8329FD4954B24DFFD4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ShaderProgram.cpp; path = common/Rendering/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
-		B6A1E28CB12D4DEB8BC23E9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Assignment3.h; path = assignment3/Assignment3.h; sourceTree = SOURCE_ROOT; };
-		BCE7DA52D6924F6795A7640F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MeshLoader.cpp; path = common/Utility/Mesh/Loading/MeshLoader.cpp; sourceTree = SOURCE_ROOT; };
-		C37938DB2EE7470FAB56615C /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EpicShader.h; path = common/Rendering/Shaders/EpicShader.h; sourceTree = SOURCE_ROOT; };
-		C4AA3E74CEBE46E38CCFB1DE /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MediaLayer.cpp; path = common/MediaLayer.cpp; sourceTree = SOURCE_ROOT; };
-		CB4446F964554395A9912E04 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Application.h; path = common/Application.h; sourceTree = SOURCE_ROOT; };
-		CDD5D12718054E8AB9565B3E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PrimitiveCreator.h; path = common/Utility/Mesh/Simple/PrimitiveCreator.h; sourceTree = SOURCE_ROOT; };
-		D19B579430EA4B81BA8912C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MediaLayer.h; path = common/MediaLayer.h; sourceTree = SOURCE_ROOT; };
-		D3484F5D715D4383AB598AD3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Light.cpp; path = common/Scene/Light/Light.cpp; sourceTree = SOURCE_ROOT; };
-		D7861EB90922474CA97760F0 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		D8AE1481C8134F3FB59A5ACA /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TextureLoader.h; path = common/Utility/Texture/TextureLoader.h; sourceTree = SOURCE_ROOT; };
-		E32CFABDE9804E619B40679F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Texture.cpp; path = common/Rendering/Textures/Texture.cpp; sourceTree = SOURCE_ROOT; };
-		E413B95ED3934B4AB0D3869F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ForwardRenderer.h; path = common/Rendering/ForwardRenderer.h; sourceTree = SOURCE_ROOT; };
-		EAE54E0542664406B9B44888 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = main.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		EB45278733174BE98B2BD408 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = common/Scene/Scene.cpp; sourceTree = SOURCE_ROOT; };
-		EDFC763C9F5A4F719ED4A19D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Light.h; path = common/Scene/Light/Light.h; sourceTree = SOURCE_ROOT; };
-		F2838C92EEE546EEA526A3E2 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = core.h; path = common/core.h; sourceTree = SOURCE_ROOT; };
-		F45B801B13754387A436934A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/LightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LightProperties.h; path = common/Scene/Light/LightProperties.h; sourceTree = SOURCE_ROOT; };
-		F84FC796002943588FF31980 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SceneObject.h; path = common/Scene/SceneObject.h; sourceTree = SOURCE_ROOT; };
-		FA3E740E08284EF7A0CA3688 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PerspectiveCamera.cpp; path = common/Scene/Camera/PerspectiveCamera.cpp; sourceTree = SOURCE_ROOT; };
-		FD359747DABF47C18BC482F5 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MeshLoader.h; path = common/Utility/Mesh/Loading/MeshLoader.h; sourceTree = SOURCE_ROOT; };
-		FE69FE8F9F9B4A69A9269558 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PerspectiveCamera.h; path = common/Scene/Camera/PerspectiveCamera.h; sourceTree = SOURCE_ROOT; };
+		0025D3F8FC0F4A9F943E15E0 /* Assignment3.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Assignment3.cpp; path = assignment3/Assignment3.cpp; sourceTree = SOURCE_ROOT; };
+		018A7D69D47B41B3B2F4006D /* RenderingObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = RenderingObject.h; path = common/Rendering/RenderingObject.h; sourceTree = SOURCE_ROOT; };
+		0CE01373533949468F881155 /* PrimitiveCreator.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PrimitiveCreator.cpp; path = common/Utility/Mesh/Simple/PrimitiveCreator.cpp; sourceTree = SOURCE_ROOT; };
+		0D6940833BCF4EFBA0042C86 /* TextureLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = TextureLoader.cpp; path = common/Utility/Texture/TextureLoader.cpp; sourceTree = SOURCE_ROOT; };
+		0F22C9815B0B4D788DFA44CB /* BlinnPhongShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BlinnPhongShader.h; path = common/Rendering/Shaders/BlinnPhongShader.h; sourceTree = SOURCE_ROOT; };
+		11B9609F32F547FA9A1F1A9F /* BlinnPhongShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = BlinnPhongShader.cpp; path = common/Rendering/Shaders/BlinnPhongShader.cpp; sourceTree = SOURCE_ROOT; };
+		1E3D249EEA0346288957A8B1 /* Application.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Application.cpp; path = common/Application.cpp; sourceTree = SOURCE_ROOT; };
+		292D31595F774F5190B266C7 /* ForwardRenderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ForwardRenderer.cpp; path = common/Rendering/ForwardRenderer.cpp; sourceTree = SOURCE_ROOT; };
+		2AA989F297E040F98711346B /* SceneObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = SceneObject.cpp; path = common/Scene/SceneObject.cpp; sourceTree = SOURCE_ROOT; };
+		2C47C168D94645F5A7B9B098 /* Scene.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Scene.h; path = common/Scene/Scene.h; sourceTree = SOURCE_ROOT; };
+		3E697F141BCC4EA60069174C /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
+		3E72617815BB471A9CB1AA35 /* Renderer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Renderer.cpp; path = common/Rendering/Renderer.cpp; sourceTree = SOURCE_ROOT; };
+		4B05B5D4596B42CEAE42915B /* Camera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Camera.h; path = common/Scene/Camera/Camera.h; sourceTree = SOURCE_ROOT; };
+		61FF9BAD41034F8C81EE6EE4 /* BlinnPhongLightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = BlinnPhongLightProperties.h; path = common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h; sourceTree = SOURCE_ROOT; };
+		625EF7410060438AB66A76C8 /* cs148opengl4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = cs148opengl4; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD5E7640FBF4E1781A60190 /* Camera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Camera.cpp; path = common/Scene/Camera/Camera.cpp; sourceTree = SOURCE_ROOT; };
+		7325EA63FBFA4C51B08054C3 /* ShaderProgram.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ShaderProgram.h; path = common/Rendering/Shaders/ShaderProgram.h; sourceTree = SOURCE_ROOT; };
+		77B9C9526F0E47A68B1D7CD7 /* Renderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Renderer.h; path = common/Rendering/Renderer.h; sourceTree = SOURCE_ROOT; };
+		7890B6EE72284B5899FE9ED9 /* common.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = common.h; path = common/common.h; sourceTree = SOURCE_ROOT; };
+		82B830E4D7804FE4B8B15806 /* RenderingObject.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = RenderingObject.cpp; path = common/Rendering/RenderingObject.cpp; sourceTree = SOURCE_ROOT; };
+		921669EC8FBE4645ABA2B12E /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		99319D1D55BA44FCA7414598 /* Texture.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Texture.h; path = common/Rendering/Textures/Texture.h; sourceTree = SOURCE_ROOT; };
+		AAAD7EE12D9A40C9A046C6AB /* EpicShader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = EpicShader.cpp; path = common/Rendering/Shaders/EpicShader.cpp; sourceTree = SOURCE_ROOT; };
+		AE8D3B17D59F4DD0868CC4F6 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		AFC3F76F194343FB87DBFCBC /* EpicLightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EpicLightProperties.h; path = common/Scene/Light/Properties/EpicShader/EpicLightProperties.h; sourceTree = SOURCE_ROOT; };
+		B0CB0F8329FD4954B24DFFD4 /* ShaderProgram.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = ShaderProgram.cpp; path = common/Rendering/Shaders/ShaderProgram.cpp; sourceTree = SOURCE_ROOT; };
+		B6A1E28CB12D4DEB8BC23E9F /* Assignment3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Assignment3.h; path = assignment3/Assignment3.h; sourceTree = SOURCE_ROOT; };
+		BCE7DA52D6924F6795A7640F /* MeshLoader.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MeshLoader.cpp; path = common/Utility/Mesh/Loading/MeshLoader.cpp; sourceTree = SOURCE_ROOT; };
+		C37938DB2EE7470FAB56615C /* EpicShader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = EpicShader.h; path = common/Rendering/Shaders/EpicShader.h; sourceTree = SOURCE_ROOT; };
+		C4AA3E74CEBE46E38CCFB1DE /* MediaLayer.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = MediaLayer.cpp; path = common/MediaLayer.cpp; sourceTree = SOURCE_ROOT; };
+		CB4446F964554395A9912E04 /* Application.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Application.h; path = common/Application.h; sourceTree = SOURCE_ROOT; };
+		CDD5D12718054E8AB9565B3E /* PrimitiveCreator.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PrimitiveCreator.h; path = common/Utility/Mesh/Simple/PrimitiveCreator.h; sourceTree = SOURCE_ROOT; };
+		D19B579430EA4B81BA8912C3 /* MediaLayer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MediaLayer.h; path = common/MediaLayer.h; sourceTree = SOURCE_ROOT; };
+		D3484F5D715D4383AB598AD3 /* Light.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Light.cpp; path = common/Scene/Light/Light.cpp; sourceTree = SOURCE_ROOT; };
+		D7861EB90922474CA97760F0 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		D8AE1481C8134F3FB59A5ACA /* TextureLoader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = TextureLoader.h; path = common/Utility/Texture/TextureLoader.h; sourceTree = SOURCE_ROOT; };
+		E32CFABDE9804E619B40679F /* Texture.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Texture.cpp; path = common/Rendering/Textures/Texture.cpp; sourceTree = SOURCE_ROOT; };
+		E413B95ED3934B4AB0D3869F /* ForwardRenderer.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = ForwardRenderer.h; path = common/Rendering/ForwardRenderer.h; sourceTree = SOURCE_ROOT; };
+		EAE54E0542664406B9B44888 /* main.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		EB45278733174BE98B2BD408 /* Scene.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = Scene.cpp; path = common/Scene/Scene.cpp; sourceTree = SOURCE_ROOT; };
+		EDFC763C9F5A4F719ED4A19D /* Light.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = Light.h; path = common/Scene/Light/Light.h; sourceTree = SOURCE_ROOT; };
+		F2838C92EEE546EEA526A3E2 /* core.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = core.h; path = common/core.h; sourceTree = SOURCE_ROOT; };
+		F45B801B13754387A436934A /* LightProperties.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = LightProperties.h; path = common/Scene/Light/LightProperties.h; sourceTree = SOURCE_ROOT; };
+		F84FC796002943588FF31980 /* SceneObject.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = SceneObject.h; path = common/Scene/SceneObject.h; sourceTree = SOURCE_ROOT; };
+		FA3E740E08284EF7A0CA3688 /* PerspectiveCamera.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = PerspectiveCamera.cpp; path = common/Scene/Camera/PerspectiveCamera.cpp; sourceTree = SOURCE_ROOT; };
+		FD359747DABF47C18BC482F5 /* MeshLoader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = MeshLoader.h; path = common/Utility/Mesh/Loading/MeshLoader.h; sourceTree = SOURCE_ROOT; };
+		FE69FE8F9F9B4A69A9269558 /* PerspectiveCamera.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = PerspectiveCamera.h; path = common/Scene/Camera/PerspectiveCamera.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		05401D2E3367454589440604 /* Loading */ = {
 			isa = PBXGroup;
 			children = (
-				BCE7DA52D6924F6795A7640F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp */,
-				FD359747DABF47C18BC482F5 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.h */,
+				BCE7DA52D6924F6795A7640F /* MeshLoader.cpp */,
+				FD359747DABF47C18BC482F5 /* MeshLoader.h */,
 			);
 			name = Loading;
 			sourceTree = "<group>";
@@ -209,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				E245FFF92B1C409BA0222635 /* CMake Rules */,
-				921669EC8FBE4645ABA2B12E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */,
+				921669EC8FBE4645ABA2B12E /* CMakeLists.txt */,
 			);
 			name = ZERO_CHECK;
 			sourceTree = "<group>";
@@ -224,10 +167,10 @@
 		2F1346C2AA9E4BAD9F7D6012 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
-				6CD5E7640FBF4E1781A60190 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.cpp */,
-				4B05B5D4596B42CEAE42915B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.h */,
-				FA3E740E08284EF7A0CA3688 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.cpp */,
-				FE69FE8F9F9B4A69A9269558 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.h */,
+				6CD5E7640FBF4E1781A60190 /* Camera.cpp */,
+				4B05B5D4596B42CEAE42915B /* Camera.h */,
+				FA3E740E08284EF7A0CA3688 /* PerspectiveCamera.cpp */,
+				FE69FE8F9F9B4A69A9269558 /* PerspectiveCamera.h */,
 			);
 			name = Camera;
 			sourceTree = "<group>";
@@ -236,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				8685A29933C24D948F236A1C /* CMake Rules */,
-				D7861EB90922474CA97760F0 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */,
+				D7861EB90922474CA97760F0 /* CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
@@ -244,8 +187,8 @@
 		684D5B8F0C0849C4A3B9D3A2 /* Texture */ = {
 			isa = PBXGroup;
 			children = (
-				0D6940833BCF4EFBA0042C86 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp */,
-				D8AE1481C8134F3FB59A5ACA /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.h */,
+				0D6940833BCF4EFBA0042C86 /* TextureLoader.cpp */,
+				D8AE1481C8134F3FB59A5ACA /* TextureLoader.h */,
 			);
 			name = Texture;
 			sourceTree = "<group>";
@@ -266,7 +209,7 @@
 				D7E444DA4A2446418478B527 /* Source Files */,
 				84F7E79E199A47168F68CCA9 /* common */,
 				EF153E975E094440A38D5C58 /* Header Files */,
-				AE8D3B17D59F4DD0868CC4F6 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/CMakeLists.txt */,
+				AE8D3B17D59F4DD0868CC4F6 /* CMakeLists.txt */,
 			);
 			name = cs148opengl4;
 			sourceTree = "<group>";
@@ -277,12 +220,12 @@
 				9BD0F81C8B44449DBD02974D /* Rendering */,
 				C06377AF3983495C959DC0AD /* Scene */,
 				F9E3FE053260436EB8DC1478 /* Utility */,
-				1E3D249EEA0346288957A8B1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.cpp */,
-				CB4446F964554395A9912E04 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.h */,
-				C4AA3E74CEBE46E38CCFB1DE /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.cpp */,
-				D19B579430EA4B81BA8912C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.h */,
-				7890B6EE72284B5899FE9ED9 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/common.h */,
-				F2838C92EEE546EEA526A3E2 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/core.h */,
+				1E3D249EEA0346288957A8B1 /* Application.cpp */,
+				CB4446F964554395A9912E04 /* Application.h */,
+				C4AA3E74CEBE46E38CCFB1DE /* MediaLayer.cpp */,
+				D19B579430EA4B81BA8912C3 /* MediaLayer.h */,
+				7890B6EE72284B5899FE9ED9 /* common.h */,
+				F2838C92EEE546EEA526A3E2 /* core.h */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -299,12 +242,12 @@
 			children = (
 				CBD62438BBCB44EEB16D2D96 /* Shaders */,
 				DB30FA12B61B42A398C63565 /* Textures */,
-				292D31595F774F5190B266C7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.cpp */,
-				E413B95ED3934B4AB0D3869F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.h */,
-				3E72617815BB471A9CB1AA35 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.cpp */,
-				77B9C9526F0E47A68B1D7CD7 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.h */,
-				82B830E4D7804FE4B8B15806 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.cpp */,
-				018A7D69D47B41B3B2F4006D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.h */,
+				292D31595F774F5190B266C7 /* ForwardRenderer.cpp */,
+				E413B95ED3934B4AB0D3869F /* ForwardRenderer.h */,
+				3E72617815BB471A9CB1AA35 /* Renderer.cpp */,
+				77B9C9526F0E47A68B1D7CD7 /* Renderer.h */,
+				82B830E4D7804FE4B8B15806 /* RenderingObject.cpp */,
+				018A7D69D47B41B3B2F4006D /* RenderingObject.h */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -322,10 +265,10 @@
 			children = (
 				2F1346C2AA9E4BAD9F7D6012 /* Camera */,
 				F5FF66107B914D49A8AF0A48 /* Light */,
-				EB45278733174BE98B2BD408 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.cpp */,
-				2C47C168D94645F5A7B9B098 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.h */,
-				2AA989F297E040F98711346B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.cpp */,
-				F84FC796002943588FF31980 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.h */,
+				EB45278733174BE98B2BD408 /* Scene.cpp */,
+				2C47C168D94645F5A7B9B098 /* Scene.h */,
+				2AA989F297E040F98711346B /* SceneObject.cpp */,
+				F84FC796002943588FF31980 /* SceneObject.h */,
 			);
 			name = Scene;
 			sourceTree = "<group>";
@@ -333,12 +276,12 @@
 		CBD62438BBCB44EEB16D2D96 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
-				11B9609F32F547FA9A1F1A9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.cpp */,
-				0F22C9815B0B4D788DFA44CB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.h */,
-				AAAD7EE12D9A40C9A046C6AB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.cpp */,
-				C37938DB2EE7470FAB56615C /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.h */,
-				B0CB0F8329FD4954B24DFFD4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.cpp */,
-				7325EA63FBFA4C51B08054C3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.h */,
+				11B9609F32F547FA9A1F1A9F /* BlinnPhongShader.cpp */,
+				0F22C9815B0B4D788DFA44CB /* BlinnPhongShader.h */,
+				AAAD7EE12D9A40C9A046C6AB /* EpicShader.cpp */,
+				C37938DB2EE7470FAB56615C /* EpicShader.h */,
+				B0CB0F8329FD4954B24DFFD4 /* ShaderProgram.cpp */,
+				7325EA63FBFA4C51B08054C3 /* ShaderProgram.h */,
 			);
 			name = Shaders;
 			sourceTree = "<group>";
@@ -346,6 +289,7 @@
 		CC61A8F1F369431A82A91475 = {
 			isa = PBXGroup;
 			children = (
+				3E697F141BCC4EA60069174C /* shaders */,
 				6D8D397B30774A3D9F7DB17A /* Sources */,
 				25F422ABD52149AFBB0C588F /* Resources */,
 				A705D2E5444142EDBF028D57 /* Products */,
@@ -355,8 +299,8 @@
 		D7E444DA4A2446418478B527 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				0025D3F8FC0F4A9F943E15E0 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp */,
-				EAE54E0542664406B9B44888 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/main.cpp */,
+				0025D3F8FC0F4A9F943E15E0 /* Assignment3.cpp */,
+				EAE54E0542664406B9B44888 /* main.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
@@ -364,8 +308,8 @@
 		DB30FA12B61B42A398C63565 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
-				E32CFABDE9804E619B40679F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.cpp */,
-				99319D1D55BA44FCA7414598 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.h */,
+				E32CFABDE9804E619B40679F /* Texture.cpp */,
+				99319D1D55BA44FCA7414598 /* Texture.h */,
 			);
 			name = Textures;
 			sourceTree = "<group>";
@@ -380,8 +324,8 @@
 		E2E79E0C289D417C9F7B7178 /* Simple */ = {
 			isa = PBXGroup;
 			children = (
-				0CE01373533949468F881155 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.cpp */,
-				CDD5D12718054E8AB9565B3E /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.h */,
+				0CE01373533949468F881155 /* PrimitiveCreator.cpp */,
+				CDD5D12718054E8AB9565B3E /* PrimitiveCreator.h */,
 			);
 			name = Simple;
 			sourceTree = "<group>";
@@ -389,7 +333,7 @@
 		EF153E975E094440A38D5C58 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				B6A1E28CB12D4DEB8BC23E9F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.h */,
+				B6A1E28CB12D4DEB8BC23E9F /* Assignment3.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";
@@ -397,11 +341,11 @@
 		F5FF66107B914D49A8AF0A48 /* Light */ = {
 			isa = PBXGroup;
 			children = (
-				D3484F5D715D4383AB598AD3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.cpp */,
-				EDFC763C9F5A4F719ED4A19D /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.h */,
-				F45B801B13754387A436934A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/LightProperties.h */,
-				61FF9BAD41034F8C81EE6EE4 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h */,
-				AFC3F76F194343FB87DBFCBC /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Properties/EpicShader/EpicLightProperties.h */,
+				D3484F5D715D4383AB598AD3 /* Light.cpp */,
+				EDFC763C9F5A4F719ED4A19D /* Light.h */,
+				F45B801B13754387A436934A /* LightProperties.h */,
+				61FF9BAD41034F8C81EE6EE4 /* BlinnPhongLightProperties.h */,
+				AFC3F76F194343FB87DBFCBC /* EpicLightProperties.h */,
 			);
 			name = Light;
 			sourceTree = "<group>";
@@ -444,16 +388,12 @@
 				BuildIndependentTargetsInParallel = YES;
 			};
 			buildConfigurationList = 893657DC0DDC40FCBE12F246 /* Build configuration list for PBXProject "cs148-opengl4" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				6AEA359DF3CC49419ADB3E8F /* Debug */,
-				5112194DC32E45BD99D84F33 /* Release */,
-				C65EC6B3596F4661BE4679F2 /* MinSizeRel */,
-				C0040718950A4F988BEA580E /* RelWithDebInfo */,
-			);
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = CC61A8F1F369431A82A91475;
 			projectDirPath = ../../;
 			projectRoot = "";
@@ -466,21 +406,6 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		132ACBD9493D4A7DABAF062E = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
 		17D710EEBCAD4F5DAFBF7B50 /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -503,21 +428,6 @@ exit 0";
 			shellScript = "make -C /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode -f /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode/CMakeScripts/cs148opengl4_postBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
-		EFD58A7D7B544A0783FFB402 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
 		FF0D9B4E3C7740C480DFFE4A /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,25 +446,25 @@ exit 0";
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80790B5A5B843748E96CBEB /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/assignment3/Assignment3.cpp */,
-				3A2E6A6AFFA84F4691E83C24 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Application.cpp */,
-				A60BFBE859F14A83857F6B4B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/MediaLayer.cpp */,
-				493F274A9D2D49C0A6F0BAE1 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/ForwardRenderer.cpp */,
-				280FC49B9A694B42BBE16C5A /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Renderer.cpp */,
-				AAB1B0FB5C944B3D913B5B04 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/RenderingObject.cpp */,
-				8664D690797241F185B215E3 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/BlinnPhongShader.cpp */,
-				C73DF004DB08410C97263496 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/EpicShader.cpp */,
-				9E397F1F04504E2F8C067F60 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Shaders/ShaderProgram.cpp */,
-				045A4D7536854A0BA79E4B52 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Rendering/Textures/Texture.cpp */,
-				4D4EC792E23747ACBB449561 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/Camera.cpp */,
-				4CBD9177A5E04227A96B3A16 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Camera/PerspectiveCamera.cpp */,
-				DCB3695549C6476FA271A40F /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Light/Light.cpp */,
-				FFEB7CD29701490887722772 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/Scene.cpp */,
-				DB6A044B17064F9580CAA357 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Scene/SceneObject.cpp */,
-				4F306CA84B594DCD9A893529 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Loading/MeshLoader.cpp */,
-				14F01D193A3643A68F6A1484 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Mesh/Simple/PrimitiveCreator.cpp */,
-				DBEBFDDB9B9B4514A1C0CA17 /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/common/Utility/Texture/TextureLoader.cpp */,
-				C9BFB4932E2A4C18A4FE3F7B /* /Users/nathanlee/workspace/cs148/cs148opengl4/source/main.cpp */,
+				F80790B5A5B843748E96CBEB /* Assignment3.cpp in Sources */,
+				3A2E6A6AFFA84F4691E83C24 /* Application.cpp in Sources */,
+				A60BFBE859F14A83857F6B4B /* MediaLayer.cpp in Sources */,
+				493F274A9D2D49C0A6F0BAE1 /* ForwardRenderer.cpp in Sources */,
+				280FC49B9A694B42BBE16C5A /* Renderer.cpp in Sources */,
+				AAB1B0FB5C944B3D913B5B04 /* RenderingObject.cpp in Sources */,
+				8664D690797241F185B215E3 /* BlinnPhongShader.cpp in Sources */,
+				C73DF004DB08410C97263496 /* EpicShader.cpp in Sources */,
+				9E397F1F04504E2F8C067F60 /* ShaderProgram.cpp in Sources */,
+				045A4D7536854A0BA79E4B52 /* Texture.cpp in Sources */,
+				4D4EC792E23747ACBB449561 /* Camera.cpp in Sources */,
+				4CBD9177A5E04227A96B3A16 /* PerspectiveCamera.cpp in Sources */,
+				DCB3695549C6476FA271A40F /* Light.cpp in Sources */,
+				FFEB7CD29701490887722772 /* Scene.cpp in Sources */,
+				DB6A044B17064F9580CAA357 /* SceneObject.cpp in Sources */,
+				4F306CA84B594DCD9A893529 /* MeshLoader.cpp in Sources */,
+				14F01D193A3643A68F6A1484 /* PrimitiveCreator.cpp in Sources */,
+				DBEBFDDB9B9B4514A1C0CA17 /* TextureLoader.cpp in Sources */,
+				C9BFB4932E2A4C18A4FE3F7B /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,13 +502,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -606,7 +529,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = RelWithDebInfo;
 		};
@@ -614,13 +542,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -628,7 +569,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = MinSizeRel;
 		};
@@ -645,13 +591,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -659,7 +618,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = RelWithDebInfo;
 		};
@@ -667,13 +631,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -681,7 +658,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -689,13 +671,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -703,7 +698,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -713,24 +713,62 @@ exit 0";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx, );
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG   -Wall -std=c++11 -Wno-missing-braces";
-				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework AGL -framework OpenGL -framework SDL2 /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-std=c++11",
+					"-Wno-missing-braces",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"-framework",
+					SDL2,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a,
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = cs148opengl4;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = RelWithDebInfo;
 		};
@@ -738,13 +776,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -752,7 +803,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = MinSizeRel;
 		};
@@ -762,24 +818,61 @@ exit 0";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx, );
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "         -Wall -std=c++11 -Wno-missing-braces";
-				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework AGL -framework OpenGL -framework SDL2 /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-Wall",
+					"-std=c++11",
+					"-Wno-missing-braces",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"-framework",
+					SDL2,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a,
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = cs148opengl4;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -789,24 +882,62 @@ exit 0";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx, );
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 3;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG       -Wall -std=c++11 -Wno-missing-braces";
-				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework AGL -framework OpenGL -framework SDL2 /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-std=c++11",
+					"-Wno-missing-braces",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"-framework",
+					SDL2,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a,
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = cs148opengl4;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -814,13 +945,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -828,7 +972,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
@@ -854,13 +1003,26 @@ exit 0";
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, );
+				FRAMEWORK_SEARCH_PATHS = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -868,7 +1030,12 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
@@ -878,24 +1045,62 @@ exit 0";
 				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = "";
 				EXECUTABLE_SUFFIX = "";
-				FRAMEWORK_SEARCH_PATHS = (/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks, /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx, );
+				FRAMEWORK_SEARCH_PATHS = (
+					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx,
+				);
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", "'ASSIGNMENT=3'", "'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'", "'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'", "'OPENGL_MAJOR=4'", "'OPENGL_MINOR=1'", );
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'ASSIGNMENT=3'",
+					"'SHADER_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/shaders'",
+					"'ASSET_PATH=/Users/nathanlee/workspace/cs148/cs148opengl4/source/assets'",
+					"'OPENGL_MAJOR=4'",
+					"'OPENGL_MINOR=1'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = (/Users/nathanlee/workspace/cs148/cs148opengl4/source/., /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include, /Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx, );
+				HEADER_SEARCH_PATHS = (
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/.,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glm,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/glew/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/assimp/include,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/./external/freeimage/distrib/osx,
+				);
 				INSTALL_PATH = "";
 				LD_RUNPATH_SEARCH_PATHS = /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/SDL2/osx;
 				LIBRARY_SEARCH_PATHS = "";
-				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG   -Wall -std=c++11 -Wno-missing-braces";
-				OTHER_LDFLAGS = " -Wl,-search_paths_first -Wl,-headerpad_max_install_names  -framework AGL -framework OpenGL -framework SDL2 /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib /Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-Wall",
+					"-std=c++11",
+					"-Wno-missing-braces",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"-framework",
+					SDL2,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/glew/distrib/osx/lib/libGLEW.a,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/assimp/distrib/osx/libassimp.dylib,
+					/Users/nathanlee/workspace/cs148/cs148opengl4/source/external/freeimage/distrib/osx/libfreeimage.a,
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = cs148opengl4;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/nathanlee/workspace/cs148/cs148opengl4/source/build/xcode;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", "$(inherited)", );
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = MinSizeRel;
 		};

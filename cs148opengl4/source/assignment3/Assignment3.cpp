@@ -179,10 +179,11 @@ void Assignment3::AddHLight()
     // add a hemispherical light which has a sky and ground color
     std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
     lightProperties = EpicShader::CreateLightProperties();
-    lightProperties->groundColor = glm::vec4(1.f, 1.f, 1.f, 1.f); // Green
-    lightProperties->skyColor = glm::vec4(1.f, 1.f, 1.f, 1.f);    // Blue
+    lightProperties->groundColor = glm::vec3(0.f, 3.f, 1.f); // Green
+    lightProperties->skyColor = glm::vec3(1.f, 1.f, 3.f);    // Blue
+    lightProperties->radius = 1000.f;
     
-    hemisphereLight = std::make_shared<Light>(std::move(lightProperties));
+    hemisphereLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::HEMISPHERE);
     scene->AddLight(hemisphereLight);
 }
 

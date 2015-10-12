@@ -73,10 +73,12 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal)
     {
         L = N;
 
-        vec3 c_ground = vec3(genericLight.groundColor);
-
-        vec3 c_sky = vec3(genericLight.skyColor);
-
+        //vec3 c_ground = vec3(genericLight.groundColor);
+        //vec3 c_sky = vec3(genericLight.skyColor);
+        //c_light = mix( c_ground, c_sky, clamp( dot(N, vec3(0.f, 1.f, 0.f)) * 0.5 + 0.5, 0, 1 ) );
+        
+        vec3 c_ground = vec3(1.5f,0.9f,0.5f);
+        vec3 c_sky =  vec3(1.7f,1.4f,0.9f);
         c_light = mix( c_ground, c_sky, clamp( dot(N, vec3(0.f, 1.f, 0.f)) * 0.5 + 0.5, 0, 1 ) );
     }
 

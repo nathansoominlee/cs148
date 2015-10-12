@@ -68,10 +68,13 @@ void EpicShader::SetupShaderLighting(const Light* light) const
 
         // Get the light's properties and pass it into the shader.
         const EpicLightProperties* lightProperty = static_cast<const EpicLightProperties*>(light->GetPropertiesRaw());
+        
         SetShaderUniform("genericLight.color", lightProperty->color);
         SetShaderUniform("genericLight.direction", lightProperty->direction);
-        SetShaderUniform("genericLight.groundColor", lightProperty->groundColor);
-        SetShaderUniform("genericLight.skyColor", lightProperty->skyColor);
+        //SetShaderUniform("genericLight.groundColor", lightProperty->groundColor);
+        //SetShaderUniform("genericLight.skyColor", lightProperty->skyColor);
+       
+        
         SetShaderUniform("genericLight.radius", lightProperty->radius);
         light->SetupShaderUniforms(this);
     }
