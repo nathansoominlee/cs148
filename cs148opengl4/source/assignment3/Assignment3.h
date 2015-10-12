@@ -22,9 +22,6 @@ protected:
 
 private:
     virtual void SetupScene();
-
-    virtual void SetupExample1();
-    virtual void SetupExample2();
     virtual void SetupEpic();
     virtual void SetupDummy();
     virtual void GenericSetupExample(std::shared_ptr<class ShaderProgram> shader, std::shared_ptr<ShaderProgram> groundShader);

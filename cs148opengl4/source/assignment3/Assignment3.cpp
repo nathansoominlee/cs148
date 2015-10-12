@@ -35,19 +35,27 @@ glm::vec2 Assignment3::GetWindowSize() const
 
 void Assignment3::SetupScene()
 {
-    SetupEpic();
+    SetupCamera();
+    SetupDummy();
 }
 
+//Adjust the camera for viewing as in Maya
 void Assignment3::SetupCamera()
 {
-    camera->SetPosition(glm::vec3(-35.698f, 40.571f, -2.285f));
-    camera->Rotate(glm::vec3(SceneObject::GetWorldUp()), -3.3f * PI / 5.f);
-    camera->Rotate(glm::vec3(camera->GetRightDirection()), -PI / 8.f);
-    camera->Translate(glm::vec3(camera->GetRightDirection()) * 10.f);
-    camera->Translate(glm::vec3(camera->GetForwardDirection()) * -10.f);
-
+    
     PerspectiveCamera* pcamera = static_cast<PerspectiveCamera*>(camera.get());
+  
+    // Set camera field of view and clipping planes
+    pcamera->SetFOV(35.9f);
+    pcamera->SetZNear(0.1f);
     pcamera->SetZFar(1000.f);
+    
+    // Set camera position and rotation
+    camera->SetPosition(glm::vec3(-7.339f, 135.659f, 429.348f));
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -4.985f * PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.942f* PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
+    
 }
 
 void Assignment3::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
@@ -59,21 +67,12 @@ void Assignment3::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     switch (key.sym) {
     case SDLK_1:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample1();
+            SetupDummy();
         }
         break;
     case SDLK_2:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample2();
-        }
-        break;
-    case SDLK_3:
-        if (!repeat && state == SDL_KEYDOWN) {
             SetupEpic();
-        }
-    case SDLK_4:
-        if (!repeat && state == SDL_KEYDOWN) {
-            SetupDummy();
         }
         break;
     case SDLK_UP:
@@ -117,39 +116,6 @@ void Assignment3::HandleWindowResize(float x, float y)
 {
     Application::HandleWindowResize(x, y);
     std::static_pointer_cast<PerspectiveCamera>(camera)->SetAspectRatio(x / y);
-}
-
-void Assignment3::SetupExample1()
-{
-    scene->ClearScene();
-#ifndef DISABLE_OPENGL_SUBROUTINES
-    std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
-        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag" }
-    };
-#else
-    std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
-        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
-    };
-#endif
-    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
-    shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
-
-    std::shared_ptr<BlinnPhongShader> groundShader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
-
-    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
-    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
-    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
-
-    pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
-    scene->AddLight(pointLight);
-
-    GenericSetupExample(shader, groundShader);
-
 }
 
 void Assignment3::SetupEpic()
@@ -199,39 +165,6 @@ void Assignment3::SetupEpic()
 
 }
 
-void Assignment3::SetupExample2() {
-//    scene->ClearScene();
-//    std::unordered_map<GLenum, std::string> shaderSpec = {
-//        { GL_VERTEX_SHADER, "instructor/epic/epic.vert" },
-//        { GL_FRAGMENT_SHADER, "instructor/epic/epic.frag" }
-//    };
-//    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
-//    shader->SetMetallic(0.6f);
-//    shader->SetSpecular(0.4f);
-//    shader->SetRoughness(0.5f);
-//
-//    std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
-//    groundShader->SetMetallic(0.f);
-//    groundShader->SetSpecular(0.f);
-//    groundShader->SetRoughness(0.f);
-//
-//    std::unique_ptr<EpicLightingProperties> lightProperties = EpicShader::CreateLightProperties();
-//    lightProperties->lightColor = glm::vec4(2.f, 2.f, 2.f, 1.f);
-//
-//    sunLight = std::make_shared<DirectionalLight>(std::move(lightProperties));
-//    sunLight->Rotate(glm::vec3(SceneObject::GetWorldRight()), PI / -4.f);
-//    sunLight->Rotate(glm::vec3(SceneObject::GetWorldUp()), PI / 4.f);
-//    scene->AddLight(sunLight);
-//
-//    lightProperties = EpicShader::CreateLightProperties();
-//    lightProperties->lightColor = glm::vec4(glm::vec3(0.529f, 0.808f, 0.98f) * 3.f, 1.f);
-//    lightProperties->secondaryColor = glm::vec4(glm::vec3(0.471f, 0.282f, 0.f) * 3.f, 1.f);
-//    hemisphereLight = std::make_shared<HemisphereLight>(std::move(lightProperties));
-//    scene->AddLight(hemisphereLight);
-//
-//    GenericSetupExample(shader, groundShader);
-}
-
 void Assignment3::SetupDummy()
 {
     scene->ClearScene();
@@ -265,21 +198,6 @@ void Assignment3::SetupDummy()
     pointLight = std::make_shared<Light>(std::move(lightProperties));
     pointLight->SetPosition(glm::vec3(0.f, 0.f, 10.f));
     scene->AddLight(pointLight);
-
-    // Adjust the camera for viewing as in Maya
-
-    PerspectiveCamera* pcamera = static_cast<PerspectiveCamera*>(camera.get());
-
-    // Set camera field of view and clipping planes
-    pcamera->SetFOV(35.9f);
-    pcamera->SetZNear(0.1f);
-    pcamera->SetZFar(10000.f);
-
-    // Set camera position and rotation
-    camera->SetPosition(glm::vec3(-7.339f, 135.659f, 429.348f));
-    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -4.985f * PI / 180.f);
-    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.942f* PI / 180.f);
-    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
 }
 
 void Assignment3::GenericSetupExample(std::shared_ptr<ShaderProgram> shader, std::shared_ptr<ShaderProgram> groundShader)
@@ -339,3 +257,81 @@ void Assignment3::Tick(double deltaTime)
         sphereDance[i]->SetPosition(glm::vec3(og.x, std::abs(std::sin(elapsedTime + (float)i)) * 6.f, og.z));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* FOR REFERENCE
+ void Assignment3::SetupExample1()
+ {
+ scene->ClearScene();
+ #ifndef DISABLE_OPENGL_SUBROUTINES
+ std::unordered_map<GLenum, std::string> shaderSpec = {
+ { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
+ { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag" }
+ };
+ #else
+ std::unordered_map<GLenum, std::string> shaderSpec = {
+ { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
+ { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
+ };
+ #endif
+ std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+ shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+ shader->SetSpecular(glm::vec4(1.f, 1.f, 1.f, 1.f), 40.f);
+ 
+ std::shared_ptr<BlinnPhongShader> groundShader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+ shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+ 
+ std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+ lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+ lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+ 
+ pointLight = std::make_shared<Light>(std::move(lightProperties));
+ pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+ scene->AddLight(pointLight);
+ 
+ GenericSetupExample(shader, groundShader);
+ 
+ }
+ 
+ void Assignment3::SetupExample2() {
+ //    scene->ClearScene();
+ //    std::unordered_map<GLenum, std::string> shaderSpec = {
+ //        { GL_VERTEX_SHADER, "instructor/epic/epic.vert" },
+ //        { GL_FRAGMENT_SHADER, "instructor/epic/epic.frag" }
+ //    };
+ //    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+ //    shader->SetMetallic(0.6f);
+ //    shader->SetSpecular(0.4f);
+ //    shader->SetRoughness(0.5f);
+ //
+ //    std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+ //    groundShader->SetMetallic(0.f);
+ //    groundShader->SetSpecular(0.f);
+ //    groundShader->SetRoughness(0.f);
+ //
+ //    std::unique_ptr<EpicLightingProperties> lightProperties = EpicShader::CreateLightProperties();
+ //    lightProperties->lightColor = glm::vec4(2.f, 2.f, 2.f, 1.f);
+ //
+ //    sunLight = std::make_shared<DirectionalLight>(std::move(lightProperties));
+ //    sunLight->Rotate(glm::vec3(SceneObject::GetWorldRight()), PI / -4.f);
+ //    sunLight->Rotate(glm::vec3(SceneObject::GetWorldUp()), PI / 4.f);
+ //    scene->AddLight(sunLight);
+ //
+ //    lightProperties = EpicShader::CreateLightProperties();
+ //    lightProperties->lightColor = glm::vec4(glm::vec3(0.529f, 0.808f, 0.98f) * 3.f, 1.f);
+ //    lightProperties->secondaryColor = glm::vec4(glm::vec3(0.471f, 0.282f, 0.f) * 3.f, 1.f);
+ //    hemisphereLight = std::make_shared<HemisphereLight>(std::move(lightProperties));
+ //    scene->AddLight(hemisphereLight);
+ //
+ //    GenericSetupExample(shader, groundShader);
+ }
+ */
