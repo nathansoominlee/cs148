@@ -71,6 +71,10 @@ void Assignment3::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
         if (!repeat && state == SDL_KEYDOWN) {
             SetupEpic();
         }
+    case SDLK_4:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupDummy();
+        }
         break;
     case SDLK_UP:
         camera->Rotate(glm::vec3(camera->GetRightDirection()), 0.1f);
@@ -226,6 +230,56 @@ void Assignment3::SetupExample2() {
 //    scene->AddLight(hemisphereLight);
 //
 //    GenericSetupExample(shader, groundShader);
+}
+
+void Assignment3::SetupDummy()
+{
+    scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
+    std::unordered_map<GLenum, std::string> shaderSpec = { 
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/blinnphong.frag"}
+    };  
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = { 
+        { GL_VERTEX_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/frag/noSubroutine/blinnphong.frag"}
+    };  
+#endif
+    std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetDiffuse(glm::vec4(0.8f, 0.8f, 0.8f, 1.f));
+    shader->SetAmbient(glm::vec4(0.5f));
+
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "dummy/Model/dummy.obj");
+    if (meshTemplate.empty()) {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return;
+    }       
+
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    scene->AddSceneObject(sceneObject);
+
+    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    lightProperties->diffuseColor = glm::vec4(0.5f, 0.5f, 0.5f, 1.f);
+
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(0.f, 0.f, 10.f));
+    scene->AddLight(pointLight);
+
+    // Adjust the camera for viewing as in Maya
+
+    PerspectiveCamera* pcamera = static_cast<PerspectiveCamera*>(camera.get());
+
+    // Set camera field of view and clipping planes
+    pcamera->SetFOV(35.9f);
+    pcamera->SetZNear(0.1f);
+    pcamera->SetZFar(10000.f);
+
+    // Set camera position and rotation
+    camera->SetPosition(glm::vec3(-7.339f, 135.659f, 429.348f));
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -4.985f * PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.942f* PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
 }
 
 void Assignment3::GenericSetupExample(std::shared_ptr<ShaderProgram> shader, std::shared_ptr<ShaderProgram> groundShader)
