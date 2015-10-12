@@ -10,6 +10,7 @@ struct EpicLightProperties: public LightProperties {
     glm::vec4 direction;
     glm::vec4 groundColor;
     glm::vec4 skyColor;
+    float radius;
 };
 
 #endif

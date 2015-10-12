@@ -162,18 +162,20 @@ void Assignment3::SetupEpic()
     shader->SetSpecular(0.5f);
     
     std::shared_ptr<EpicShader> groundShader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
-    groundShader->SetMetallic(0.5f);
+    groundShader->SetMetallic(0.f);
     groundShader->SetRoughness(0.f);
-    groundShader->SetSpecular(0.5f);
+    groundShader->SetSpecular(0.f);
 
     // add a point light
     std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
-    lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
+    lightProperties->radius = 1000.f; // Tunable parameter, see @195 on Piazza
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+    pointLight->SetPosition(glm::vec3(10.f, 10.f, -10.f));
     scene->AddLight(pointLight);
 
+    /*
     // add a directional light
     lightProperties = EpicShader::CreateLightProperties();
     lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
@@ -191,6 +193,7 @@ void Assignment3::SetupEpic()
     hemisphereLight = std::make_shared<Light>(std::move(lightProperties));
     hemisphereLight->SetPosition(glm::vec3(-50.f, 50.f, -50.f));
     scene->AddLight(hemisphereLight);
+    */
 
     GenericSetupExample(shader, groundShader);
 

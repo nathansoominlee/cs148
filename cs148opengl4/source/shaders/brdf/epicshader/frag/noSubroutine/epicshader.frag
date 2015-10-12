@@ -19,6 +19,7 @@ struct LightProperties {
     vec4 direction;
     vec4 groundColor;
     vec4 skyColor;
+    float radius;
 };
 uniform LightProperties genericLight;
 
@@ -54,7 +55,9 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
         // the vertex position
         vec3 x_vert = vec3(vertexWorldPosition);
 
-        L = (x_vert - l_pos) / length(x_vert - l_pos);
+        // THIS WAS REVERSED in assignment3.pdf, see @143 on Piazza for correction
+        //L = (x_vert - l_pos) / length(x_vert - l_pos);
+        L = (l_pos - x_vert) / length(l_pos - x_vert);
 
         // the light color
         c_light = vec3(genericLight.color);
@@ -137,22 +140,63 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
     return vec4(c_brdf, 0.f);
 }
 
+/*
 vec4 globalLightSubroutine(vec4 worldPosition, vec3 worldNormal)
 {
     //return material.matAmbient;
     return vec4(0.f, 0.f, 0.f, 0.f);
 }
+*/
 
+/*
 vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
 {
     float lightDistance = length(pointLight.pointPosition - worldPosition);
     float attenuation = 1.0 / (constantAttenuation + lightDistance * linearAttenuation + lightDistance * lightDistance * quadraticAttenuation);
     return originalColor * attenuation;
 }
+*/
+
+vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
+{
+    // the light distance
+    float t = length(pointLight.pointPosition - worldPosition);
+
+    // the light radius <---- tunable parameter, pass-in through LightProperties for now, see @195 on Piazza
+    float l_radius = genericLight.radius;
+
+    // the constant attenuation
+    float a_constant = constantAttenuation;
+
+    // the linear attenuation
+    float a_linear = linearAttenuation;
+
+    // the quadratic attenudation
+    float a_quad = quadraticAttenuation;
+
+    // the total attenuation
+    float a_total = pow(clamp(1 - pow(t / l_radius, 4), 0.f, 0.f), 2) / (a_constant + a_linear * t + a_quad * pow(t, 2));
+
+    return a_total * originalColor;
+}
 
 void main()
 {
     vec4 lightingColor = vec4(0);
     lightingColor = lightSubroutine(vertexWorldPosition, vertexWorldNormal, lightingType);
-    finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
+
+    /*
+    // only attenuate point lights
+    if (lightingType == 1) // Point
+    {
+        finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
+    }
+    else
+    {
+        // directional and hemisphere lights are unattenuated
+        finalColor = lightingColor;
+    }
+    */
+    finalColor = lightingColor;
+    //finalColor = AttenuateLight(lightingColor, vertexWorldPosition);
 }
