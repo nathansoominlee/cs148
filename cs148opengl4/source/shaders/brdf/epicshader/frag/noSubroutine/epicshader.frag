@@ -36,7 +36,7 @@ uniform float quadraticAttenuation;
 
 uniform int lightingType;
 
-vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
+vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal)
 {
     ////////////////////////////////////////////////////////// 
     /////// calculate values specific to light type //////////
@@ -47,7 +47,7 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
     // the normal vector of a vertex
     vec3 N = vertexWorldNormal;
 
-    if (type == 1) // Point
+    if (lightingType == 1) // Point
     {
         // the light position
         vec3 l_pos = vec3(pointLight.pointPosition);
@@ -62,14 +62,14 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
         // the light color
         c_light = vec3(genericLight.color);
     } 
-    else if (type == 2) // directional
+    else if (lightingType == 2) // directional
     {
-        L = - vec3(genericLight.direction);
+        L = - vec3(normalize(genericLight.direction));
 
         // the light color
         c_light = vec3(genericLight.color);
     } 
-    else if (type == 3) // hemisphere
+    else if (lightingType == 3) // hemisphere
     {
         L = N;
 
@@ -133,29 +133,22 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
 
     //vec3 c_light = vec3(genericLight.color);
 
-    vec3 c_brdf = c_light * dot(N, L) * (d + s);
+    vec3 c_brdf; 
+
+    // No specular on hemisphere
+    if (lightingType == 3)  // hemisphere
+    {
+        c_brdf = c_light * dot(N, L) * d;
+    }
+    else // point or directional
+    {
+        c_brdf = c_light * dot(N, L) * (d + s);
+    }
 
     //return vec4(d, 0.f); // just the diffuse term
     //return vec4(s, 0.f); // just the specular term
     return vec4(c_brdf, 0.f);
 }
-
-/*
-vec4 globalLightSubroutine(vec4 worldPosition, vec3 worldNormal)
-{
-    //return material.matAmbient;
-    return vec4(0.f, 0.f, 0.f, 0.f);
-}
-*/
-
-/*
-vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
-{
-    float lightDistance = length(pointLight.pointPosition - worldPosition);
-    float attenuation = 1.0 / (constantAttenuation + lightDistance * linearAttenuation + lightDistance * lightDistance * quadraticAttenuation);
-    return originalColor * attenuation;
-}
-*/
 
 vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
 {
@@ -183,7 +176,7 @@ vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
 void main()
 {
     vec4 lightingColor = vec4(0);
-    lightingColor = lightSubroutine(vertexWorldPosition, vertexWorldNormal, lightingType);
+    lightingColor = lightSubroutine(vertexWorldPosition, vertexWorldNormal);
 
     /*
     // only attenuate point lights
@@ -197,6 +190,5 @@ void main()
         finalColor = lightingColor;
     }
     */
-    finalColor = lightingColor;
-    //finalColor = AttenuateLight(lightingColor, vertexWorldPosition);
+    finalColor = lightingColor; // attenuation is not working
 }

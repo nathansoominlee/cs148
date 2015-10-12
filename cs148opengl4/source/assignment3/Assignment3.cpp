@@ -172,28 +172,24 @@ void Assignment3::SetupEpic()
     lightProperties->radius = 1000.f; // Tunable parameter, see @195 on Piazza
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));
-    pointLight->SetPosition(glm::vec3(10.f, 10.f, -10.f));
+    pointLight->SetPosition(glm::vec3(50.f, 0.f, 50.f)); // point light positioned in center of plane
     scene->AddLight(pointLight);
 
-    /*
-    // add a directional light
+    // add a directional light which has a direction instead of position
     lightProperties = EpicShader::CreateLightProperties();
-    lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
-    lightProperties->direction = glm::vec4(0.f, -1.f, 0.f, 1.f); // +y is Up
+    lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
+    lightProperties->direction = glm::vec4(0.f, -10.f, 0.f, 1.f); // Sunlight shines down (in the -y direction)
 
-    sunLight = std::make_shared<Light>(std::move(lightProperties));
-    sunLight->SetPosition(glm::vec3(50.f, 50.f, -50.f));
+    sunLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::DIRECTIONAL);
     scene->AddLight(sunLight);
 
-    // add a hemispherical light
+    // add a hemispherical light which has a sky and ground color
     lightProperties = EpicShader::CreateLightProperties();
-    lightProperties->groundColor = glm::vec4(0.f, 0.f, 1.f, 1.f); // Green
-    lightProperties->skyColor = glm::vec4(0.f, 1.f, 0.f, 1.f);    // Blue
+    lightProperties->groundColor = glm::vec4(1.f, 1.f, 1.f, 1.f); // Green
+    lightProperties->skyColor = glm::vec4(1.f, 1.f, 1.f, 1.f);    // Blue
 
     hemisphereLight = std::make_shared<Light>(std::move(lightProperties));
-    hemisphereLight->SetPosition(glm::vec3(-50.f, 50.f, -50.f));
     scene->AddLight(hemisphereLight);
-    */
 
     GenericSetupExample(shader, groundShader);
 
