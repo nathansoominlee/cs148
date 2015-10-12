@@ -45,35 +45,29 @@ EpicShader::~EpicShader()
 void EpicShader::SetupShaderLighting(const Light* light) const
 {
     if (!light) {
-#ifndef DISABLE_OPENGL_SUBROUTINES
-        SetShaderSubroutine("inputLightSubroutine", "globalLightSubroutine", lightingShaderStage);
-#else
-        SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
-#endif
+        SetShaderUniform("lightingType", static_cast<int>(Light::LightType::POINT));
     } else {
         // Select proper lighting subroutine based on the light's type.
         switch(light->GetLightType()) {
         case Light::LightType::POINT:
-#ifndef DISABLE_OPENGL_SUBROUTINES
-            SetShaderSubroutine("inputLightSubroutine", "pointLightSubroutine", lightingShaderStage);
-#else
             SetShaderUniform("lightingType", static_cast<int>(Light::LightType::POINT));
-#endif
+            break;
+        case Light::LightType::DIRECTIONAL:
+            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::DIRECTIONAL));
+            break;
+        case Light::LightType::HEMISPHERE:
+            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::HEMISPHERE));
             break;
         default:
-            std::cerr << "WARNING: Light type is not supported. Defaulting to global light. Your output may look wrong. -- Ignoring: " << static_cast<int>(light->GetLightType()) << std::endl;
-#ifndef DISABLE_OPENGL_SUBROUTINES
-            SetShaderSubroutine("inputLightSubroutine", "globalLightSubroutine", lightingShaderStage);
-#else
-            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::GLOBAL));
-#endif
+            std::cerr << "WARNING: Light type is not supported. Defaulting to point light. Your output may look wrong. -- Ignoring: " << 
+                static_cast<int>(light->GetLightType()) << std::endl;
+            SetShaderUniform("lightingType", static_cast<int>(Light::LightType::POINT));
             break;
         }
 
+
         // Get the light's properties and pass it into the shader.
         const EpicLightProperties* lightProperty = static_cast<const EpicLightProperties*>(light->GetPropertiesRaw());
-        //SetShaderUniform("genericLight.diffuseColor", lightProperty->diffuseColor);
-        //SetShaderUniform("genericLight.specularColor", lightProperty->specularColor);
         SetShaderUniform("genericLight.color", lightProperty->color);
         light->SetupShaderUniforms(this);
     }
@@ -165,27 +159,6 @@ void EpicShader::SetSpecular(float inSpecular)
     specular = inSpecular;
     UpdateMaterialBlock();
 }
-
-/*
-void EpicShader::SetDiffuse(glm::vec4 inDiffuse) 
-{ 
-    diffuse = inDiffuse; 
-    UpdateMaterialBlock();
-}
-
-void EpicShader::SetSpecular(glm::vec4 inSpecular, float inShininess) 
-{ 
-    specular = inSpecular; 
-    shininess = inShininess;
-    UpdateMaterialBlock();
-}
-
-void EpicShader::SetAmbient(glm::vec4 inAmbient) 
-{ 
-    ambient = inAmbient; 
-    UpdateMaterialBlock();
-}
-*/
 
 void EpicShader::SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture)
 {

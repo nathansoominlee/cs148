@@ -8,12 +8,6 @@ in vec3 vertexWorldNormal;
 out vec4 finalColor;
 
 uniform InputMaterial {
-    /*
-    vec4 matDiffuse;
-    vec4 matSpecular;
-    float matShininess;
-    vec4 matAmbient;
-    */
     float metallic;
     float roughness;
     float specular;
@@ -21,9 +15,10 @@ uniform InputMaterial {
 } material;
 
 struct LightProperties {
-    //vec4 diffuseColor;
-    //vec4 specularColor;
     vec4 color;
+    vec4 direction;
+    vec4 groundColor;
+    vec4 skyColor;
 };
 uniform LightProperties genericLight;
 
@@ -40,33 +35,47 @@ uniform float quadraticAttenuation;
 
 uniform int lightingType;
 
-
-vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
+vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal, int type)
 {
-/*
-    // Normal to the surface
-    vec4 N = vec4(normalize(worldNormal), 0.f);
-    
-    // Direction from the surface to the light
-    vec4 L = normalize(pointLight.pointPosition - worldPosition);
+    ////////////////////////////////////////////////////////// 
+    /////// calculate values specific to light type //////////
 
-    // Direction from the surface to the eye
-    vec4 E = normalize(cameraPosition - worldPosition);
+    vec3 L;
+    vec3 c_light;
 
-    // Direction of maximum highlights (see paper!)
-    vec4 H = normalize(L + E);
+    // the normal vector of a vertex
+    vec3 N = vertexWorldNormal;
 
-    // Amount of diffuse reflection
-    float d = max(0, dot(N, L));
-    vec4 diffuseColor = d * genericLight.diffuseColor * material.matDiffuse;
-    
-    // Amount of specular reflection
-    float s = pow(max(0, dot(N, H)), material.matShininess);
-    vec4 specularColor = s * genericLight.specularColor * material.matSpecular;
+    if (type == 1) // Point
+    {
+        // the light position
+        vec3 l_pos = vec3(pointLight.pointPosition);
 
-    return diffuseColor + specularColor;
-*/
+        // the vertex position
+        vec3 x_vert = vec3(vertexWorldPosition);
 
+        L = (x_vert - l_pos) / length(x_vert - l_pos);
+
+        // the light color
+        c_light = vec3(genericLight.color);
+    } 
+    else if (type == 2) // directional
+    {
+        L = - vec3(genericLight.direction);
+
+        // the light color
+        c_light = vec3(genericLight.color);
+    } 
+    else if (type == 3) // hemisphere
+    {
+        L = N;
+
+        vec3 c_ground = vec3(genericLight.groundColor);
+
+        vec3 c_sky = vec3(genericLight.skyColor);
+
+        c_light = mix( c_ground, c_sky, clamp( dot(N, vec3(0.f, 1.f, 0.f)) * 0.5 + 0.5, 0, 1 ) );
+    }
 
     ////////////////////////////////////////////////////////// 
     ////////////// calculate the diffuse color, d //////////// 
@@ -86,14 +95,11 @@ vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
     // a = roughness ** 2
     float alpha = pow(material.roughness, 2);
 
-    // the normal vector of a vertex
-    vec3 N = vertexWorldNormal;
-
     // the normalized vector from the vertex to the camera
     vec3 V = vec3(normalize(cameraPosition - vertexWorldPosition));
 
     // the normalized vector from the vertex to the light
-    vec3 L = vec3(normalize(pointLight.pointPosition - worldPosition));
+    //vec3 L = vec3(normalize(pointLight.pointPosition - worldPosition));
 
     // H = (L + V) / magnitude(L + V)
     vec3 H = L + V / length(L + V);
@@ -122,8 +128,9 @@ vec4 pointLightSubroutine(vec4 worldPosition, vec3 worldNormal)
     ////////////////////////////////////////////////////////// 
     //////////// calculate the final color, c_brdf //////////// 
 
-    vec3 c_brdf = vec3(genericLight.color) * dot(N, L) * (d + s);
+    //vec3 c_light = vec3(genericLight.color);
 
+    vec3 c_brdf = c_light * dot(N, L) * (d + s);
 
     //return vec4(d, 0.f); // just the diffuse term
     //return vec4(s, 0.f); // just the specular term
@@ -146,10 +153,6 @@ vec4 AttenuateLight(vec4 originalColor, vec4 worldPosition)
 void main()
 {
     vec4 lightingColor = vec4(0);
-    if (lightingType == 0) {
-        lightingColor = globalLightSubroutine(vertexWorldPosition, vertexWorldNormal);
-    } else if (lightingType == 1) {
-        lightingColor = pointLightSubroutine(vertexWorldPosition, vertexWorldNormal);
-    }
+    lightingColor = lightSubroutine(vertexWorldPosition, vertexWorldNormal, lightingType);
     finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
 }
