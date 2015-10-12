@@ -16,6 +16,11 @@ void Scene::AddLight(std::shared_ptr<Light> light)
     sceneLights.emplace_back(std::move(light));
 }
 
+void Scene::ClearLights()
+{
+    sceneLights.clear();
+}
+
 void Scene::ClearScene()
 {
     sceneObjects.clear();

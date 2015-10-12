@@ -78,6 +78,10 @@ public:
      */
     void AddLight(std::shared_ptr<Light> light);
 
+    /*! \brief Removes all lights from the scene. This prevents them from being rendered.
+     */
+    void ClearLights();
+    
     /*! \brief Removes all objects and lights from the scene. This prevents them from being rendered.
      */
     void ClearScene();
