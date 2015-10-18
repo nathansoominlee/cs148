@@ -165,10 +165,19 @@ std::shared_ptr<RenderingObject> CreateIcoSphere(std::shared_ptr<ShaderProgram> 
         vertexNormals->at(i) = glm::normalize(glm::vec3(vertexPositions->at(i)));
     }
 
+    std::unique_ptr<RenderingObject::UVArray> vertexUV = make_unique<RenderingObject::UVArray>(vertexPositions->size());
+    for (decltype(vertexUV->size()) i = 0; i < vertexUV->size(); ++i) {
+        const glm::vec3 position = glm::vec3(vertexPositions->at(i));
+        float theta = acos(position.z / glm::length(position)) / PI;
+        float phi = (atan2(position.y, position.x) / PI + 1.f) / 2.f;
+        vertexUV->at(i) = glm::vec2(phi, theta);
+    }
+
     std::shared_ptr<RenderingObject> newObj = std::make_shared<RenderingObject>(std::move(inputShader),
         std::move(vertexPositions), 
         make_unique<RenderingObject::IndexArray>(std::move(vertexIndices)),
-        std::move(vertexNormals)
+        std::move(vertexNormals),
+        std::move(vertexUV)
     );
             
     return newObj;

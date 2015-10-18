@@ -11,6 +11,9 @@
 #elif ASSIGNMENT == 3
 #include "assignment3/Assignment3.h"
 #define APPLICATION Assignment3
+#elif ASSIGNMENT == 4
+#include "assignment4/Assignment4.h"
+#define APPLICATION Assignment4
 #else 
 #define APPLICATION Application
 #endif
@@ -18,7 +21,7 @@
 #include <iostream>
 #include <chrono>
 
-#undef ASSIGNMENT 	// Special config to prevent overwriting in Xcode.
+#undef ASSIGNMENT      // Special config to prevent overwriting in Xcode.
 #define ASSIGNMENT 2 // Replace the number to be the corresponding assignment.
 
 int main(int argc, char** argv) {

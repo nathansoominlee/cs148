@@ -97,7 +97,7 @@ find_package(OpenGL REQUIRED)
 include_directories(${OPENGL_INCLUDE_DIR})
 
 # Add Files based on the assignment
-if (NOT ASSIGNMENT OR ASSIGNMENT GREATER 3)
+if (NOT ASSIGNMENT OR ASSIGNMENT GREATER 4)
     message(STATUS "Assignment NOT SET or INVALID, default to assignment 1")
     set(ASSIGNMENT 1)
 endif()

@@ -3,7 +3,7 @@
 # Builds the Makefiles then runs make
 
 # Change this for different assignments
-ASSIGNMENT=3
+ASSIGNMENT=4
 
 # The build location
 MIKE_DIR=unix/Debug
