@@ -25,6 +25,7 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
             aiProcess_Triangulate            |
             aiProcess_JoinIdenticalVertices  |
             aiProcess_FixInfacingNormals |
+            aiProcess_FindInstances |
             aiProcess_SortByPType);
     if (!scene) {
         std::cerr << "ERROR: Assimp failed -- " << importer.GetErrorString() << std::endl;
