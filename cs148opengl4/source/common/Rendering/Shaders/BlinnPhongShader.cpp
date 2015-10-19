@@ -62,6 +62,7 @@ void BlinnPhongShader::SetupShaderLighting(const Light* light) const
             break;
         default:
             std::cerr << "WARNING: Light type is not supported. Defaulting to global light. Your output may look wrong. -- Ignoring: " << static_cast<int>(light->GetLightType()) << std::endl;
+            std::cerr << "Todo: Implement directional and hemisphere lights for Blinn-Phong Shader (see @258 on Piazza)" << static_cast<int>(light->GetLightType()) << std::endl;
 #ifndef DISABLE_OPENGL_SUBROUTINES
             SetShaderSubroutine("inputLightSubroutine", "globalLightSubroutine", lightingShaderStage);
 #else

@@ -142,6 +142,8 @@ void Assignment4::SetupDummy()
     shader->SetRoughness(0.f);
     shader->SetSpecular(0.5f);
     
+    shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("dummy/Texture/dummy_wood.jpg"));
+    
     std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "dummy/Model/dummy.obj");
     if (meshTemplate.empty()) {
         std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
@@ -256,17 +258,11 @@ void Assignment4::SetupExample1Epic()
 void Assignment4::SetupExample2()
 {
     scene->ClearScene();
-#ifndef DISABLE_OPENGL_SUBROUTINES
-    std::unordered_map<GLenum, std::string> shaderSpec = {
-        { GL_VERTEX_SHADER, "brdf/blinnphong/fragTexture/blinnphong.vert" },
-        { GL_FRAGMENT_SHADER, "brdf/blinnphong/fragTexture/blinnphong.frag" }
-    };
-#else
     std::unordered_map<GLenum, std::string> shaderSpec = {
         { GL_VERTEX_SHADER, "brdf/blinnphong/fragTexture/noSubroutine/blinnphong.vert" },
         { GL_FRAGMENT_SHADER, "brdf/blinnphong/fragTexture/noSubroutine/blinnphong.frag" }
     };
-#endif
+
     std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
