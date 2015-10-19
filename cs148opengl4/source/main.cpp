@@ -22,7 +22,7 @@
 #include <chrono>
 
 #undef ASSIGNMENT      // Special config to prevent overwriting in Xcode.
-#define ASSIGNMENT 2 // Replace the number to be the corresponding assignment.
+#define ASSIGNMENT 4 // Replace the number to be the corresponding assignment.
 
 int main(int argc, char** argv) {
     FreeImage_Initialise();

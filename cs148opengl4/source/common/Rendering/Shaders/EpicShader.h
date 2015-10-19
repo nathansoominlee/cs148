@@ -53,8 +53,8 @@ public:
      */
     struct TextureSlots {
         enum Type {
-            DIFFUSE = 0,
-            SPECULAR
+            DIFFUSE = 0
+            //SPECULAR
         };
     };
 

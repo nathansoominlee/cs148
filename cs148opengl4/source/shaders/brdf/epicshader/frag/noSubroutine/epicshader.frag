@@ -1,7 +1,7 @@
 #version 330
 #define M_PI 3.1415926535897932384626433832795
 
-in vec4 fragmentColor;
+in vec2 fragmentUV;
 in vec4 vertexWorldPosition;
 in vec3 vertexWorldNormal;
 
@@ -33,6 +33,8 @@ uniform vec4 cameraPosition;
 uniform float constantAttenuation;
 uniform float linearAttenuation;
 uniform float quadraticAttenuation;
+
+uniform sampler2D diffuseTexture;
 
 uniform int lightingType;
 
@@ -86,7 +88,8 @@ vec4 lightSubroutine(vec4 worldPosition, vec3 worldNormal)
     ////////////// calculate the diffuse color, d //////////// 
 
     // the base color passed to the material
-    vec3 c_base = vec3(fragmentColor);
+    //vec3 c_base = vec3(fragmentColor);
+    vec3 c_base = vec3(texture(diffuseTexture, fragmentUV));
 
     // the diffuse color of the material
     vec3 c_diff = vec3((1 - material.metallic) * c_base);
@@ -184,7 +187,8 @@ void main()
     // only attenuate point lights
     if (lightingType == 1) // Point
     {
-        finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
+        //finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * fragmentColor;
+        finalColor = AttenuateLight(lightingColor, vertexWorldPosition) * texture(diffuseTexture, fragmentUV);
     }
     else
     {

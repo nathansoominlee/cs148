@@ -24,6 +24,7 @@ private:
     virtual void SetupScene();
 
     virtual void SetupExample1();
+    virtual void SetupExample1Epic();
     virtual void SetupCamera();
 };
 

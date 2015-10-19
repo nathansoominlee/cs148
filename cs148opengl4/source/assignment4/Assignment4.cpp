@@ -49,6 +49,11 @@ void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
             SetupExample1();
         }
         break;
+    case SDLK_2:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupExample1Epic();
+        }
+        break;
     case SDLK_UP:
         camera->Rotate(glm::vec3(camera->GetRightDirection()), 0.1f);
         break;
@@ -114,6 +119,34 @@ void Assignment4::SetupExample1()
     std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+
+    std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+    scene->AddLight(pointLight);
+
+    std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(sphereTemplate);
+    sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), PI / 4.f);
+    scene->AddSceneObject(sceneObject);
+}
+
+
+void Assignment4::SetupExample1Epic()
+{
+    scene->ClearScene();
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.frag"}
+    };
+
+    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetMetallic(0.5f);
+    shader->SetRoughness(0.f);
+    shader->SetSpecular(0.5f);
+    shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
+
+    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
     pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
