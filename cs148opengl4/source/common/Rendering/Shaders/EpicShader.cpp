@@ -1,7 +1,7 @@
 #include "common/Rendering/Shaders/EpicShader.h"
 #include "common/Rendering/Textures/Texture.h"
 #include "common/Scene/Light/Light.h"
-#include "common/Scene/Light/Properties/EpicShader/EpicLightProperties.h"
+#include "common/Scene/Light/LightProperties.h"
 #include "common/Scene/Camera/Camera.h"
 #include "common/Utility/Texture/TextureLoader.h"
 
@@ -67,7 +67,7 @@ void EpicShader::SetupShaderLighting(const Light* light) const
 
 
         // Get the light's properties and pass it into the shader.
-        const EpicLightProperties* lightProperty = static_cast<const EpicLightProperties*>(light->GetPropertiesRaw());
+        const LightProperties* lightProperty = light->GetPropertiesRaw();
         
         SetShaderUniform("genericLight.color", lightProperty->color);
         SetShaderUniform("genericLight.direction", lightProperty->direction);
@@ -144,11 +144,6 @@ void EpicShader::SetupShaderMaterials() const
 void EpicShader::SetupShaderCamera(const class Camera* camera) const
 {
     SetShaderUniform("cameraPosition", camera->GetPosition());
-}
-
-std::unique_ptr<EpicLightProperties> EpicShader::CreateLightProperties()
-{
-    return make_unique<EpicLightProperties>();
 }
 
 void EpicShader::SetMetallic(float inMetallic)

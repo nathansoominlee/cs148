@@ -137,7 +137,7 @@ void Assignment2::SetupExample1()
     sceneObject = std::make_shared<SceneObject>(sphereTemplate);
     scene->AddSceneObject(sceneObject);
 
-    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->diffuseColor = glm::vec4(0.5f, 0.5f, 0.5f, 1.f);
 
     pointLight = std::make_shared<Light>(std::move(lightProperties));

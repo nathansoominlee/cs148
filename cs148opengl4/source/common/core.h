@@ -17,7 +17,6 @@
 #include "common/Scene/Camera/Camera.h"
 #include "common/Scene/Camera/PerspectiveCamera.h"
 #include "common/Scene/Light/Light.h"
-#include "common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h"
-#include "common/Scene/Light/Properties/EpicShader/EpicLightProperties.h"
+#include "common/Scene/Light/LightProperties.h"
 
 #endif

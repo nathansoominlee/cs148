@@ -158,7 +158,7 @@ void Assignment4::SetupDummy()
 void Assignment4::AddPLight()
 {
     // turn on point light.
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
     lightProperties->radius = 1000.f;
     
@@ -170,8 +170,8 @@ void Assignment4::AddPLight()
 void Assignment4::AddDLight()
 {
     // add a directional light which has a direction instead of position
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
-    lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
+    lightProperties = make_unique<LightProperties>();
     lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
     lightProperties->direction = glm::vec4(0.f, -10.f, 0.f, 1.f); // Sunlight shines down (in the -y direction)
     
@@ -182,8 +182,8 @@ void Assignment4::AddDLight()
 void Assignment4::AddHLight()
 {
     // add a hemispherical light which has a sky and ground color
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
-    lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
+    lightProperties = make_unique<LightProperties>();
     lightProperties->groundColor = glm::vec3(0.f, 3.f, 1.f); // Green
     lightProperties->skyColor = glm::vec3(1.f, 1.f, 3.f);    // Blue
     lightProperties->radius = 1000.f;
@@ -211,7 +211,7 @@ void Assignment4::SetupExample1()
     shader->SetTexture(BlinnPhongShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
     shader->SetTexture(BlinnPhongShader::TextureSlots::SPECULAR, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
 
-    std::unique_ptr<LightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
@@ -240,7 +240,7 @@ void Assignment4::SetupExample1Epic()
     shader->SetSpecular(0.5f);
     shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
 
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->color = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
     std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));

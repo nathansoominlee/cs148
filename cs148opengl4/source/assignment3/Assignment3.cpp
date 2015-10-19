@@ -152,7 +152,7 @@ void Assignment3::SetupDummy()
 void Assignment3::AddPLight()
 {
     // turn on point light.
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
     lightProperties->radius = 1000.f;
     
@@ -165,7 +165,7 @@ void Assignment3::AddPLight()
 void Assignment3::AddDLight()
 {
     // add a directional light which has a direction instead of position
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties = EpicShader::CreateLightProperties();
     lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
     lightProperties->direction = glm::vec4(0.f, -10.f, 0.f, 1.f); // Sunlight shines down (in the -y direction)
@@ -177,7 +177,7 @@ void Assignment3::AddDLight()
 void Assignment3::AddHLight()
 {
     // add a hemispherical light which has a sky and ground color
-    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties = EpicShader::CreateLightProperties();
     lightProperties->groundColor = glm::vec3(0.f, 3.f, 1.f); // Green
     lightProperties->skyColor = glm::vec3(1.f, 1.f, 3.f);    // Blue

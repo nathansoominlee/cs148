@@ -64,9 +64,6 @@ public:
      */
     virtual void SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture);
 
-    /*! \copydoc ShaderProgram::CreateLightProperties() 
-     */
-    static std::unique_ptr<struct EpicLightProperties> CreateLightProperties();
 protected:
     // Material Parameters
     virtual void UpdateMaterialBlock() const;

@@ -139,17 +139,6 @@ public:
         StopUseShader();  
     }
 
-    /*! \brief Creates the light properties that is of the right type for this shader.
-     *  \returns The light properties that is of the right type for this shader.
-     *
-     *  The LightProperties structure is necessary to separate the type of light (point, directional, etc.)
-     *  and what properties are necessary for the shader to calculate the final color of the fragment.
-     *  When creating a light, you should request a light property from the shader you will be using and then set the light properties on the
-     *  structure and then pass it to the light. Note that this restricts you (currently) to using only
-     *  one shader in the entire scene. However, you can easily expand the Light class to contain multiple
-     *  light properties and using the right properties structure for the appropriate shader.
-     */
-    static std::unique_ptr<struct LightProperties> CreateLightProperties();
 protected:
     /*! \brief Reads in a shader object and returns the OpenGL shader object name.
      *  \param type Is the same as the shaderType paramter in <a href="https://www.opengl.org/sdk/docs/man/html/glCreateShader.xhtml">glCreateShader</a>.
