@@ -29,12 +29,24 @@ glm::vec2 Assignment4::GetWindowSize() const
 
 void Assignment4::SetupScene()
 {
-    SetupExample1();
+    SetupDummy();
 }
 
 void Assignment4::SetupCamera()
 {
-    camera->SetPosition(glm::vec3(0.f, 0.f, 10.f));
+    PerspectiveCamera* pcamera = static_cast<PerspectiveCamera*>(camera.get());
+  
+    // Set camera field of view and clipping planes
+    pcamera->SetFOV(35.9f);
+    pcamera->SetZNear(0.1f);
+    pcamera->SetZFar(1000.f);
+    
+    // Set camera position and rotation
+    camera->SetPosition(glm::vec3(-0.607f, 40.868f, 115.363f));
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -10.745f * PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.089f* PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
+
 }
 
 void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double timestamp, double deltaTime)
@@ -53,6 +65,23 @@ void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
         if (!repeat && state == SDL_KEYDOWN) {
             SetupExample1Epic();
         }
+        break;
+    case SDLK_3:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupDummy();
+        }
+        break;
+    case SDLK_p:
+        AddPLight();
+        break;
+    case SDLK_d:
+        AddDLight();
+        break;
+    case SDLK_h:
+        AddHLight();
+        break;
+    case SDLK_c:
+        scene->ClearLights();
         break;
     case SDLK_UP:
         camera->Rotate(glm::vec3(camera->GetRightDirection()), 0.1f);
@@ -75,9 +104,6 @@ void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     case SDLK_s:
         camera->Translate(glm::vec3(camera->GetForwardDirection() * -0.3f));
         break;
-    case SDLK_d:
-        camera->Translate(glm::vec3(camera->GetRightDirection() * 0.3f));
-        break;
     case SDLK_SPACE:
         camera->Translate(glm::vec3(camera->GetUpDirection() * 0.3f));
         break;
@@ -95,6 +121,70 @@ void Assignment4::HandleWindowResize(float x, float y)
 {
     Application::HandleWindowResize(x, y);
     std::static_pointer_cast<PerspectiveCamera>(camera)->SetAspectRatio(x / y);
+}
+
+void Assignment4::SetupDummy()
+{
+    scene->ClearScene();
+    
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.frag"}
+    };
+    
+    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetMetallic(0.5f);
+    shader->SetRoughness(0.f);
+    shader->SetSpecular(0.5f);
+    
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "dummy/Model/dummy.obj");
+    if (meshTemplate.empty()) {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return;
+    }       
+
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    scene->AddSceneObject(sceneObject);
+    
+    AddPLight();
+    
+}
+
+void Assignment4::AddPLight()
+{
+    // turn on point light.
+    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
+    lightProperties->radius = 1000.f;
+    
+    pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(0.f, 0.f, 10.f));
+    scene->AddLight(pointLight);
+    pLightIsOn = true;
+} 
+void Assignment4::AddDLight()
+{
+    // add a directional light which has a direction instead of position
+    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    lightProperties = EpicShader::CreateLightProperties();
+    lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
+    lightProperties->direction = glm::vec4(0.f, -10.f, 0.f, 1.f); // Sunlight shines down (in the -y direction)
+    
+    sunLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::DIRECTIONAL);
+    scene->AddLight(sunLight);
+}
+
+void Assignment4::AddHLight()
+{
+    // add a hemispherical light which has a sky and ground color
+    std::unique_ptr<EpicLightProperties> lightProperties = EpicShader::CreateLightProperties();
+    lightProperties = EpicShader::CreateLightProperties();
+    lightProperties->groundColor = glm::vec3(0.f, 3.f, 1.f); // Green
+    lightProperties->skyColor = glm::vec3(1.f, 1.f, 3.f);    // Blue
+    lightProperties->radius = 1000.f;
+    
+    hemisphereLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::HEMISPHERE);
+    scene->AddLight(hemisphereLight);
 }
 
 void Assignment4::SetupExample1()

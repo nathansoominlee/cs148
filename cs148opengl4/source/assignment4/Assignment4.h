@@ -21,11 +21,27 @@ protected:
     virtual void HandleWindowResize(float x, float y);
 
 private:
-    virtual void SetupScene();
 
+    // for demo
+    virtual void SetupScene();
+    virtual void SetupDummy();
+    virtual void AddPLight();    // key press 'p'
+    virtual void AddDLight();    // key press 'd'
+    virtual void AddHLight();    // key press 'h'
+
+    // for reference
     virtual void SetupExample1();
     virtual void SetupExample1Epic();
     virtual void SetupCamera();
+
+    // shared
+    std::shared_ptr<class Light> sunLight;
+    std::shared_ptr<class Light> hemisphereLight;
+    std::shared_ptr<class Light> pointLight;
+    std::vector<std::shared_ptr<class SceneObject>> sphereDance;
+    bool pLightIsOn;
+    bool dLightIsOn;
+    bool hLightIsOn;
 };
 
 #endif
