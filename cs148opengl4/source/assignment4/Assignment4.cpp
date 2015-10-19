@@ -144,14 +144,24 @@ void Assignment4::SetupDummy()
     
     shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("dummy/Texture/dummy_wood.jpg"));
     
-    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, "dummy/Model/dummy.obj");
-    if (meshTemplate.empty()) {
-        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
-        return;
-    }       
+    // load the dummy objects
+    std::array<std::string, 3> dummy_objects = {"dummy/Model/dummy.obj", 
+                                                "dummy/Model/base.obj",
+                                                "dummy/Model/support.obj"};
 
-    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
-    scene->AddSceneObject(sceneObject);
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate;
+    for (auto dummy_object : dummy_objects)
+    {
+        meshTemplate = MeshLoader::LoadMesh(shader, dummy_object);
+        if (meshTemplate.empty()) 
+        {
+            std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+            return;
+        }       
+
+        std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
+        scene->AddSceneObject(sceneObject);
+    }
     
     AddPLight();
     
