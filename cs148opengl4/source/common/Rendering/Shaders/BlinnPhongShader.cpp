@@ -1,9 +1,10 @@
 #include "common/Rendering/Shaders/BlinnPhongShader.h"
 #include "common/Rendering/Textures/Texture.h"
 #include "common/Scene/Light/Light.h"
-#include "common/Scene/Light/Properties/BlinnPhong/BlinnPhongLightProperties.h"
+#include "common/Scene/Light/LightProperties.h"
 #include "common/Scene/Camera/Camera.h"
 #include "common/Utility/Texture/TextureLoader.h"
+#include "assimp/material.h"
 
 std::array<const char*, 4> BlinnPhongShader::MATERIAL_PROPERTY_NAMES = {
     "InputMaterial.matDiffuse", 
@@ -70,7 +71,7 @@ void BlinnPhongShader::SetupShaderLighting(const Light* light) const
         }
 
         // Get the light's properties and pass it into the shader.
-        const BlinnPhongLightProperties* lightProperty = static_cast<const BlinnPhongLightProperties*>(light->GetPropertiesRaw());
+        const LightProperties* lightProperty = light->GetPropertiesRaw();
         SetShaderUniform("genericLight.diffuseColor", lightProperty->diffuseColor);
         SetShaderUniform("genericLight.specularColor", lightProperty->specularColor);
         light->SetupShaderUniforms(this);
@@ -94,10 +95,6 @@ void BlinnPhongShader::UpdateMaterialBlock() const
         OGL_CALL(glUniformBlockBinding(shaderProgram, materialBlockLocation, MATERIAL_BINDING_POINT));
         OGL_CALL(glBindBuffer(GL_UNIFORM_BUFFER, 0));
     }
-
-    // While we're here, also setup the textures too.
-    SetShaderUniform("diffuseTexture", static_cast<int>(TextureSlots::DIFFUSE));
-    SetShaderUniform("specularTexture", static_cast<int>(TextureSlots::SPECULAR));
 
     StopUseShader();
 }
@@ -134,6 +131,9 @@ void BlinnPhongShader::SetupShaderMaterials() const
     assert(specularTexture);
     specularTexture->BeginRender(static_cast<int>(TextureSlots::SPECULAR));
 
+    // While we're here, also setup the textures too.
+    SetShaderUniform("diffuseTexture", static_cast<int>(TextureSlots::DIFFUSE));
+    SetShaderUniform("specularTexture", static_cast<int>(TextureSlots::SPECULAR));
 }
 
 void BlinnPhongShader::SetupShaderCamera(const class Camera* camera) const
@@ -141,10 +141,6 @@ void BlinnPhongShader::SetupShaderCamera(const class Camera* camera) const
     SetShaderUniform("cameraPosition", camera->GetPosition());
 }
 
-std::unique_ptr<BlinnPhongLightProperties> BlinnPhongShader::CreateLightProperties()
-{
-    return make_unique<BlinnPhongLightProperties>();
-}
 void BlinnPhongShader::SetDiffuse(glm::vec4 inDiffuse) 
 { 
     diffuse = inDiffuse; 
@@ -167,4 +163,32 @@ void BlinnPhongShader::SetAmbient(glm::vec4 inAmbient)
 void BlinnPhongShader::SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture)
 {
     textureSlotMapping[slot] = std::move(inputTexture);
+}
+
+void BlinnPhongShader::LoadMaterialFromAssimp(std::shared_ptr<aiMaterial> assimpMaterial)
+{
+    if (!assimpMaterial) {
+        return;
+    }
+
+    assimpMaterial->Get(AI_MATKEY_COLOR_DIFFUSE, glm::value_ptr(diffuse), nullptr);
+    assimpMaterial->Get(AI_MATKEY_COLOR_SPECULAR, glm::value_ptr(specular), nullptr);
+    assimpMaterial->Get(AI_MATKEY_SHININESS, &shininess, nullptr);
+    assimpMaterial->Get(AI_MATKEY_COLOR_AMBIENT, glm::value_ptr(ambient), nullptr);
+
+    if (assimpMaterial->GetTextureCount(aiTextureType_DIFFUSE)) {
+        aiString aiDiffusePath;
+        assimpMaterial->GetTexture(aiTextureType_DIFFUSE, 0, &aiDiffusePath);
+        std::string diffusePath(aiDiffusePath.C_Str());
+        SetTexture(TextureSlots::DIFFUSE, TextureLoader::LoadTexture(diffusePath));
+    }
+
+    if (assimpMaterial->GetTextureCount(aiTextureType_SPECULAR)) {
+        aiString aiSpecularPath;
+        assimpMaterial->GetTexture(aiTextureType_SPECULAR, 0, &aiSpecularPath);
+        std::string specularPath(aiSpecularPath.C_Str());
+        SetTexture(TextureSlots::SPECULAR, TextureLoader::LoadTexture(specularPath));
+    }
+
+    UpdateMaterialBlock();
 }

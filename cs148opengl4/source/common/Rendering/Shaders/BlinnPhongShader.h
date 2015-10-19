@@ -74,7 +74,9 @@ public:
     struct TextureSlots {
         enum Type {
             DIFFUSE = 0,
-            SPECULAR
+            SPECULAR,
+            NORMAL,
+            DISPLACEMENT
         };
     };
 
@@ -84,9 +86,7 @@ public:
      */
     virtual void SetTexture(TextureSlots::Type slot, std::shared_ptr<class Texture> inputTexture);
 
-    /*! \copydoc ShaderProgram::CreateLightProperties() 
-     */
-    static std::unique_ptr<struct BlinnPhongLightProperties> CreateLightProperties();
+    virtual void LoadMaterialFromAssimp(std::shared_ptr<struct aiMaterial> assimpMaterial);
 protected:
     // Material Parameters
     virtual void UpdateMaterialBlock() const;

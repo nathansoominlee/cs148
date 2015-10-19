@@ -71,6 +71,11 @@ void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
             SetupDummy();
         }
         break;
+    case SDLK_4:
+        if (!repeat && state == SDL_KEYDOWN) {
+            SetupExample2();
+        }
+        break;
     case SDLK_p:
         AddPLight();
         break;
@@ -206,7 +211,7 @@ void Assignment4::SetupExample1()
     shader->SetTexture(BlinnPhongShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
     shader->SetTexture(BlinnPhongShader::TextureSlots::SPECULAR, TextureLoader::LoadTexture("brick/bricktexture.jpg"));
 
-    std::unique_ptr<BlinnPhongLightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
+    std::unique_ptr<LightProperties> lightProperties = BlinnPhongShader::CreateLightProperties();
     lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
     lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
 
@@ -243,6 +248,41 @@ void Assignment4::SetupExample1Epic()
     scene->AddLight(pointLight);
 
     std::shared_ptr<RenderingObject> sphereTemplate = PrimitiveCreator::CreateIcoSphere(shader, 5.f, 4);
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(sphereTemplate);
+    sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), PI / 4.f);
+    scene->AddSceneObject(sceneObject);
+}
+
+void Assignment4::SetupExample2()
+{
+    scene->ClearScene();
+#ifndef DISABLE_OPENGL_SUBROUTINES
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/fragTexture/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/fragTexture/blinnphong.frag" }
+    };
+#else
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/blinnphong/fragTexture/noSubroutine/blinnphong.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/blinnphong/fragTexture/noSubroutine/blinnphong.frag" }
+    };
+#endif
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
+    lightProperties->diffuseColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+    lightProperties->specularColor = glm::vec4(1.f, 1.f, 1.f, 1.f);
+
+    std::shared_ptr<Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(glm::vec3(10.f, 10.f, 10.f));
+    scene->AddLight(pointLight);
+
+    std::vector<std::shared_ptr<aiMaterial>> loadedMaterials;
+    std::vector<std::shared_ptr<RenderingObject>> sphereTemplate = MeshLoader::LoadMesh(nullptr, "sphere.obj", &loadedMaterials);
+    for (size_t i = 0; i < sphereTemplate.size(); ++i) {
+        std::shared_ptr<BlinnPhongShader> shader = std::make_shared<BlinnPhongShader>(shaderSpec, GL_FRAGMENT_SHADER);
+        shader->LoadMaterialFromAssimp(loadedMaterials[i]);
+        sphereTemplate[i]->SetShader(std::move(shader));
+    }
+
     std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(sphereTemplate);
     sceneObject->Rotate(glm::vec3(SceneObject::GetWorldRight()), PI / 4.f);
     scene->AddSceneObject(sceneObject);

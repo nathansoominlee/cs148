@@ -4,9 +4,12 @@
 #define __MESH_LOADER__
 
 #include "common/common.h"
+#include "assimp/material.h"
+#include <map>
 
 class RenderingObject;
 class ShaderProgram;
+class Texture2D;
 
 namespace MeshLoader
 {
@@ -24,7 +27,7 @@ namespace MeshLoader
  *  - Face Vertex Indices
  *  Note that we do not load textures or material here. If you wish to do that you will have to extend the functionality in this function.
  */
-std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderProgram> inputShader, const std::string& filename);
+std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderProgram> inputShader, const std::string& filename, std::vector<std::shared_ptr<aiMaterial>>* outputMaterials = nullptr);
 
 }
 

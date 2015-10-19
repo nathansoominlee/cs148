@@ -25,6 +25,8 @@ public:
      *  shader is highly recommended unless you know what you are doing. 
      */
     ShaderProgram(const std::unordered_map<GLenum, std::string>& inputShaders);
+
+    virtual void LoadMaterialFromAssimp(std::shared_ptr<struct aiMaterial> assimpMaterial) {}
     
     /*! \brief A destructor to clean up the shader program.
      */

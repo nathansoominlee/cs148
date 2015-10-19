@@ -32,6 +32,7 @@ private:
     // for reference
     virtual void SetupExample1();
     virtual void SetupExample1Epic();
+    virtual void SetupExample2();
     virtual void SetupCamera();
 
     // shared

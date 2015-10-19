@@ -6,6 +6,8 @@
 #include "common/common.h"
 
 struct LightProperties {
+    glm::vec4 diffuseColor;
+    glm::vec4 specularColor;
 };
 
 #endif

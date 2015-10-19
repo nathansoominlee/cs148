@@ -8,7 +8,7 @@
 namespace MeshLoader
 {
 
-std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderProgram> inputShader, const std::string& filename)
+std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderProgram> inputShader, const std::string& filename, std::vector<std::shared_ptr<aiMaterial>>* outputMaterials)
 {
 
 #ifndef ASSET_PATH
@@ -30,6 +30,17 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
     if (!scene) {
         std::cerr << "ERROR: Assimp failed -- " << importer.GetErrorString() << std::endl;
         return {};
+    }
+
+    std::vector<std::shared_ptr<aiMaterial>> sceneMaterials;
+    if (outputMaterials) {
+        sceneMaterials.resize(scene->mNumMaterials);
+        for (unsigned int m = 0; m < scene->mNumMaterials; ++m) {
+            aiMaterial* material = scene->mMaterials[m];
+            std::shared_ptr<aiMaterial> dstMaterial = std::make_shared<aiMaterial>();
+            aiMaterial::CopyPropertyList(dstMaterial.get(), material);
+            sceneMaterials[m] = dstMaterial;
+        }
     }
 
     std::vector<std::shared_ptr<RenderingObject>> loadedMeshes;
@@ -78,6 +89,9 @@ std::vector<std::shared_ptr<RenderingObject>> LoadMesh(std::shared_ptr<ShaderPro
         std::shared_ptr<RenderingObject> createdMesh = std::make_shared<RenderingObject>(inputShader, std::move(positions), std::move(indices),
             std::move(normals), std::move(uv), std::move(colors));
         loadedMeshes.push_back(std::move(createdMesh));
+        if (outputMaterials) {
+            outputMaterials->push_back(sceneMaterials[mesh->mMaterialIndex]);
+        }
     }
     return loadedMeshes;
 }
