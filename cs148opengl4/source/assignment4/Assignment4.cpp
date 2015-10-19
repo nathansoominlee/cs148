@@ -162,6 +162,30 @@ void Assignment4::SetupDummy()
         std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
         scene->AddSceneObject(sceneObject);
     }
+
+    // add the frog!
+    std::shared_ptr<EpicShader> frog_shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    frog_shader->SetMetallic(0.5f);
+    frog_shader->SetRoughness(0.f);
+    frog_shader->SetSpecular(0.5f);
+
+    frog_shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture("frog/Texture/frog_texture.png"));
+    meshTemplate = MeshLoader::LoadMesh(frog_shader, "frog/Model/frog.obj");
+    if (meshTemplate.empty()) 
+    {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return;
+    }       
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    // place the frog
+    sceneObject->SetPosition(glm::vec3(-5.317f, -2.027f, 2.966f));
+    sceneObject->Rotate(glm::vec3(1.f, 0.f, 0.f), 8.441f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 1.f, 0.f), -7.558f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 0.f, 1.f), 1.087f * PI / 180.f);
+    sceneObject->MultScale(0.2f);
+
+    scene->AddSceneObject(sceneObject);
+
     
     AddPLight();
     
