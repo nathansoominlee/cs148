@@ -4,6 +4,7 @@
 #define __ASSIGNMENT_4__
 
 #include "common/Application.h"
+#include "common/core.h" // <-- haha.
 
 class Assignment4: public Application
 {
@@ -22,14 +23,25 @@ protected:
 
 private:
 
-    // for demo
+    // for scanline image
     virtual void SetupScene();
-    virtual void SetupDummy();
+    virtual void SetupFinalScene();
     virtual void AddPLight();    // key press 'p'
     virtual void AddDLight();    // key press 'd'
     virtual void AddHLight();    // key press 'h'
 
+    // helper functions
+    std::shared_ptr<EpicShader> MakeEpicShader(float metallic,
+                                               float roughness,
+                                               float specular,
+                                               std::string texture);
+
+    std::shared_ptr<class SceneObject> LoadObj(std::shared_ptr<ShaderProgram> shader, std::string obj);
+
+
+
     // for reference
+    virtual void SetupDummy();
     virtual void SetupExample1();
     virtual void SetupExample1Epic();
     virtual void SetupExample2();

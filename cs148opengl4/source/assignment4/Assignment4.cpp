@@ -1,5 +1,4 @@
 #include "assignment4/Assignment4.h"
-#include "common/core.h" // <-- haha.
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
 #include "common/Utility/Mesh/Loading/MeshLoader.h"
 #include "common/Utility/Texture/TextureLoader.h"
@@ -29,7 +28,7 @@ glm::vec2 Assignment4::GetWindowSize() const
 
 void Assignment4::SetupScene()
 {
-    SetupDummy();
+    SetupFinalScene();
 }
 
 void Assignment4::SetupCamera()
@@ -128,6 +127,144 @@ void Assignment4::HandleWindowResize(float x, float y)
     std::static_pointer_cast<PerspectiveCamera>(camera)->SetAspectRatio(x / y);
 }
 
+// Returns an epic shader with the given parameters
+// and texture. Any objects with different parameter/textures
+// need different shaders.
+std::shared_ptr<EpicShader> Assignment4::MakeEpicShader(float metallic,
+                                                          float roughness,
+                                                          float specular,
+                                                          std::string texture)
+{
+    std::unordered_map<GLenum, std::string> shaderSpec = {
+        { GL_VERTEX_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.vert" },
+        { GL_FRAGMENT_SHADER, "brdf/epicshader/frag/noSubroutine/epicshader.frag"}
+    };
+
+    std::shared_ptr<EpicShader> shader = std::make_shared<EpicShader>(shaderSpec, GL_FRAGMENT_SHADER);
+    shader->SetMetallic(metallic);
+    shader->SetRoughness(roughness);
+    shader->SetSpecular(specular);
+
+    if (!texture.empty())
+    {
+        shader->SetTexture(EpicShader::TextureSlots::DIFFUSE, TextureLoader::LoadTexture(texture));
+    }
+
+    return shader;
+}
+
+// Loads an .obj file, assigns it a shader, and adds it to the scene.
+std::shared_ptr<class SceneObject> Assignment4::LoadObj(std::shared_ptr<ShaderProgram> shader, std::string obj)
+{
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate = MeshLoader::LoadMesh(shader, obj);
+    if (meshTemplate.empty()) 
+    {
+        std::cerr << "ERROR: Failed to load the model. Check your paths." << std::endl;
+        return nullptr;
+    }       
+
+    // Make scene object and add it to the scene
+    std::shared_ptr<class SceneObject> sceneObject = std::make_shared<SceneObject>(meshTemplate);
+    scene->AddSceneObject(sceneObject);
+
+    // Return handle to scene object so caller can translate/rotate/scale it
+    return sceneObject;
+}
+
+void Assignment4::SetupFinalScene()
+{
+    scene->ClearScene();
+    
+    std::string texture = "dummy/Texture/dummy_wood.jpg";
+    float metallic = 0.5f;
+    float roughness = 0.f;
+    float specular = 0.5f;
+    std::shared_ptr<EpicShader> shader = MakeEpicShader(metallic, roughness, specular, texture);
+    
+    // load the dummy objects
+    std::array<std::string, 3> dummy_objects = {"dummy/Model/dummy.obj", 
+                                                "dummy/Model/base.obj",
+                                                "dummy/Model/support.obj"};
+
+    std::vector<std::shared_ptr<RenderingObject>> meshTemplate;
+    for (auto dummy_object : dummy_objects)
+    {
+        LoadObj(shader, dummy_object);
+    }
+
+    // add the frog!
+    texture = "frog/Texture/frog_texture.png";
+    metallic = 0.5f;
+    roughness = 0.f;
+    specular = 0.5f;
+    shader = MakeEpicShader(metallic, roughness, specular, texture);
+
+    std::string object = "frog/Model/frog.obj";
+    std::shared_ptr<class SceneObject> sceneObject = LoadObj(shader, object);
+
+    // place the frog
+    sceneObject->SetPosition(glm::vec3(-5.317f, -2.027f, 2.966f));
+    sceneObject->Rotate(glm::vec3(1.f, 0.f, 0.f), 8.441f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 1.f, 0.f), -7.558f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 0.f, 1.f), 1.087f * PI / 180.f);
+    sceneObject->MultScale(0.2f);
+
+
+    // add the blind window!
+    texture = "";
+    metallic = 0.5f;
+    roughness = 0.f;
+    specular = 0.5f;
+    shader = MakeEpicShader(metallic, roughness, specular, texture);
+    
+    object = "blind_window/Model/blind_window.obj";
+    sceneObject = LoadObj(shader, object);
+
+    // place the blind window
+    sceneObject->SetPosition(glm::vec3(23.f, 30.f, -21.4f));
+
+    // add the pearls!
+    texture = "";
+    metallic = 0.5f;
+    roughness = 0.f;
+    specular = 0.5f;
+    shader = MakeEpicShader(metallic, roughness, specular, texture);
+    
+    object = "pearl_necklace/Model/pearl_necklace.obj";
+    sceneObject = LoadObj(shader, object);
+
+    // place the pearls
+    sceneObject->SetPosition(glm::vec3(-6.107f, 26.359f, -2.537f));
+    sceneObject->Rotate(glm::vec3(1.f, 0.f, 0.f), 0.f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 1.f, 0.f), 90.f * PI / 180.f);
+    sceneObject->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
+
+
+    // add the banister!
+    texture = "";
+    metallic = 0.5f;
+    roughness = 0.f;
+    specular = 0.5f;
+    shader = MakeEpicShader(metallic, roughness, specular, texture);
+    
+    object = "banister/Model/banister.obj";
+    sceneObject = LoadObj(shader, object);
+
+    // add the wall!
+    texture = "";
+    metallic = 0.5f;
+    roughness = 0.f;
+    specular = 0.5f;
+    shader = MakeEpicShader(metallic, roughness, specular, texture);
+    
+    object = "wall/Model/wall.obj";
+    sceneObject = LoadObj(shader, object);
+    sceneObject->SetPosition(glm::vec3(0.f, 0.f, -23.f));
+
+
+    AddPLight();
+}
+
 void Assignment4::SetupDummy()
 {
     scene->ClearScene();
@@ -190,6 +327,7 @@ void Assignment4::SetupDummy()
     AddPLight();
     
 }
+
 
 void Assignment4::AddPLight()
 {
