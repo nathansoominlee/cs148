@@ -1,6 +1,7 @@
 #include "assignment4/SheetReader.h"
 
-int SheetReader::ImportSheet(std::string sheet, std::vector<std::vector<std::string>> &rows)
+int SheetReader::ImportSheet(std::string sheet, // input parameter
+                             Rows &rows)        // output parameter
 {
     std::string fname;
 
@@ -25,26 +26,35 @@ int SheetReader::ImportSheet(std::string sheet, std::vector<std::vector<std::str
 
 }
 
-// Copied from http://stackoverflow.com/questions/1075712/reading-delimited-files-in-c
-std::vector<std::vector<std::string>> SheetReader::ParseTSV(std::string fname)
+// Reads TSV line by line and extracts fields
+Rows SheetReader::ParseTSV(std::string fname)
 {
-    std::vector<std::vector<std::string>> rows;
+    Rows rows;
 
-    std::ifstream input(fname);
+    std::ifstream file(fname);
+    std::string line;
 
-    char const row_delim = '\n';
-    char const field_delim = '\t';
+    const char *needle = "\t";
 
-    for (std::string row; getline(input, row, row_delim); /* no increment */ ) 
+    while (std::getline(file, line))
     {
-        rows.push_back(std::vector<std::string>());
+        rows.push_back(Rows::value_type());
 
-        std::istringstream ss(row);
+        const char *haystack = line.c_str();
+        char *field;
 
-        for (std::string field; getline(ss, field, field_delim); /* no increment */ ) 
+        while ( (field = strnstr(haystack, needle, line.length())) )
         {
-            rows.back().push_back(field);
+            // put in null char
+            (*field) = '\0';
+
+            rows.back().push_back(haystack);
+
+            haystack = field + 1;
         }
+
+        // Collect the last field
+        rows.back().push_back(haystack);
 
     }
 
@@ -55,7 +65,7 @@ std::vector<std::vector<std::string>> SheetReader::ParseTSV(std::string fname)
 std::string SheetReader::DownloadSheet(std::string sheet)
 {
     // check for curl
-    std::string cmd = "curl --version";
+    std::string cmd = "curl --version > /dev/null 2>&1";
     int retval = system(cmd.c_str());
     if (retval)
     {
@@ -66,7 +76,7 @@ std::string SheetReader::DownloadSheet(std::string sheet)
 
     // download sheet
     std::string fname = "final_scene_sheet.tsv";
-    cmd = "curl -k " + sheet + " > " + fname;
+    cmd = "curl -sk " + sheet + " > " + fname;
 
     retval = system(cmd.c_str());
 
