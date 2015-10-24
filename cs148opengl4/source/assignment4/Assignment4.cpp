@@ -59,12 +59,14 @@ void Assignment4::HandleInput(SDL_Keysym key, Uint32 state, Uint8 repeat, double
     switch (key.sym) {
     case SDLK_1:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample1();
+            //SetupExample1();
+            SetupFinalScene();
         }
         break;
     case SDLK_2:
         if (!repeat && state == SDL_KEYDOWN) {
-            SetupExample1Epic();
+            //SetupExample1Epic();
+            SetupFinalSceneFromSheet();
         }
         break;
     case SDLK_3:
@@ -174,6 +176,8 @@ std::shared_ptr<class SceneObject> Assignment4::LoadObj(std::shared_ptr<ShaderPr
 }
 void Assignment4::SetupFinalSceneFromSheet()
 {
+    scene->ClearScene();
+
     // Import the sheet
     Rows rows;
     SheetReader::ImportSheet(this->sheetURL, rows);
@@ -187,6 +191,7 @@ void Assignment4::SetupFinalSceneFromSheet()
 
     // Turn on the lights
     AddPLight();
+    AddHLight();
 }
 
 void Assignment4::SetupFinalScene()

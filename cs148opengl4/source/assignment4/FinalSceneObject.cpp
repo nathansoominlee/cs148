@@ -98,13 +98,12 @@ FinalSceneObject FinalSceneObject::ParseFSO(std::vector<std::string> row)
             case(Column::Object):
 
                 name = field;
-                std::cout << "Reading in " << name << ": ";
+                std::cout << "Reading in " << name << std::endl;
                 break;
 
             case(Column::Description):
 
                 description = field;
-                std::cout << description << std::endl;
                 break;
 
             case(Column::Texture):
