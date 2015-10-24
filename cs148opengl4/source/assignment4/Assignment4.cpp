@@ -2,6 +2,8 @@
 #include "common/Utility/Mesh/Simple/PrimitiveCreator.h"
 #include "common/Utility/Mesh/Loading/MeshLoader.h"
 #include "common/Utility/Texture/TextureLoader.h"
+#include "assignment4/SheetReader.h"
+#include "assignment4/FinalSceneObject.h"
 
 Assignment4::Assignment4(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
     Application(std::move(inputScene), std::move(inputCamera))
@@ -28,7 +30,7 @@ glm::vec2 Assignment4::GetWindowSize() const
 
 void Assignment4::SetupScene()
 {
-    SetupFinalScene();
+    SetupFinalSceneFromSheet();
 }
 
 void Assignment4::SetupCamera()
@@ -169,6 +171,22 @@ std::shared_ptr<class SceneObject> Assignment4::LoadObj(std::shared_ptr<ShaderPr
 
     // Return handle to scene object so caller can translate/rotate/scale it
     return sceneObject;
+}
+void Assignment4::SetupFinalSceneFromSheet()
+{
+    // Import the sheet
+    Rows rows;
+    SheetReader::ImportSheet(this->sheetURL, rows);
+
+    // Parse the objects
+    std::vector<FinalSceneObject> objects;
+    FinalSceneObject::MakeContainer(rows, objects);
+
+    // Add to scene
+    FinalSceneObject::AddContainer(objects, this->scene);
+
+    // Turn on the lights
+    AddPLight();
 }
 
 void Assignment4::SetupFinalScene()

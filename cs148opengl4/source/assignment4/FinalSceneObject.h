@@ -18,10 +18,13 @@ public:
     // Print function for the created container
     static void PrintContainer(const std::vector<FinalSceneObject>& final_scene_objects);
 
+    // Utility function to add a container of objects to the scene
+    static void AddContainer(const std::vector<FinalSceneObject>& final_scene_objects, std::shared_ptr<Scene> scene);
+
 private:
 
 // The column data looks like this
-// Try to parse? object description texture shader:p1,p2{,p3} transformations:tx,ty,tz 
+// Try to parse? object description texture shader:p1,p2,... scale transformations:tx,ty,tz 
 
     enum Column {TryToParse      = 0,
                  Object          = 1,
@@ -37,8 +40,8 @@ private:
 
     FinalSceneObject(std::string name, 
                      std::string description, 
-                     std::string texture_path,
-                     ShaderType shader,
+                     std::string texture,
+                     ShaderType shader_type,
                      float epic_metallic,
                      float epic_roughness,
                      float epic_specular,
@@ -53,8 +56,8 @@ private:
                      float rz) :
         name(name),
         description(description),
-        texture_path(texture_path),
-        shader(shader),
+        texture(texture),
+        shader_type(shader_type),
         epic_metallic(epic_metallic),
         epic_roughness(epic_roughness),
         epic_specular(epic_specular),
@@ -69,12 +72,17 @@ private:
         rz(rz)
     {}
 
+    // Non-static private member functions
+    std::shared_ptr<class ShaderProgram> MakeShader();
+    std::shared_ptr<class SceneObject> LoadObj(std::shared_ptr<class ShaderProgram> shader, std::shared_ptr<Scene> scene);
+
+    // Static private member functions
     static void PrintRow(std::vector<std::string> row);
 
     static FinalSceneObject ParseFSO(std::vector<std::string> row);
 
     static int ParseShader(const std::string& field,          // input parameter
-                           ShaderType& shader,  // output parameter
+                           ShaderType& shader_type,  // output parameter
                            float* epic_metallic,              // output parameter
                            float* epic_roughness,             // output parameter
                            float* epic_specular,              // output parameter
@@ -99,12 +107,13 @@ private:
     static int ParseScale(const std::string& scale_param,
                           float* scale);
 
+    //  operator overload
     friend std::ostream& operator<< (std::ostream& os, const FinalSceneObject& fso);
 
     std::string name;
     std::string description;
-    std::string texture_path;
-    ShaderType shader;
+    std::string texture;
+    ShaderType shader_type;
     float epic_metallic;
     float epic_roughness;
     float epic_specular;

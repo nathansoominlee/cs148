@@ -23,8 +23,20 @@ protected:
 
 private:
 
+    //https://docs.google.com/spreadsheets/d/1azLEDHN8ghwzDDCjWozNAQ1ehgD3wAbm8a1xC9FaA8U/export?exportFormat=tsv
+    const std::string baseURL = 
+        "https://docs.google.com/spreadsheets/d/";
+    const std::string key = 
+        "1azLEDHN8ghwzDDCjWozNAQ1ehgD3wAbm8a1xC9FaA8U";
+    const std::string fmt = 
+        "/export?exportFormat=tsv"; // tab-separated values
+
+    const std::string sheetURL = baseURL + key + fmt;
+    const std::string sheet_path = "final_scene_sheet.tsv";
+
     // for scanline image
     virtual void SetupScene();
+    virtual void SetupFinalSceneFromSheet();
     virtual void SetupFinalScene();
     virtual void AddPLight();    // key press 'p'
     virtual void AddDLight();    // key press 'd'

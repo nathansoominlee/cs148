@@ -1,5 +1,7 @@
 #include "assignment4/FinalSceneObject.h"
 
+#include "assignment4/Utility.h"
+
 // The format for the .TSV file looks like this
 //
 // Try to parse? object description texture shader:p1,p2{,p3} transformations:tx,ty,tz 
@@ -46,10 +48,7 @@ int FinalSceneObject::MakeContainer(const Rows &rows,                      // in
 
     } // for j
 
-    for (auto object : final_scene_objects)
-    {
-        std::cout << object << std::endl;
-    }
+    return 0;
 
 } // FinalSceneObject::MakeContainer()
 
@@ -67,8 +66,8 @@ FinalSceneObject FinalSceneObject::ParseFSO(std::vector<std::string> row)
 {
     std::string name = "";
     std::string description = "";
-    std::string texture_path = "";
-    ShaderType shader = ShaderType::None;
+    std::string texture = "";
+    ShaderType shader_type = ShaderType::None;
     float epic_metallic = -1.f;
     float epic_roughness = -1.f;
     float epic_specular = -1.f;
@@ -110,13 +109,16 @@ FinalSceneObject FinalSceneObject::ParseFSO(std::vector<std::string> row)
 
             case(Column::Texture):
 
-                texture_path = field;
+                if (!(field == "None"))
+                {
+                    texture = field;
+                }
                 break;
 
             case(Column::Shader):
 
                 FinalSceneObject::ParseShader(field,
-                                              shader,
+                                              shader_type,
                                               &epic_metallic,
                                               &epic_roughness,
                                               &epic_specular,
@@ -138,7 +140,7 @@ FinalSceneObject FinalSceneObject::ParseFSO(std::vector<std::string> row)
     } // for i
 
     // Build and return the object
-    FinalSceneObject fso(name, description, texture_path, shader, \
+    FinalSceneObject fso(name, description, texture, shader_type, \
                     epic_metallic, epic_roughness, epic_specular, bp_diffuse, bp_specular, \
                     scale, tx, ty, tz, rx, ry, rz);
 
@@ -146,9 +148,62 @@ FinalSceneObject FinalSceneObject::ParseFSO(std::vector<std::string> row)
 
 } //FinalSceneObject::ParseFSO()
 
+void FinalSceneObject::AddContainer(const std::vector<FinalSceneObject>& final_scene_objects, std::shared_ptr<Scene> scene)
+{
+    for (auto fso : final_scene_objects)
+    {
+        // Get the shader
+        std::shared_ptr<class ShaderProgram> shader = fso.MakeShader();
+
+        // Load the object into the scene
+        std::shared_ptr<class SceneObject> so = fso.LoadObj(shader, scene);
+
+        // Position the object
+        so->SetPosition(glm::vec3(fso.tx, fso.ty, fso.tz));
+
+        // Rotate the object
+        so->Rotate(glm::vec3(1.f, 0.f, 0.f), fso.rx * PI / 180.f);
+        so->Rotate(glm::vec3(0.f, 1.f, 0.f), fso.ry * PI / 180.f);
+        so->Rotate(glm::vec3(0.f, 0.f, 1.f), fso.rz * PI / 180.f);
+
+        // Scale the object
+        so->MultScale(fso.scale);
+    }
+}
+
+std::shared_ptr<class SceneObject> FinalSceneObject::LoadObj(std::shared_ptr<class ShaderProgram> shader, std::shared_ptr<Scene> scene)
+{
+    std::string object_path = "objects/" + this->name + ".obj";
+    return Utility::LoadObj(shader, scene, object_path);
+}
+
+std::shared_ptr<class ShaderProgram> FinalSceneObject::MakeShader()
+{
+
+    std::string texture_path = "";
+    if (!this->texture.empty())
+    {
+        texture_path = "textures/" + this->texture;
+    }
+
+    switch (this->shader_type)
+    {
+        case (ShaderType::Epic):
+            return Utility::MakeEpicShader(this->epic_metallic, this->epic_roughness, this->epic_specular, texture_path);
+
+        case (ShaderType::BP):
+            return Utility::MakeBlinnPhongShader(this->bp_diffuse, this->bp_specular, texture_path);
+
+        case (ShaderType::None):
+            std::cerr << "MakeShader: Don't know how to make None shader type." << std::endl;
+    }
+
+    return nullptr;
+}
+
 // returns 0 on success
 int FinalSceneObject::ParseShader(const std::string& field,          // input parameter
-                                 ShaderType& shader,  // output parameter
+                                 ShaderType& shader_type,  // output parameter
                                  float* epic_metallic,              // output parameter
                                  float* epic_roughness,             // output parameter
                                  float* epic_specular,              // output parameter
@@ -170,7 +225,7 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
 
     if (!colon_location)
     {
-        std::cerr << "Error: Malformatted shader specification " << field << std::endl;
+        std::cerr << "Error: Malformatted shader_type specification " << field << std::endl;
         exit(1);
     }
 
@@ -182,7 +237,7 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
     if (shader_spec == "Epic")
     {
         // Set what we know
-        shader = ShaderType::Epic;
+        shader_type = ShaderType::Epic;
         bp_diffuse = glm::vec4(-1.f, -1.f, -1.f, -1.f);
         bp_specular = glm::vec4(-1.f, -1.f, -1.f, -1.f);
 
@@ -198,7 +253,7 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
     else if (shader_spec == "BP")
     {
         // Set what we know
-        shader = ShaderType::BP;
+        shader_type = ShaderType::BP;
         (*epic_metallic) = -1;
         (*epic_roughness) = -1;
         (*epic_specular) = -1;
@@ -378,7 +433,7 @@ void FinalSceneObject::PrintContainer(const std::vector<FinalSceneObject>& final
 std::ostream& operator<< (std::ostream& os, const FinalSceneObject& fso)
 {
     std::string shader = "None";
-    switch(fso.shader)
+    switch(fso.shader_type)
     {
         case (FinalSceneObject::ShaderType::Epic):
 
@@ -396,9 +451,9 @@ std::ostream& operator<< (std::ostream& os, const FinalSceneObject& fso)
             break;
     }
 
-    os << "name: "           << fso.name
+    os << "name: "            << fso.name
        << " description: "    << fso.description
-       << " texture_path: "   << fso.texture_path
+       << " texture: "        << fso.texture
        << " shader: "         << shader
        << " epic_metallic: "  << fso.epic_metallic
        << " epic_roughness: " << fso.epic_roughness
