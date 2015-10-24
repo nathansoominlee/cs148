@@ -43,7 +43,7 @@ void Assignment4::SetupCamera()
     pcamera->SetZFar(1000.f);
     
     // Set camera position and rotation
-    camera->SetPosition(glm::vec3(-0.607f, 40.868f, 115.363f));
+    camera->SetPosition(glm::vec3(0.f, 40.f, 110.f));
     camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -10.745f * PI / 180.f);
     camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.089f* PI / 180.f);
     camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
@@ -192,6 +192,7 @@ void Assignment4::SetupFinalSceneFromSheet()
     // Turn on the lights
     AddPLight();
     AddHLight();
+    AddDLight();
 }
 
 void Assignment4::SetupFinalScene()
