@@ -14,7 +14,11 @@ int SheetReader::ImportSheet(std::string sheet, // input parameter
             return -1;
         }
     }
-    else if(sheet.substr(sheet.length() - 4 - 1) != ".tsv")
+    else if(sheet.substr(sheet.length() - 4) == ".tsv")
+    {
+        fname = sheet;
+    }
+    else
     {
         std::cerr << "Error: Expected https URL or .tsv file for sheet. Returning nullptr" << std::endl;
         return -1;
