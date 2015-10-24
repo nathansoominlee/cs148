@@ -280,15 +280,14 @@ int FinalSceneObject::ParseEpicParams(const std::string& epic_params, // input p
                                       float* epic_roughness,          // output parameter
                                       float* epic_specular)           // output parameter
 {
-
     // Collect the 3 parameters
 
-    std::string::size_type sz = 0;
+    std::string::size_type sub_pos = 0;
     for (int i = 0; i < 3; i++)
     {
 
-        float param = std::stof(epic_params.substr(sz), &sz);
-        sz += 1;
+        float param = -1;
+        sub_pos += ReadFloat(epic_params.substr(sub_pos), &param) + 1;
 
         if (i == 0) 
         {
@@ -316,15 +315,15 @@ int FinalSceneObject::ParseBPParams(const std::string& bp_params, // input param
     // Collect the 4 parameters for each vec4, 4 * 2 = 8 
     int n = 8;
     
-    std::string::size_type sz = 0;
+    std::string::size_type sub_pos = 0;
     float v1 = -1;
     float v2 = -1;
     float v3 = -1;
     float v4 = -1;
     for (int i = 0; i < n; i++)
     {
-        float param = std::stof(bp_params.substr(sz), &sz);
-        sz += 1;
+        float param = -1;
+        sub_pos += ReadFloat(bp_params.substr(sub_pos), &param) + 1;
 
         if ( i == 0 || (i == n - 4) )
         {
@@ -359,15 +358,23 @@ int FinalSceneObject::ParseBPParams(const std::string& bp_params, // input param
     return 0;
 }
 
+std::size_t FinalSceneObject::ReadFloat(const std::string& in_float, float* out_float)
+{
+    std::size_t sz;
+    (*out_float) = std::stof(in_float, &sz);
+
+    return sz;
+}
+
 // Returns 0 on success
 int FinalSceneObject::ParseTransformations(const std::string& t_params,
                                            float* tx, float* ty, float* tz)
 {
-    std::string::size_type sz = 0;
+    std::string::size_type sub_pos = 0;
     for (int i = 0; i < 3; i++)
     {
-        float param = std::stof(t_params.substr(sz), &sz);
-        sz += 1;
+        float param = -1;
+        sub_pos += ReadFloat(t_params.substr(sub_pos), &param) + 1;
 
         if (i == 0)
         {
@@ -390,11 +397,11 @@ int FinalSceneObject::ParseTransformations(const std::string& t_params,
 int FinalSceneObject::ParseRotations(const std::string& r_params,
                                      float* rx, float* ry, float* rz)
 {
-    std::string::size_type sz = 0;
+    std::string::size_type sub_pos = 0;
     for (int i = 0; i < 3; i++)
     {
-        float param = std::stof(r_params.substr(sz), &sz);
-        sz += 1;
+        float param = -1;
+        sub_pos += ReadFloat(r_params.substr(sub_pos), &param) + 1;
 
         if (i == 0)
         {

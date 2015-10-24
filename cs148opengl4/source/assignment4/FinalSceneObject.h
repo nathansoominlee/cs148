@@ -107,6 +107,8 @@ private:
     static int ParseScale(const std::string& scale_param,
                           float* scale);
 
+    static std::size_t ReadFloat(const std::string& in_float, float* out_float);
+
     //  operator overload
     friend std::ostream& operator<< (std::ostream& os, const FinalSceneObject& fso);
 
