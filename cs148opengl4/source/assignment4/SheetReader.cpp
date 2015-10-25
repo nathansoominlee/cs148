@@ -38,27 +38,27 @@ Rows SheetReader::ParseTSV(std::string fname)
     std::ifstream file(fname);
     std::string line;
 
-    const char *needle = "\t";
+    std::string tab = "\t";
 
     while (std::getline(file, line))
     {
         rows.push_back(Rows::value_type());
+        
+        int tab_pos = -1; 
+        int last_tab_pos = -1;
 
-        const char *haystack = line.c_str();
-        char *field;
-
-        while ( (field = strnstr(haystack, needle, line.length())) )
+        do
         {
-            // put in null char
-            (*field) = '\0';
+            last_tab_pos = tab_pos + 1;
+            tab_pos = line.find(tab, tab_pos + 1);
 
-            rows.back().push_back(haystack);
+            std::size_t start = last_tab_pos;
+            std::size_t count = tab_pos - last_tab_pos;
+            std::string field = line.substr(start, count);
 
-            haystack = field + 1;
+            rows.back().push_back(field);
         }
-
-        // Collect the last field
-        rows.back().push_back(haystack);
+        while (tab_pos != std::string::npos);
 
     }
 

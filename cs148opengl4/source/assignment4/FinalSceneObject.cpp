@@ -212,26 +212,18 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
     // Should look like either 
     // Epic:0.5,0,0.6 or BP:0.5,0.5,0.5,1.0,0.5,0.5,0.5,1.0
 
-    const char *haystack = field.c_str();
-    const char *colon = ":"; 
-    char *colon_location;
+    std::string colon = ":";
+    std::size_t colon_pos = field.find(colon);
 
-    //std::cout << "ParseShader, field: " << field << std::endl;
-
-    colon_location = strnstr(haystack, colon, field.length());
-
-    // Check that we found a colon
-
-    if (!colon_location)
+    if (colon_pos == std::string::npos)
     {
         std::cerr << "Error: Malformatted shader_type specification " << field << std::endl;
         exit(1);
     }
 
-    // Put in a null character and check which shader it is
-    (*colon_location) = '\0';
+    // Check which shader this is
+    std::string shader_spec = field.substr(0, colon_pos);
 
-    std::string shader_spec(haystack);
     int retval = -1;
     if (shader_spec == "Epic")
     {
@@ -241,8 +233,7 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
         bp_specular = glm::vec4(-1.f, -1.f, -1.f, -1.f);
 
         // Process Epic parameters
-        haystack = colon_location + 1;
-        std::string epic_params(haystack);
+        std::string epic_params(field.substr(colon_pos + 1));
 
         retval = FinalSceneObject::ParseEpicParams(epic_params,
                                                    epic_metallic,
@@ -257,8 +248,7 @@ int FinalSceneObject::ParseShader(const std::string& field,          // input pa
         (*epic_roughness) = -1;
         (*epic_specular) = -1;
 
-        haystack = colon_location + 1;
-        std::string bp_params(haystack);
+        std::string bp_params(field.substr(colon_pos + 1));
 
         retval = FinalSceneObject::ParseBPParams(bp_params,
                                                  bp_diffuse,
