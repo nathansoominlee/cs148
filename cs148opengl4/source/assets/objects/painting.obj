@@ -1,0 +1,20 @@
+# This file uses centimeters as units for non-parametric coordinates.
+
+mtllib painting.mtl
+g default
+v 0.594417 1.595902 3.393482
+v 0.390235 9.148054 3.399598
+v 0.063365 9.148054 -5.438881
+v 0.267547 1.595902 -5.444996
+vt 0.000711 0.000235
+vt 1.003673 0.000235
+vt 1.003673 0.985097
+vt 0.000711 0.985097
+vn 0.998951 0.027037 -0.036943
+vn 0.998951 0.027037 -0.036943
+vn 0.998951 0.027037 -0.036943
+vn 0.998951 0.027037 -0.036943
+s off
+g frame3_mike:frontFace
+usemtl frame3_mike:VRayMtl2SG
+f 1/1/1 4/2/2 3/3/3 2/4/4
