@@ -31,6 +31,7 @@ glm::vec2 Assignment4::GetWindowSize() const
 void Assignment4::SetupScene()
 {
     SetupFinalSceneFromSheet();
+    //SetupExample2();
 }
 
 void Assignment4::SetupCamera()
@@ -38,14 +39,31 @@ void Assignment4::SetupCamera()
     PerspectiveCamera* pcamera = static_cast<PerspectiveCamera*>(camera.get());
   
     // Set camera field of view and clipping planes
-    pcamera->SetFOV(35.9f);
+    //pcamera->SetFOV(35.9f);
+    pcamera->SetFOV(30.f);
     pcamera->SetZNear(0.1f);
     pcamera->SetZFar(1000.f);
     
     // Set camera position and rotation
+    /*
     camera->SetPosition(glm::vec3(0.f, 40.f, 110.f));
     camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -10.745f * PI / 180.f);
     camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -0.089f* PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
+    */
+    /*
+    camera->SetPosition(glm::vec3(61.875f, 55.505f, 93.685f));
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -20.f * PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -29.2f* PI / 180.f);
+    //camera->Rotate(glm::vec3(0.f, 1.f, 0.f), 0.1f * 3);
+    camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
+    */
+
+    camera->SetPosition(glm::vec3(15.f, 40.f, 80.f));
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), -20.f * PI / 180.f);
+    camera->Rotate(glm::vec3(1.f, 0.f, 0.f), 0.1f * 1);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), -29.2f* PI / 180.f);
+    camera->Rotate(glm::vec3(0.f, 1.f, 0.f), 0.1f * 6.5);
     camera->Rotate(glm::vec3(0.f, 0.f, 1.f), 0.f * PI / 180.f);
 
 }
