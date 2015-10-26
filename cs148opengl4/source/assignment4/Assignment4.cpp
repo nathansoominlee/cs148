@@ -4,6 +4,7 @@
 #include "common/Utility/Texture/TextureLoader.h"
 #include "assignment4/SheetReader.h"
 #include "assignment4/FinalSceneObject.h"
+#include "assignment4/Utility.h"
 
 Assignment4::Assignment4(std::shared_ptr<class Scene> inputScene, std::shared_ptr<class Camera> inputCamera):
     Application(std::move(inputScene), std::move(inputCamera))
@@ -208,9 +209,40 @@ void Assignment4::SetupFinalSceneFromSheet()
     FinalSceneObject::AddContainer(objects, this->scene);
 
     // Turn on the lights
-    AddPLight();
+    //AddPLight();
     AddHLight();
     AddDLight();
+    
+
+    // Hard-coded point lights 
+    glm::vec4 color;
+    glm::vec3 position;
+
+    float factor = 5;
+
+    color = glm::vec4(0.5f, 0.1f, 0.2f, 10.0f);
+    position = glm::vec3(-33.046f, 2.f, 4.295f);
+    Utility::AddPLight(color * factor, position, scene);
+
+    color = glm::vec4(0.1f, 0.1f, 0.5f, 1.0f);
+    position = glm::vec3(-19.947f, 2.f, 9.482f);
+    Utility::AddPLight(color * factor, position, scene);
+
+    color = glm::vec4(0.1f, 0.5f, 0.1f, 1.0f);
+    position = glm::vec3(-7.37f, 8.f, 1.813f);
+    Utility::AddPLight(color * factor, position, scene);
+
+    color = glm::vec4(0.5f, 0.1f, 0.1f, 1.0f);
+    position = glm::vec3(9.960f, 2.f, -1.005f);
+    Utility::AddPLight(color * factor, position, scene);
+
+    color = glm::vec4(0.1f, 0.1f, 0.5f, 1.0f);
+    position = glm::vec3(-19.455f, 2.f, 1.371f);
+    Utility::AddPLight(color * factor, position, scene);
+
+    color = glm::vec4(0.1f, 0.5f, 0.1f, 1.0f);
+    position = glm::vec3(30.177f, 2.f, 3.993f);
+    Utility::AddPLight(color * factor, position, scene);
 }
 
 void Assignment4::SetupFinalScene()

@@ -3,6 +3,18 @@
 #include "common/Utility/Mesh/Loading/MeshLoader.h"
 #include "common/Utility/Texture/TextureLoader.h"
 
+void Utility::AddPLight(glm::vec4 color, glm::vec3 position, std::shared_ptr<Scene> scene)
+{
+    // turn on point light.
+    std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
+    lightProperties->color = color;
+    lightProperties->radius = 1000.f;
+    
+    std::shared_ptr<class Light> pointLight = std::make_shared<Light>(std::move(lightProperties));
+    pointLight->SetPosition(position);
+    scene->AddLight(pointLight);
+}
+
 // Returns an epic shader with the given parameters
 // and texture. Any objects with different parameter/textures
 // need different shaders.
