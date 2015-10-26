@@ -1,0 +1,74 @@
+﻿Build started 10/26/2015 12:59:26 PM.
+     1>Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\cs148opengl4.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\. /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glm /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glew\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\assimp\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\freeimage\distrib\windows\x64 /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\SDL2\windows\include /nologo /W3 /WX- /O2 /Ob2 /D WIN32 /D _WINDOWS /D NDEBUG /D ASSIGNMENT=4 /D SHADER_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/shaders /D ASSET_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/assets /D OPENGL_MAJOR=4 /D OPENGL_MINOR=1 /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cs148opengl4.dir\Release\\" /Fd"cs148opengl4.dir\Release\vc140.pdb" /Gd /TP /errorReport:prompt  -O3 C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '-O3'
+         Assignment4.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.cpp(67): warning C4305: 'argument': truncation from 'double' to 'float'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\Release\cs148opengl4.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib glu32.lib opengl32.lib ..\..\external\SDL2\windows\lib\x64\SDL2.lib ..\..\external\glew\distrib\windows\lib\x64\glew32.lib ..\..\external\assimp\distrib\windows\lib64\assimp.lib ..\..\external\freeimage\distrib\windows\x64\FreeImage.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:"C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release/cs148opengl4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release/cs148opengl4.lib" /MACHINE:X64  /machine:x64 cs148opengl4.dir\Release\main.obj
+         cs148opengl4.dir\Release\Application.obj
+         cs148opengl4.dir\Release\MediaLayer.obj
+         cs148opengl4.dir\Release\ForwardRenderer.obj
+         cs148opengl4.dir\Release\Renderer.obj
+         cs148opengl4.dir\Release\RenderingObject.obj
+         cs148opengl4.dir\Release\BlinnPhongShader.obj
+         cs148opengl4.dir\Release\EpicShader.obj
+         cs148opengl4.dir\Release\ShaderProgram.obj
+         cs148opengl4.dir\Release\Texture.obj
+         cs148opengl4.dir\Release\Camera.obj
+         cs148opengl4.dir\Release\PerspectiveCamera.obj
+         cs148opengl4.dir\Release\Light.obj
+         cs148opengl4.dir\Release\Scene.obj
+         cs148opengl4.dir\Release\SceneObject.obj
+         cs148opengl4.dir\Release\MeshLoader.obj
+         cs148opengl4.dir\Release\PrimitiveCreator.obj
+         cs148opengl4.dir\Release\TextureLoader.obj
+         cs148opengl4.dir\Release\Assignment4.obj
+         cs148opengl4.dir\Release\FinalSceneObject.obj
+         cs148opengl4.dir\Release\SheetReader.obj
+         cs148opengl4.dir\Release\Utility.obj
+         cs148opengl4.vcxproj -> C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\Release\cs148opengl4.exe
+       PostBuildEvent:
+         setlocal
+         "C:\Program Files (x86)\CMake\bin\cmake.exe" -E copy_if_different C:/Users/natha/148scanline/cs148/cs148opengl4/source/external/assimp/distrib/windows/bin64/assimp.dll C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release
+         if %errorlevel% neq 0 goto :cmEnd
+         :cmEnd
+         endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+         :cmErrorLevel
+         exit /b %1
+         :cmDone
+         if %errorlevel% neq 0 goto :VCEnd
+         setlocal
+         "C:\Program Files (x86)\CMake\bin\cmake.exe" -E copy_if_different C:/Users/natha/148scanline/cs148/cs148opengl4/source/external/freeimage/distrib/windows/x64/FreeImage.dll C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release
+         if %errorlevel% neq 0 goto :cmEnd
+         :cmEnd
+         endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+         :cmErrorLevel
+         exit /b %1
+         :cmDone
+         if %errorlevel% neq 0 goto :VCEnd
+         setlocal
+         "C:\Program Files (x86)\CMake\bin\cmake.exe" -E copy_if_different C:/Users/natha/148scanline/cs148/cs148opengl4/source/external/glew/distrib/windows/bin/x64/glew32.dll C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release
+         if %errorlevel% neq 0 goto :cmEnd
+         :cmEnd
+         endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+         :cmErrorLevel
+         exit /b %1
+         :cmDone
+         if %errorlevel% neq 0 goto :VCEnd
+         setlocal
+         "C:\Program Files (x86)\CMake\bin\cmake.exe" -E copy_if_different C:/Users/natha/148scanline/cs148/cs148opengl4/source/external/SDL2/windows/lib/x64/SDL2.dll C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/Release
+         if %errorlevel% neq 0 goto :cmEnd
+         :cmEnd
+         endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+         :cmErrorLevel
+         exit /b %1
+         :cmDone
+         if %errorlevel% neq 0 goto :VCEnd
+         :VCEnd
+     1>Done Building Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\cs148opengl4.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.17

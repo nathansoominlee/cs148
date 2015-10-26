@@ -1,0 +1,53 @@
+﻿Build started 10/25/2015 2:49:15 PM.
+     1>Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\cs148opengl4.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Building Custom Rule C:/Users/natha/148scanline/cs148/cs148opengl4/source/CMakeLists.txt
+         CMake does not need to re-run because C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\CMakeFiles\generate.stamp is up-to-date.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\. /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glm /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glew\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\assimp\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\freeimage\distrib\windows\x64 /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\SDL2\windows\include /Zi /nologo /W3 /WX- /Od /Ob0 /D WIN32 /D _WINDOWS /D _DEBUG /D ASSIGNMENT=4 /D SHADER_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/shaders /D ASSET_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/assets /D OPENGL_MAJOR=4 /D OPENGL_MINOR=1 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cs148opengl4.dir\Debug\\" /Fd"cs148opengl4.dir\Debug\vc140.pdb" /Gd /TP /errorReport:prompt  -O0 C:\Users\natha\148scanline\cs148\cs148opengl4\source\main.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Application.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\MediaLayer.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\ForwardRenderer.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Renderer.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\RenderingObject.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\BlinnPhongShader.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\EpicShader.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\ShaderProgram.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Textures\Texture.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\Camera.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\PerspectiveCamera.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Light\Light.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Scene.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\SceneObject.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Loading\MeshLoader.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Texture\TextureLoader.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\FinalSceneObject.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\SheetReader.cpp C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Utility.cpp
+     1>cl : Command line warning D9002: ignoring unknown option '-O0'
+         main.cpp
+         Application.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Application.cpp(91): warning C4244: 'argument': conversion from 'float' to 'GLsizei', possible loss of data
+         MediaLayer.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\MediaLayer.cpp(53): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         ForwardRenderer.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\ForwardRenderer.cpp(43): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+         Renderer.cpp
+         RenderingObject.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\RenderingObject.cpp(67): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\RenderingObject.cpp(69): warning C4267: 'argument': conversion from 'size_t' to 'GLsizei', possible loss of data
+         BlinnPhongShader.cpp
+         EpicShader.cpp
+         ShaderProgram.cpp
+         Texture.cpp
+         Camera.cpp
+         PerspectiveCamera.cpp
+         Light.cpp
+         Scene.cpp
+         SceneObject.cpp
+         MeshLoader.cpp
+         PrimitiveCreator.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(114): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(114): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(127): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(131): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(135): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(141): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(146): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp(151): warning C4267: '=': conversion from 'size_t' to 'unsigned int', possible loss of data
+         TextureLoader.cpp
+         Assignment4.cpp
+         FinalSceneObject.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\FinalSceneObject.cpp(220): error C3861: 'strnstr': identifier not found
+         Generating Code...
+         Compiling...
+         SheetReader.cpp
+     1>C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\SheetReader.cpp(50): error C3861: 'strnstr': identifier not found
+         Utility.cpp
+         Generating Code...
+     1>Done Building Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\cs148opengl4.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:09.12

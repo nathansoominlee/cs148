@@ -199,7 +199,7 @@ void Assignment4::SetupFinalSceneFromSheet()
 
     // Import the sheet
     Rows rows;
-    SheetReader::ImportSheet(this->sheetURL, rows);
+    SheetReader::ImportSheet(this->sheet_path_local, rows);
 
     // Parse the objects
     std::vector<FinalSceneObject> objects;
@@ -210,8 +210,8 @@ void Assignment4::SetupFinalSceneFromSheet()
 
     // Turn on the lights
     //AddPLight();
-    AddHLight();
-    AddDLight();
+    //AddHLight();
+    //AddDLight();
     
 
     // Hard-coded point lights 
@@ -220,27 +220,27 @@ void Assignment4::SetupFinalSceneFromSheet()
 
     float factor = 5;
 
-    color = glm::vec4(0.5f, 0.1f, 0.2f, 10.0f);
+    color = glm::vec4(0.8f, 0.1f, 0.2f, 1.5f);	//red
     position = glm::vec3(-33.046f, 2.f, 4.295f);
     Utility::AddPLight(color * factor, position, scene);
 
-    color = glm::vec4(0.1f, 0.1f, 0.5f, 1.0f);
+    color = glm::vec4(0.1f, 0.1f, 0.5f, 0.8f);	//blue
     position = glm::vec3(-19.947f, 2.f, 9.482f);
     Utility::AddPLight(color * factor, position, scene);
 
-    color = glm::vec4(0.1f, 0.5f, 0.1f, 1.0f);
+    color = glm::vec4(0.1f, 0.4f, 0.1f, 0.9f);	//green
     position = glm::vec3(-7.37f, 8.f, 1.813f);
     Utility::AddPLight(color * factor, position, scene);
 
-    color = glm::vec4(0.5f, 0.1f, 0.1f, 1.0f);
+    color = glm::vec4(0.8f, 0.1f, 0.1f, 0.6f);	//red
     position = glm::vec3(9.960f, 2.f, -1.005f);
     Utility::AddPLight(color * factor, position, scene);
 
-    color = glm::vec4(0.1f, 0.1f, 0.5f, 1.0f);
+    color = glm::vec4(0.1f, 0.1f, 0.6f, 0.4f);	//blue
     position = glm::vec3(-19.455f, 2.f, 1.371f);
     Utility::AddPLight(color * factor, position, scene);
 
-    color = glm::vec4(0.1f, 0.5f, 0.1f, 1.0f);
+    color = glm::vec4(0.1f, 0.7f, 0.1f, 1.2f);	//green
     position = glm::vec3(30.177f, 2.f, 3.993f);
     Utility::AddPLight(color * factor, position, scene);
 }
@@ -326,17 +326,15 @@ void Assignment4::SetupFinalScene()
 
     // add the wall!
     texture = "";
-    metallic = 0.5f;
-    roughness = 0.f;
-    specular = 0.5f;
+    metallic = 0.0f;
+    roughness = 1.f;
+    specular = 0.1f;
     shader = MakeEpicShader(metallic, roughness, specular, texture);
     
     object = "wall/Model/wall.obj";
     sceneObject = LoadObj(shader, object);
     sceneObject->SetPosition(glm::vec3(0.f, 0.f, -23.f));
 
-
-    AddPLight();
 }
 
 void Assignment4::SetupDummy()
@@ -398,8 +396,6 @@ void Assignment4::SetupDummy()
     scene->AddSceneObject(sceneObject);
 
     
-    AddPLight();
-    
 }
 
 
@@ -420,7 +416,7 @@ void Assignment4::AddDLight()
     // add a directional light which has a direction instead of position
     std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties = make_unique<LightProperties>();
-    lightProperties->color = glm::vec4(2.f, 2.f, 2.f, 1.f);
+    lightProperties->color = glm::vec4(1.f, 0.f, 0.5f, 0.5f);
     lightProperties->direction = glm::vec4(0.f, -10.f, 0.f, 1.f); // Sunlight shines down (in the -y direction)
     
     sunLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::DIRECTIONAL);
@@ -432,8 +428,8 @@ void Assignment4::AddHLight()
     // add a hemispherical light which has a sky and ground color
     std::unique_ptr<LightProperties> lightProperties = make_unique<LightProperties>();
     lightProperties = make_unique<LightProperties>();
-    lightProperties->groundColor = glm::vec3(0.f, 3.f, 1.f); // Green
-    lightProperties->skyColor = glm::vec3(1.f, 1.f, 3.f);    // Blue
+    lightProperties->groundColor = glm::vec3(2.5f, 1.f, 0.f); // orange
+    lightProperties->skyColor = glm::vec3(0.0f, 0.0f, 0.0f);    // dark orange
     lightProperties->radius = 1000.f;
     
     hemisphereLight = std::make_shared<Light>(std::move(lightProperties), Light::LightType::HEMISPHERE);

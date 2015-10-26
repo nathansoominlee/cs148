@@ -1,0 +1,10 @@
+﻿Build started 10/25/2015 2:49:14 PM.
+     1>Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\ZERO_CHECK.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Checking Build System
+         CMake does not need to re-run because C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/CMakeFiles/generate.stamp is up-to-date.
+     1>Done Building Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\ZERO_CHECK.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.24

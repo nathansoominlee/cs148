@@ -1,0 +1,3 @@
+C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/CMakeFiles/ALL_BUILD.dir
+C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/CMakeFiles/cs148opengl4.dir
+C:/Users/natha/148scanline/cs148/cs148opengl4/source/build/vs/CMakeFiles/ZERO_CHECK.dir

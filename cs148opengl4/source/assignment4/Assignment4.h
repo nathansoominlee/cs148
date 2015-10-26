@@ -33,6 +33,7 @@ private:
 
     const std::string sheetURL = baseURL + key + fmt;
     const std::string sheet_path = "final_scene_sheet.tsv";
+	const std::string sheet_path_local = "C:/Users/natha/Downloads/scene_scanline.tsv";
 
     // for scanline image
     virtual void SetupScene();

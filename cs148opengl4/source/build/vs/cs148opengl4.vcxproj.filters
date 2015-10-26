@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Application.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\MediaLayer.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\ForwardRenderer.cpp">
+      <Filter>common\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Renderer.cpp">
+      <Filter>common\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\RenderingObject.cpp">
+      <Filter>common\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\BlinnPhongShader.cpp">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\EpicShader.cpp">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\ShaderProgram.cpp">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Textures\Texture.cpp">
+      <Filter>common\Rendering\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\Camera.cpp">
+      <Filter>common\Scene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\PerspectiveCamera.cpp">
+      <Filter>common\Scene\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Light\Light.cpp">
+      <Filter>common\Scene\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Scene.cpp">
+      <Filter>common\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\SceneObject.cpp">
+      <Filter>common\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Loading\MeshLoader.cpp">
+      <Filter>common\Utility\Mesh\Loading</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.cpp">
+      <Filter>common\Utility\Mesh\Simple</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Texture\TextureLoader.cpp">
+      <Filter>common\Utility\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\FinalSceneObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\SheetReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Utility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Application.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\common.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\core.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\MediaLayer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\ForwardRenderer.h">
+      <Filter>common\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Renderer.h">
+      <Filter>common\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\RenderingObject.h">
+      <Filter>common\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\BlinnPhongShader.h">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\EpicShader.h">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Shaders\ShaderProgram.h">
+      <Filter>common\Rendering\Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Rendering\Textures\Texture.h">
+      <Filter>common\Rendering\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\Camera.h">
+      <Filter>common\Scene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Camera\PerspectiveCamera.h">
+      <Filter>common\Scene\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Light\Light.h">
+      <Filter>common\Scene\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Light\LightProperties.h">
+      <Filter>common\Scene\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\Scene.h">
+      <Filter>common\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Scene\SceneObject.h">
+      <Filter>common\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Loading\MeshLoader.h">
+      <Filter>common\Utility\Mesh\Loading</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Mesh\Simple\PrimitiveCreator.h">
+      <Filter>common\Utility\Mesh\Simple</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\common\Utility\Texture\TextureLoader.h">
+      <Filter>common\Utility\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\FinalSceneObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\SheetReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\natha\148scanline\cs148\cs148opengl4\source\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="common\Utility\Mesh">
+      <UniqueIdentifier>{246550EF-7C45-40DF-B1E5-62292A4956A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Utility\Texture">
+      <UniqueIdentifier>{CDD36000-AC77-46FA-A065-AFDAEF7E3E91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Rendering\Shaders">
+      <UniqueIdentifier>{9FD70AA0-6878-4933-8E39-26FABB748C77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Rendering\Textures">
+      <UniqueIdentifier>{3B22862E-D45E-411C-AF01-58E6BA0A5AF9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Utility\Mesh\Loading">
+      <UniqueIdentifier>{F99DC15F-43F6-4069-85C5-DFA8436032D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Utility\Mesh\Simple">
+      <UniqueIdentifier>{61377946-D3B9-433A-9F41-319BB690CC39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Scene\Camera">
+      <UniqueIdentifier>{25D418BF-9071-4DF7-A219-A06D3F562528}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Scene\Light">
+      <UniqueIdentifier>{9521A2D2-C891-4B0D-A9B6-68F9B5155301}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{09330C84-DA62-4005-9AA1-FC31936D162F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{AB0A2C17-F621-43C3-8F19-E9B43871AAAC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{A9FF5E5D-ECD9-4A15-9520-54861ADA99AA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Rendering">
+      <UniqueIdentifier>{CA541262-0FE7-477F-8E85-AD608DBF3AA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Scene">
+      <UniqueIdentifier>{7C6706C4-AC4C-4EFB-B740-44C46F1DC93C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\Utility">
+      <UniqueIdentifier>{5D2C7B87-BAE1-445A-AE4D-C567C06614FB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
