@@ -1,4 +1,4 @@
-﻿Build started 10/26/2015 3:44:04 PM.
+﻿Build started 10/26/2015 4:16:14 PM.
      1>Project "C:\Users\natha\148scanline\cs148\cs148opengl4\source\build\vs\cs148opengl4.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\. /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glm /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\glew\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\assimp\include /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\freeimage\distrib\windows\x64 /IC:\Users\natha\148scanline\cs148\cs148opengl4\source\.\external\SDL2\windows\include /nologo /W3 /WX- /O2 /Ob2 /D WIN32 /D _WINDOWS /D NDEBUG /D ASSIGNMENT=4 /D SHADER_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/shaders /D ASSET_PATH=C:/Users/natha/148scanline/cs148/cs148opengl4/source/assets /D OPENGL_MAJOR=4 /D OPENGL_MINOR=1 /D "CMAKE_INTDIR=\"Release\"" /D _MBCS /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cs148opengl4.dir\Release\\" /Fd"cs148opengl4.dir\Release\vc140.pdb" /Gd /TP /errorReport:prompt  -O3 C:\Users\natha\148scanline\cs148\cs148opengl4\source\assignment4\Assignment4.cpp
@@ -71,4 +71,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.16
+Time Elapsed 00:00:01.11

@@ -286,9 +286,9 @@ void Assignment4::SetupFinalScene()
 
     // add the blind window!
     texture = "";
-    metallic = 0.5f;
-    roughness = 0.f;
-    specular = 0.5f;
+    metallic = 0.0f;
+    roughness = 0.6f;
+    specular = 0.3f;
     shader = MakeEpicShader(metallic, roughness, specular, texture);
     
     object = "blind_window/Model/blind_window.obj";
