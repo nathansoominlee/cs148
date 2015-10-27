@@ -233,7 +233,7 @@ void Assignment4::SetupFinalSceneFromSheet()
     Utility::AddPLight(color * factor, position, scene);
 
     color = glm::vec4(0.8f, 0.1f, 0.1f, 0.6f);	//red
-    position = glm::vec3(9.960f, 2.f, -1.005f);
+    position = glm::vec3(10.0f, 2.f, -2.623f);
     Utility::AddPLight(color * factor, position, scene);
 
     color = glm::vec4(0.1f, 0.1f, 0.6f, 0.4f);	//blue
